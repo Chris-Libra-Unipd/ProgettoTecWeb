@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color-dark-black: #000000;
+    --bg-color-dark-gray: #242424;
+    --txt-color-gray: #8B8B8B;
+    --txt-color-not-pure-white: #F0F0F0;
+    --link-color-not-pure-white: #F0F0F0;
+    --txt-color-dark-gray: #242424;
+    --txt-error-messages: #DF1818;
+    --bgButton-color-not-pure-white: #F0F0F0;
+    --header-bg-color: rgba(26, 26, 26, 0.4);
+    --border-liquid-glass: rgba(255, 255, 255, 0.4);
+}
+
+html, body {
+    font-size: 100%;
+    font-family: "Inter", "Roboto", sans-serif;
+    line-height: 1.5em;
+}
+
+
+body {
+    background-color: var(--bg-color-dark-black);
+    background-image: url("../assets/img/sky_backgorund.jpg");
+    background-attachment: fixed;
+}
+
+/*================HEADER====================== */
+/*================HEADER====================== */
+/*================HEADER====================== */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.5s;
+}
+
+.header-no-scroll {
+    padding: 0 1em 1em 1em;
+}
+
+.header-scroll {
+    padding: 0.7em 1em 1em 1em;
+}
+
+.header-bg-liquid-glass {
+    background: var(--header-bg-color);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(2.5px);
+}
+
+#header-container {
+    padding: 0.5em 2em 0.5em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
+    
+    border: 1px solid var(--border-liquid-glass);
+
+    transition: all 0.5s;
+}
+
+.header-container-no-scroll {
+    border-radius: 0px 0px 60px 60px;
+}
+
+.header-container-scroll {
+    border-radius: 60px;
+}
+
+
+#logo {
+    display: block;
+    background-image: url("../assets/img/logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    text-indent: -9999em;
+    height: 90px;
+    
+    min-width: 153px;
+    text-align: center;
+    padding-right: 1em;
+    border-right: 1px solid var(--border-liquid-glass);
+}
+
+#top-header-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.menu-link {
+    color: var(--link-color-not-pure-white);
+    text-decoration: none;
+}
+
+
+#menu ul {
+    display: flex; 
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    gap: 1.1em;
+    font-size: 1.1em;
+    margin-left: 1em;
+}
+
+#menu li {
+    color: var(--txt-color-not-pure-white);
+    text-decoration: none;
+    margin: 1.5em 0 1.5em 0;
+}
+
+#button-menu-mobile {
+    display: none;
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0.5em;
+}
+
+#image-button-menu-mobile {
+    height: 40px;
+    transition: all 0.3s;
+}
+
+#menu-mobile {
+    display: none;
+    width: 100%;
+}
+
+
+#menu-mobile ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    list-style-type: none; 
+    margin: 1em 0;
+}
+
+#menu-mobile ul li {
+    width: 100%;
+    text-align: center;
+    color: var(--txt-color-not-pure-white);
+    font-size: 1.5em;
+}
+
+#login-link{
+    color: var(--txt-color-dark-gray);
+    background-color: var(--bgButton-color-not-pure-white);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.8em;
+    border-radius: 60px;
+    border: none;
+    margin-left: auto;
+}
+
+#login-link-mobile {
+    color: var(--txt-color-dark-gray);
+    background-color: var(--bgButton-color-not-pure-white);
+    text-decoration: none;
+    padding: 0.2em 0.5em;
+    border-radius: 60px;
+    border: none;
+}
+
+#breadCrumb-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#breadCrumb {
+    color: var(--txt-color-not-pure-white);
+    font-size: 1em;
+    border-radius: 0px 0px 60px 60px;
+    border: 0.5px solid var(--border-liquid-glass);
+    border-top: none;
+    padding: 0 1em 0 1em;
+}
+
+#breadCrumb a {
+    color: var(--txt-color-not-pure-white);
+    text-decoration: none;
+}
+

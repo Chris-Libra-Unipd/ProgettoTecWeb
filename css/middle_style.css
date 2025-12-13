@@ -1,0 +1,23 @@
+
+
+/*================HEADER====================== */
+/*================HEADER====================== */
+/*================HEADER====================== */
+
+#header-container {
+    width: 85%;
+}
+
+#menu ul {
+    font-size: 1em;
+    margin-left: 1em;
+}
+
+#login-link {
+    font-size: 1em;
+}
+
+#header-container h1 {
+    height: 75px;
+    min-width: 120px;
+}
