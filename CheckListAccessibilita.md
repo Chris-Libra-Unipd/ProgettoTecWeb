@@ -1,0 +1,1 @@
+# Checklist per il controllo dell'accessibilità
