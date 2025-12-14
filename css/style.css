@@ -77,11 +77,11 @@ header {
 }
 
 .header-container-no-scroll {
-    border-radius: 0px 0px 60px 60px;
+    border-radius: 0px 0px 50px 50px;
 }
 
 .header-container-scroll {
-    border-radius: 60px;
+    border-radius: 50px;
 }
 
 
@@ -136,6 +136,8 @@ header {
     background: none;
     border: none;
     padding: 0.5em;
+    min-height: 44px;
+    min-width: 44px;
 }
 
 #image-button-menu-mobile {
@@ -144,12 +146,13 @@ header {
 }
 
 #menu-mobile {
+    margin: 1em 0;
     display: none;
     width: 100%;
 }
 
 
-#menu-mobile ul{
+#menu-mobile ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -171,7 +174,7 @@ header {
     text-decoration: none;
     font-size: 1.2em;
     padding: 0.8em;
-    border-radius: 60px;
+    border-radius: 50px;
     border: none;
     margin-left: auto;
 }
@@ -189,16 +192,16 @@ header {
     display: flex;
     width: 100%;
     justify-content: center;
-    max-width: 65%;
+    max-width: 70%;
 }
 
 #breadCrumb {
     color: var(--txt-color-not-pure-white);
-    font-size: 1.2em;
+    font-size: 1em;
     border-radius: 0px 0px 60px 60px;
     border: 0.5px solid var(--border-liquid-glass);
     border-top: none;
-    padding: 0 2em 0 2em;
+    padding: 0 1.7em 0 1.7em;
 }
 
 #breadCrumb a {
