@@ -29,6 +29,34 @@ body {
     background-attachment: fixed;
     padding-top: 11em;
 }
+/*================AIUTI NAVIGAZIONE====================== */
+/*================AIUTI NAVIGAZIONE====================== */
+/*================AIUTI NAVIGAZIONE====================== */
+
+.aiuti-navigazione {
+    position: fixed;
+    z-index: 1001;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    margin: -1;
+    clip-path: rect(0,0,0,0);
+    top: 10px;
+    left: 10px;
+}
+
+.aiuti-navigazione:focus {
+    clip-path: none;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    padding: 1em;
+    color: var(--txt-color-not-pure-white);
+    background-color: var(--bg-color-dark-black);
+    border-radius: 40px;
+    text-decoration: none;
+}
 
 /*================HEADER====================== */
 /*================HEADER====================== */
@@ -228,7 +256,9 @@ header {
 /*================MAIN====================== */
 /*================MAIN====================== */
 
-#content {
+#contenuto {
+    scroll-margin-top: 11em;
+
     width: 1000px;
     background-color: gray;
     margin: 0 auto;
