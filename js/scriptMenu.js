@@ -7,7 +7,6 @@ const menuMobile = document.getElementById("menu-mobile");
 const buttonMenu = document.getElementById("button-menu-mobile");
 const imageButtonMenu = document.getElementById("image-button-menu-mobile")
 
-
 let isMenuOpen = false;
 
 function scrollMenuEffect() {
@@ -25,14 +24,18 @@ function scrollMenuEffect() {
 }
 
 function openCloseMenuMobile() {
-    if(!isMenuOpen) {
-        isMenuOpen = true;
-        menuMobile.style.display = "flex";
-        imageButtonMenu.style.transform = "rotate(180deg)";
-    } else {
+    if(isMenuOpen) {
         isMenuOpen = false;
-        menuMobile.style.display = "none";
-        imageButtonMenu.style.transform = "rotate(0deg)"
+        menuMobile.classList.remove("menu-mobile-aperto-alta-spec")
+        menuMobile.classList.add("menu-mobile-chiuso-alta-spec")
+        imageButtonMenu.classList.remove("image-button-menu-mobile-aperto")
+        imageButtonMenu.classList.add("image-button-menu-mobile-chiuso")
+    } else {
+        isMenuOpen = true;
+        menuMobile.classList.remove("menu-mobile-chiuso-alta-spec")
+        menuMobile.classList.add("menu-mobile-aperto-alta-spec")
+        imageButtonMenu.classList.remove("image-button-menu-mobile-chiuso")
+        imageButtonMenu.classList.add("image-button-menu-mobile-aperto")
     }
 }
 
@@ -40,3 +43,4 @@ function openCloseMenuMobile() {
 
 window.addEventListener("scroll", scrollMenuEffect);
 buttonMenu.addEventListener("click", openCloseMenuMobile);
+buttonMenu.addEventListener("")

@@ -15,3 +15,11 @@
 #button-menu-mobile {
     display: block;
 }
+
+#header-container .menu-mobile-chiuso-alta-spec {
+    display: none;
+}
+
+#header-container .menu-mobile-aperto-alta-spec {
+    display: flex;
+}

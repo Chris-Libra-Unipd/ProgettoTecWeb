@@ -56,11 +56,7 @@ header {
     padding-top: 0.7em;
 }
 
-.header-bg-liquid-glass {
-    background: var(--header-bg-color);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3.5px);
-}
+
 
 #header-container {
     padding: 0.5em 2em 0.5em 2em;
@@ -74,6 +70,12 @@ header {
     border: 1px solid var(--border-liquid-glass);
 
     transition: all 0.5s;
+}
+
+.header-bg-liquid-glass {
+    background: var(--header-bg-color);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3.5px);
 }
 
 .header-container-no-scroll {
@@ -94,7 +96,6 @@ header {
     overflow: hidden;
     text-indent: -9999em;
     height: 90px;
-    
     min-width: 153px;
     text-align: center;
     padding-right: 1em;
@@ -102,7 +103,6 @@ header {
 }
 
 #top-header-container {
-    justify-content: center;
     align-items: center;
     display: flex;
     width: 100%;
@@ -117,8 +117,6 @@ header {
 #menu ul {
     display: flex; 
     list-style-type: none; 
-    padding: 0;
-    margin: 0;
     gap: 1.1em;
     font-size: 1.1em;
     margin-left: 1em;
@@ -128,6 +126,17 @@ header {
     color: var(--txt-color-not-pure-white);
     text-decoration: none;
     margin: 1.5em 0 1.5em 0;
+}
+
+#login-link{
+    color: var(--txt-color-dark-gray);
+    background-color: var(--bgButton-color-not-pure-white);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.8em;
+    border-radius: 50px;
+    border: none;
+    margin-left: auto;
 }
 
 #button-menu-mobile {
@@ -145,12 +154,18 @@ header {
     transition: all 0.3s;
 }
 
-#menu-mobile {
-    margin: 1em 0;
-    display: none;
-    width: 100%;
+.image-button-menu-mobile-chiuso {
+    transform: rotate(0deg);
 }
 
+.image-button-menu-mobile-aperto {
+    transform: rotate(180deg);
+}
+
+#menu-mobile {
+    margin: 1em 0;
+    width: 100%;
+}
 
 #menu-mobile ul {
     width: 100%;
@@ -168,16 +183,6 @@ header {
     font-size: 1.5em;
 }
 
-#login-link{
-    color: var(--txt-color-dark-gray);
-    background-color: var(--bgButton-color-not-pure-white);
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.8em;
-    border-radius: 50px;
-    border: none;
-    margin-left: auto;
-}
 
 #login-link-mobile {
     color: var(--txt-color-dark-gray);
@@ -208,6 +213,16 @@ header {
     color: var(--txt-color-not-pure-white);
     text-decoration: none;
 }
+
+/*per chiusura apertura menu mobile*/
+
+
+/*questo display: non viene sovrascritto da istruzioni con più specificità in mini_style.css*/
+/*per risoluzione bug apertura menu mobile*/
+.menu-mobile-chiuso-bassa-spec {
+    display: none;
+}
+
 
 /*================MAIN====================== */
 /*================MAIN====================== */
