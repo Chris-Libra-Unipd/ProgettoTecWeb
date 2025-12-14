@@ -16,6 +16,11 @@
     --border-liquid-glass: rgba(255, 255, 255, 0.4);
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 11em;
+}
+
 html, body {
     font-size: 100%;
     font-family: "Inter", "Roboto", sans-serif;
@@ -257,7 +262,7 @@ header {
 /*================MAIN====================== */
 
 #contenuto {
-    scroll-margin-top: 11em;
+
 
     width: 1000px;
     background-color: gray;
