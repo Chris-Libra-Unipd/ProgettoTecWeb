@@ -43,4 +43,3 @@ function openCloseMenuMobile() {
 
 window.addEventListener("scroll", scrollMenuEffect);
 buttonMenu.addEventListener("click", openCloseMenuMobile);
-buttonMenu.addEventListener("")

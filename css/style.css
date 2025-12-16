@@ -41,26 +41,17 @@ body {
 .aiuti-navigazione {
     position: fixed;
     z-index: 1001;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    margin: -1;
-    clip-path: rect(0,0,0,0);
     top: 10px;
-    left: 10px;
-}
-
-.aiuti-navigazione:focus {
-    clip-path: none;
-    overflow: visible;
-    width: auto;
-    height: auto;
-    padding: 1em;
+    left: -999em;
     color: var(--txt-color-not-pure-white);
     background-color: var(--bg-color-dark-black);
     border-radius: 40px;
+    padding: 1em;
     text-decoration: none;
+}
+
+.aiuti-navigazione:focus {
+    left: 10px;
 }
 
 /*================HEADER====================== */
@@ -112,11 +103,11 @@ header {
 }
 
 .header-container-no-scroll {
-    border-radius: 0px 0px 50px 50px;
+    border-radius: 0px 0px 60px 60px;
 }
 
 .header-container-scroll {
-    border-radius: 50px;
+    border-radius: 60px;
 }
 
 
@@ -167,7 +158,7 @@ header {
     text-decoration: none;
     font-size: 1.2em;
     padding: 0.8em;
-    border-radius: 50px;
+    border-radius: 60px;
     border: none;
     margin-left: auto;
 }
