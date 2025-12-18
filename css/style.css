@@ -217,31 +217,10 @@ header {
     border: none;
 }
 
-#breadCrumb-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    max-width: 70%;
-}
-
-#breadCrumb {
-    color: var(--txt-color-not-pure-white);
-    font-size: 1em;
-    border-radius: 0px 0px 60px 60px;
-    border: 0.5px solid var(--border-liquid-glass);
-    border-top: none;
-    padding: 0 1.7em 0 1.7em;
-}
-
-#breadCrumb a {
-    color: var(--txt-color-not-pure-white);
-    text-decoration: none;
-}
 
 /*per chiusura apertura menu mobile*/
 
-
-/*questo display: non viene sovrascritto da istruzioni con più specificità in mini_style.css*/
+/*questo "display: none;" viene sovrascritto da istruzioni con più specificità in mini_style.css*/
 /*per risoluzione bug apertura menu mobile*/
 .menu-mobile-chiuso-bassa-spec {
     display: none;

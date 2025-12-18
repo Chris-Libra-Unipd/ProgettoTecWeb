@@ -7,7 +7,11 @@ const menuMobile = document.getElementById("menu-mobile");
 const buttonMenu = document.getElementById("button-menu-mobile");
 const imageButtonMenu = document.getElementById("image-button-menu-mobile")
 
+
+menuMobile.classList.remove("menu-mobile-aperto-alta-spec");
+menuMobile.classList.add("menu-mobile-chiuso-alta-spec");
 let isMenuOpen = false;
+
 
 function scrollMenuEffect() {
     if(window.scrollY >= 1) {
