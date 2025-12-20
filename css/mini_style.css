@@ -25,6 +25,30 @@
 }
 
 
+h2 {
+    font-size: 1.8em;
+}
+
+/*================HOME HERO====================== */
+/*================HOME HERO====================== */
+/*================HOME HERO====================== */
+
+
+#hero-text-container h2 {
+    max-width: 80%;
+    background-color: rgb(0, 0, 0, 0.4);
+    border-radius: 30px;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+#programma-container {
+    height: 2000px;
+    border-radius: 80px;
+}
+
+
+
 /*======================= CHRIS =====================*/
 #planet-desktop{
     display: none;
@@ -58,3 +82,5 @@ blockquote{
 form > input{
     background-color: var(--bg-color-dark-black);
 }
+
+/*======================= END CHRIS =====================*/
