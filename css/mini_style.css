@@ -24,6 +24,7 @@
     display: flex;
 }
 
+
 h2 {
     font-size: 1.8em;
 }
@@ -45,3 +46,41 @@ h2 {
     height: 2000px;
     border-radius: 80px;
 }
+
+
+
+/*======================= CHRIS =====================*/
+#planet-desktop{
+    display: none;
+}
+
+#planet-mobile{
+    display: block;
+    width: 100%;
+    margin-top:2em;
+}
+
+#auth-form-bg{
+    height: auto;
+}
+
+blockquote{
+    display: none;
+}
+
+#auth-form-bg{
+    background: transparent;
+    width:100%;
+    float:none;
+    color: var(--txt-color-not-pure-white);
+}
+
+#auth-form-container{
+    width: 100%;
+}
+
+form > input{
+    background-color: var(--bg-color-dark-black);
+}
+
+/*======================= END CHRIS =====================*/
