@@ -301,10 +301,9 @@ header {
     background-color: var(--bgButton-color-not-pure-white);
     text-decoration: none;
     font-size: 2em;
-    padding: 0.3em;
+    padding: 0.5em;
     border-radius: 60px;
     border: none;
-    margin-left: auto;
 }
 
 
