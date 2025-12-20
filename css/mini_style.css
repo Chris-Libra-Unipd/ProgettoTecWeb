@@ -23,3 +23,7 @@
 #header-container .menu-mobile-aperto-alta-spec {
     display: flex;
 }
+
+h2 {
+    font-size: 1.8em;
+}

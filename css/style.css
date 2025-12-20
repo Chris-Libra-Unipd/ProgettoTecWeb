@@ -13,6 +13,7 @@
     --txt-error-messages: #DF1818;
     --bgButton-color-not-pure-white: #F0F0F0;
     --header-bg-color: rgba(12, 12, 12, 0.9);
+    --generic-liquid-glass-bg-coor: rgba(71, 71, 71, 0.3);
     --border-liquid-glass: rgba(255, 255, 255, 0.4);
 }
 
@@ -21,10 +22,10 @@ html {
     scroll-padding-top: 11em;
 }
 
+
 html, body {
-    font-size: 100%;
     font-family: "Inter", "Roboto", sans-serif;
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 
 
@@ -34,6 +35,22 @@ body {
     background-attachment: fixed;
     padding-top: 11em;
 }
+
+#home-body {
+    padding-top: 0;
+}
+
+.generic-liquid-glass {
+    background: var(--generic-liquid-glass-bg-coor);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-liquid-glass);
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
 /*================AIUTI NAVIGAZIONE====================== */
 /*================AIUTI NAVIGAZIONE====================== */
 /*================AIUTI NAVIGAZIONE====================== */
@@ -92,15 +109,13 @@ header {
     max-width: 90%;
 
     border: 1px solid var(--border-liquid-glass);
+    background: var(--header-bg-color);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
 
     transition: all 0.5s;
 }
 
-.header-bg-liquid-glass {
-    background: var(--header-bg-color);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3.5px);
-}
 
 .header-container-no-scroll {
     border-radius: 0px 0px 60px 60px;
@@ -115,14 +130,14 @@ header {
     display: block;
     background-image: url("../assets/img/logo.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     overflow: hidden;
     text-indent: -9999em;
-    height: 90px;
-    min-width: 153px;
+    height: 80px;
+    min-width: 105px;
     text-align: center;
-    padding-right: 1em;
+    padding-right: 2.5em;
     border-right: 1px solid var(--border-liquid-glass);
 }
 
@@ -227,17 +242,92 @@ header {
 }
 
 
+
+/*================HOME HERO====================== */
+/*================HOME HERO====================== */
+/*================HOME HERO====================== */
+
+#hero-container {
+    background-image: linear-gradient(
+            180deg,              
+            rgba(0, 0, 0, 0.2) 0%,  
+            rgba(0, 0, 0, 0.2) 80%, 
+            rgba(0, 0, 0, 1) 100%
+        ),
+        url("../assets/img/home/home_hero.jpeg");
+    height: 100vh; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
+    padding-top: 11em;
+    box-sizing: border-box;
+    
+    margin-bottom: 5em;
+    
+
+}
+
+#hero-container::after {
+    content: "";
+    position: absolute;
+    bottom: -10em;
+    left: 0;
+    width: 100%;
+    height: 10em;
+    background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+    z-index: -1000;
+}
+
+
+#hero-text-container {
+    width: 1000px;
+    max-width: 90%;
+    margin: auto;
+    
+}
+
+
+#hero-text-container h2 {
+    color: var(--txt-color-not-pure-white);
+    max-width: 60%;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+
+#scopri-link {
+    color: var(--txt-color-dark-gray);
+    background-color: var(--bgButton-color-not-pure-white);
+    text-decoration: none;
+    font-size: 2em;
+    padding: 0.3em;
+    border-radius: 60px;
+    border: none;
+    margin-left: auto;
+}
+
+
+
 /*================MAIN====================== */
 /*================MAIN====================== */
 /*================MAIN====================== */
 
 #contenuto {
-
-
     width: 1000px;
-    background-color: gray;
     margin: 0 auto;
-    height: 1000px;
+    height: 3000px;
     color: white;
     max-width: 90%;
+}
+
+#contenuto h2 {
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 1em;
+}
+
+#programma-container {
+    height: 2000px;
+    border-radius: 170px;
 }
