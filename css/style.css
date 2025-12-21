@@ -514,8 +514,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .liquid-glass-container-error404{
-    width: 1200px;
-    height: 400px;
+    width: 70%;
+    height: 50vh;
     padding: 30px;
     border-radius: 30px;
     backdrop-filter: blur(15px) saturate(100%); 
@@ -528,8 +528,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .immagine-404 img{
-  width: 700px;
-  height: 400px;
+  width: 60%;
+  height: 50vh;
   border-radius: 30px;
   float: left;
 }
