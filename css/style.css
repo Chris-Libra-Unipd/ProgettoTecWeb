@@ -452,7 +452,7 @@ form > input:focus{
 }
 
 input[type="submit"]{
-    margin: 2.5em auto;
+    margin-top: 1em;
     margin-bottom: 0em;
     width: 90%;
     height: 3.5em;
@@ -467,6 +467,10 @@ input[type="submit"]{
 
 input[type="submit"]:hover, input[type="submit"]:focus{
     scale: 1.08;
+}
+
+input[type="date"]{
+    font-family: "Inter", "Roboto", sans-serif;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -497,5 +501,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--txt-color-gray);
 }
 
+.hiddenError{
+    display: none;
+}
 
+.shownError{
+    display: block;
+    color: var(--txt-error-messages);
+    font-size: 0.7em;
+    text-align: left;
+}
+
+#showHidePsw{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    position: relative;
+    left:8em;
+    bottom: 2em;
+}
+
+#showHideIcon{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
 /* =================== END CHRIS ====================*/
