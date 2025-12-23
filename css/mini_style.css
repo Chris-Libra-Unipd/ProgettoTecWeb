@@ -55,14 +55,17 @@ h2 {
 /*================MAIN HOME====================== */
 /*================MAIN HOME====================== */
 
-.img-lista-programma {
-    flex-shrink: 1;
-    max-width: 90%;
+#programma-container {
+    border-radius: 90px;
+    padding: 2em 1.5em;
 }
 
-#programma-container {
-    border-radius: 100px;
-    padding: 2em 1em;
+.img-lista-programma {
+    max-width: 100%;
+}
+
+.txt-container-lista-programma {
+    min-width: auto;
 }
 
 
