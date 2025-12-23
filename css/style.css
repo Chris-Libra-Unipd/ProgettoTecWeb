@@ -26,7 +26,9 @@
     --secondary-text
     --border
     --button-bg
+    --accent-color-1
     */
+    --accent-color: #94FBFF;
 
 }
 
@@ -185,11 +187,17 @@ header {
     color: var(--txt-color-dark-gray);
     background-color: var(--bgButton-color-not-pure-white);
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.8em;
-    border-radius: 60px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 1em 2em;
+    border-radius: 1.2em;
     border: none;
     margin-left: auto;
+    transition: 0.5s;
+}
+
+#login-link:hover, #login-link:focus{
+    scale: 1.1;
 }
 
 #button-menu-mobile {
@@ -345,8 +353,72 @@ header {
     border-radius: 150px;
 }
 
+
+
+/* ===================== END DAMN ==================*/
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/* ================== CUOGO =================== */
+
+/* PAGINA 404*/
+#error404-page{
+    background-image: url("../assets/img/sky_backgorund.jpg");
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;
+}
+
+.liquid-glass-container-error404{
+    width: 70%;
+    height: 50vh;
+    padding: 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(15px) saturate(100%); 
+    color: var(--txt-color-not-pure-white);
+    margin: 0 auto;
+    background: var(--generic-liquid-glass-bg-coor);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--border-liquid-glass);
+}
+
+.immagine-404 img{
+  width: 60%;
+  height: 50vh;
+  border-radius: 30px;
+  float: left;
+}
+
+.testo-404{
+  display: flex;
+  flex-direction: column;
+    align-items: center; 
+}
+.testo-404 p{
+ font-size: 32px;
+ line-height: 2;
+
+}
+
+.testo-404 button{
+ margin-top: 30px; 
+}
+
+
+/* ===================== END CUOGO ==================*/
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
 /*================ CHRIS ================*/
-#auth-page {
+
+/* ========= AUTHENTICATION PAGES  ============*/
+/* ========= AUTHENTICATION PAGES  ============*/
+/* ========= AUTHENTICATION PAGES  ============*/
+#auth-body {
     background-color: var(--bg-color-dark-black);
     background-image: none;
     background-attachment: fixed;
@@ -373,10 +445,12 @@ header {
     border: 1px solid var(--border-liquid-glass);
     padding: 0.3em 1em;
     border-radius: 1em;
-    margin: 3em auto;
     width: fit-content;
     font-weight: bold;
+}
 
+#auth-body #breadcrumb{
+    margin: 3em auto;
 }
 
 #breadcrumb a {
@@ -402,6 +476,8 @@ blockquote{
 blockquote cite{
     float:right;
 }
+
+/* ================== AUTHENTICATION FORMS ===================*/
 
 #auth-form-bg{
     background: var(--bg-color-auth-form);
@@ -492,7 +568,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #authEscapeLinks{
-    margin-top: 2.3em;
+    margin-top: 2.5em;
+    margin-bottom: 4em;
     color: var(--txt-color-gray);
     font-size: 0.8em;
 }
@@ -500,6 +577,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #authEscapeLinks > a{
     color: var(--txt-color-gray);
 }
+
+#authEscapeLinks > p{
+    margin-top:1em;
+}
+
+/* ================== INPUT CHECK ===================*/
 
 .hiddenError{
     display: none;
@@ -526,56 +609,222 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 1.5em;
     border-radius: 50%;
 }
-/* =================== END CHRIS ====================*/
 
-/* ================== CUOGO =================== */
+/*================ DETAIL PAGE ===================*/
+/*================ DETAIL PAGE ===================*/
+/*================ DETAIL PAGE ===================*/
 
-/* PAGINA 404*/
-#error404-page{
-    background-image: url("../assets/img/sky_backgorund.jpg");
-    background-size: cover;      
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    background-position: center;
-    justify-content: center; /* Centra orizzontalmente */
+#details-body{
+    padding-top: 7em;
+}
+
+#details-body #breadcrumb{
+    margin: 0em auto;
+}
+
+#contenuto-dettagli{
+    width: 1000px;
+    margin: 3em auto;
+    height: fit-content;
+    max-width: 90%;
+    border: 1px solid var(--border-liquid-glass);
+    border-radius: 3em;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
+    color: var(--txt-color-not-pure-white);
+}
+
+
+#contenuto-dettagli > h1{
+    text-align: center;
+    background-color: var(--bg-color-auth-form);
+    margin: 1.2em auto;
+    margin-bottom: 1.5em;
+    width: fit-content;
+    padding: 0.1em 2.5em;
+    border: 1px solid var(--accent-color);
+    border-radius: 3em;
+    font-size:2.5em;
+}
+
+#firstCover, #secondCover, #thirdCover{
+    display: block;
+    border-radius: 1em;
+}
+
+#firstCover{
+    width: 50%;
+    float: left;
+    margin-left: 11%;
+    margin-right: 3%;
+}
+
+#secondCover, #thirdCover{
+    width: 24%;
+}
+
+#thirdCover{
+    margin-top: 2%;
+}
+
+#contenuto-dettagli > h2{
+    width: 50%;
+    text-align: center;
+    margin: 0.5em auto;
+    margin-top:2em;
+    border-bottom: 1px solid var(--txt-color-not-pure-white);
+    font-size:2em;
+
+}
+
+#contenuto-dettagli > p{
+    text-align: center;
+    width: 80%;
+    margin: 0.5em auto;
+}
+
+/* ITINERARIO*/
+
+.itemItinerario{
+    display: block;
+    width: 60%;
+    margin: 2em auto;
+    display: flex;
     align-items: center;
 }
 
-.liquid-glass-container-error404{
-    width: 70%;
-    height: 50vh;
-    padding: 30px;
-    border-radius: 30px;
-    backdrop-filter: blur(15px) saturate(100%); 
-    color: var(--txt-color-not-pure-white);
-    margin: 0 auto;
-    background: var(--generic-liquid-glass-bg-coor);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    border: 1px solid var(--border-liquid-glass);
+.itineraryImg{
+    width: 30%;
+    border-radius: 1em;
+    display: inline;
+    margin-right: 2em;
 }
 
-.immagine-404 img{
-  width: 60%;
-  height: 50vh;
-  border-radius: 30px;
-  float: left;
+/* PARTENZE*/
+#containerPartenze{
+    width: 60%;
+    float: left;
+    margin-left: 5%;
 }
 
-.testo-404{
-  display: flex;
-  flex-direction: column;
-    align-items: center; 
-}
-.testo-404 p{
- font-size: 32px;
- line-height: 2;
-
+#labelSeleziona{
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
 }
 
-.testo-404 button{
- margin-top: 30px; 
+.opzionePartenza{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--bgButton-color-not-pure-white);
+    background-color: transparent;
+    border-radius: 0.5em;
+    padding:0.5em;
+    margin-bottom: 1em;
+    transition: 0.5s;
+}
+
+.opzionePartenza:hover{
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.opzionePartenza > time{
+    margin: 0em 0.5em;
+}
+
+.opzionePartenza > .dataArrivo{
+    border-right: 2px solid var(--bgButton-color-not-pure-white);
+    padding-right: 1em;
+    margin-right: 1em;
+}
+
+.costoIniziale{
+    font-size: 0.8em;
+    text-decoration: line-through;
+}
+
+.costoFinale{
+    font-size: 1.2em;
+    text-align: center;
+    margin-right: 1em;
 }
 
 
-/* ===================== END CUOGO ==================*/
+.selectionIndicator{
+    appearance: none;
+    /* Safari support */
+    -webkit-appearance: none;
+    border-radius: 3em;
+    background-color: transparent;
+    width: 2em;
+    height: 2em;
+    margin-left: auto;
+    border: 2px solid var(--bgButton-color-not-pure-white);
+    border: 2px solid var(--accent-color);
+
+ }
+
+.selectionIndicator:checked{
+    background-color: var(--accent-color);
+    border: none;
+    outline: none;
+}
+
+#riepilogoAcquisto{
+    border: 1px solid var(--bgButton-color-not-pure-white);
+    background-color: transparent;
+    width: 21%;
+    margin-right:5%;
+    margin-top: 2em;
+    border-radius: 1.5em;
+    padding: 1% 2%;
+    float: right;
+    font-size: 0.8em;
+    transition: 0.5s;
+}
+
+#riepilogoAcquisto:hover{
+    transform: scale(1.07);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#riepilogoAcquisto > h3{
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+#riepilogoAcquisto > p{
+    margin-bottom: 0.5em;
+}
+
+#riepilogoAcquisto span, #riepilogoAcquisto time{
+    font-size: 1.2em;
+}
+
+#buyButton{
+    text-align: center;
+    font-weight: bolder;
+    margin:auto;
+    margin-top: 0.5em;
+    width: 100%;
+    color: black;
+    border-radius: 2em;
+    border: none;
+    outline: none;
+    padding: 0.8em 0em;
+    background-color: var(--accent-color);
+}
+
+#buyButton:hover{
+    background-color: var(--bg-color-dark-gray);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+
+/* =================== END CHRIS ====================*/

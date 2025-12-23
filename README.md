@@ -5,6 +5,9 @@ Sito buono per icone; [Sito](https://www.flaticon.com/)
 
 Links:
 
+[UPSCALER FIGO](https://imgupscaler.com/)
+[COMPRESSORE TOP](https://www.iloveimg.com/it/download/4wy1fjbt4gkznjh9qmvg9c5h5kwspm0rtp48y3cx1cgAtyflm86mgh3gx93qcnxlxvdk5mpvh44vg572nmsr07r14n94sArjq9s3jAdmb9Arxqhyn11vjs285zllj5pfnhsAsm59rvt2fycv89wcz8xnhc4hj70AcAAm0r3mg7A6rgsfd581/8)
+
 [Link OneNote](https://1drv.ms/o/c/b6e09671099a0e39/IgDjtgmMzeEeT7W0Aytqa6GCAWqVBvyePvZgi9skrhxb7gs?e=zrGGhE)
 
 [Link Figma](https://www.figma.com/design/1TfwRptNKRYOJgISjOFZtf/design-pagine?node-id=0-1&t=yEuidPBsLCkhOjBi-1)
