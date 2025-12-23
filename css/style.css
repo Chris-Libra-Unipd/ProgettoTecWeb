@@ -330,9 +330,9 @@ header {
 
 
 
-/*================MAIN====================== */
-/*================MAIN====================== */
-/*================MAIN====================== */
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
 
 #contenuto {
     width: 1000px;
@@ -348,11 +348,52 @@ header {
 }
 
 #programma-container {
-    height: 2000px;
-
     border-radius: 150px;
+    padding: 2em 3em;
 }
 
+#programma-container h3 {
+    text-align: center;
+    color: var(--txt-color-not-pure-white);
+    font-size: 2.5em;
+}
+
+#lista-programma {
+    list-style-type: none;
+}
+
+#lista-programma li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2em;
+    margin-top: 4em;
+    flex-wrap: wrap;
+}
+
+.img-lista-programma {
+    height: 18em;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.txt-container-lista-programma {
+    flex: 1 1 15em;
+    min-width: 17em;
+    max-width: 26em;
+}
+
+.txt-container-lista-programma h4 {
+    color: var(--txt-color-not-pure-white);
+    font-size: 2em;
+    text-align: center;
+}
+
+.txt-container-lista-programma p {
+    color: var(--txt-color-not-pure-white);
+    font-size: 1.2em;
+    text-align: center;
+}
 
 
 /* ===================== END DAMN ==================*/
