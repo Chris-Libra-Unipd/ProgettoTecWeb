@@ -372,7 +372,7 @@ header {
 }
 
 .img-lista-programma {
-    height: 18em;
+    width: 18em;
     border-radius: 50%;
     flex-shrink: 0;
 }

@@ -51,9 +51,18 @@ h2 {
     margin-bottom: 1.5em;
 }
 
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
+
+.img-lista-programma {
+    flex-shrink: 1;
+    max-width: 90%;
+}
+
 #programma-container {
-    height: 2000px;
-    border-radius: 80px;
+    border-radius: 100px;
+    padding: 2em 1em;
 }
 
 
