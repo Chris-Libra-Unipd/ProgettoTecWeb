@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 800px)">
+        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 1000px)">
         <title>Nova Frontiers</title>
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
         <script src="js/scriptMenu.js" defer></script>
@@ -71,11 +71,19 @@
 
         <main id="contenuto-dettagli">
             <h1>NOME VIAGGIO</h1>
-            <ul>
-                <li><img class="coverImg mainImg" src="assets/img/t0.jpg"/></li>
-                <li><img class="coverImg otherImg" src="assets/img/t2.jpg"/></li>
-                <li><img class="coverImg otherImg" src="assets/img/t1.jpeg"/></li>
-            </ul>
+            
+            <section id="imgScroller">
+                <img class="coverImg" src="assets/img/t0.jpg"/>
+                <img class="coverImg" src="assets/img/t2.jpg"/>
+                <img class="coverImg" src="assets/img/t1.jpeg"/>
+
+                <div id="swipingController">
+                    <button id="prevImg"><img src="assets/icons/prev-arrow.png" width="15px"/></button>
+                    <span id="imgIndex">1/3</span>
+                    <button id="nextImg"><img src="assets/icons/next-arrow.png" width="15px"/></button>
+                </div>
+            </section>
+
             
             <h2>IL VIAGGIO FA PER ME?</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>

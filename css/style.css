@@ -730,43 +730,60 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-align: center;
     background-color: var(--bg-color-auth-form);
     margin: 1.2em auto;
-    margin-bottom: 1.5em;
-    width: fit-content;
-    padding: 0.1em 2.5em;
+    width: 50%;
     border: 1px solid var(--accent-color);
     border-radius: 3em;
     font-size:2.5em;
 }
 
+
+#imgScroller{
+    width: 90%;
+    margin:auto;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .coverImg{
-    display: block;
     border-radius: 1em;
+    width:98%;
+    margin: 0% 1%;
+    transition: 1s;
 }
 
-.otherImg{
-    width: 13%;
-    margin-bottom: 2%;
+#swipingController{
+    width: fit-content;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--bgButton-color-not-pure-white);
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+}
+
+#imgIndex{
+    margin: 0em 0.5em;
+    font-size: 0.7em;
+}
+
+#nextImg, #prevImg{
+    background-color: transparent;
+    border:none;
     transition: 0.5s;
-    margin-right: 7%;
 }
 
-.otherImg:hover{
-    transform: scale(1.1);
-}
-
-.mainImg{
-    width: 70%;
-    float: left;
-    margin-left: 7%;
-    margin-right: 3%;
-    margin-bottom: 1em;
+#nextImg:hover, #prevImg:hover{
+    transform: scale(1.2);
 }
 
 #contenuto-dettagli > h2{
     width: 50%;
     text-align: center;
     margin: 0.5em auto;
-    margin-top:2em;
     border-bottom: 1px solid var(--txt-color-not-pure-white);
     font-size:2em;
 
@@ -778,10 +795,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0.5em auto;
 }
 
-/* ITINERARIO*/
+/* ============ ITINERARIO ===============*/
 
 .itemItinerario{
-    display: block;
     width: 60%;
     margin: 2em auto;
     display: flex;
@@ -791,11 +807,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .itineraryImg{
     width: 30%;
     border-radius: 1em;
-    display: inline;
     margin-right: 2em;
 }
 
-/* PARTENZE*/
+/* ====================== PARTENZE ========================*/
 #containerPartenze{
     width: 60%;
     float: left;
@@ -904,6 +919,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #buyButton{
     text-align: center;
     font-weight: bolder;
+    font-size: 1.3em;
     margin:auto;
     margin-top: 0.5em;
     width: 100%;
@@ -911,7 +927,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 2em;
     border: none;
     outline: none;
-    padding: 0.8em 0em;
+    padding: 0.5em 0em;
     background-color: var(--accent-color);
 }
 
@@ -921,7 +937,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid var(--accent-color);
 }
 
-/* RECENSIONI */
+/* =============== RECENSIONI ==============*/
 
 #container-recensioni{
     display: flex;

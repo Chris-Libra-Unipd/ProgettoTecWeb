@@ -80,6 +80,10 @@ h2 {
 
 
 /*======================= CHRIS =====================*/
+
+/* ============ AUTHENTICATION PAGES ============*/
+/* ============ AUTHENTICATION PAGES ============*/
+/* ============ AUTHENTICATION PAGES ============*/
 #planet-desktop{
     display: none;
 }
@@ -113,4 +117,63 @@ form > input{
     background-color: var(--bg-color-dark-black);
 }
 
+/* ============ DETAIL PAGE ============*/
+/* ============ DETAIL PAGE ============*/
+/* ============ DETAIL PAGE ============*/
+
+#contenuto-dettagli > h1{
+    margin: 0.5em auto;
+    border-radius: 0.7em;    
+}
+
+#mosaicRightColumn{
+    display: none;
+}
+
+.mainImg{
+    width: 100%;
+}
+
+/* ============== ITINERARIO =============== */
+
+.itemItinerario{
+    width: 80%;
+    flex-direction: column; 
+    margin: 3em auto;
+}
+
+.itineraryImg{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+
+.itemItinerario > div{
+    text-align: center;
+}
+
+
+/* ============ PARTENZE =============*/
+
+#riepilogoAcquisto{
+    width: 50%;
+    margin:auto;
+    float: none;
+}
+
+#containerPartenze{
+    float: none;
+    width: 90%;
+    
+}
+
+/* ============= RECENSIONI ==========*/
+#container-recensioni{
+    width: 90%;
+    flex-direction: column;
+}
+
+.recensione{
+    width: 60%;
+}
 /*======================= END CHRIS =====================*/

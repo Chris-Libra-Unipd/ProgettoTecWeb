@@ -1,18 +1,35 @@
 // ============= INTRO ==============
-var coverImages = document.getElementsByClassName("coverImg");
+var images = document.getElementsByClassName("coverImg");
+var numImages = images.length;
+var currentIndex = 1;
+var controller = document.getElementById("swipingController");
+var prevButton = document.getElementById("prevImg");
+var nextButton = document.getElementById("nextImg");
+var imgIndex = document.getElementById("imgIndex");
 
-var mainImages = document.getElementsByClassName("mainImg");
-var mainImage = mainImages[0];
+prevButton.addEventListener("click",showPrevImage);
+nextButton.addEventListener("click",showNextImage);
 
-for (i = 0; i < coverImages.length; i++){
-    coverImages[i].addEventListener("click", setMain);
+function showNextImage(){
+    if(currentIndex < numImages){
+        for(i = 0; i < numImages; i++){
+            images[i].style.transform = "translateX(-"+(102*currentIndex).toString()+"%)";
+        }
+        currentIndex++;
+        imgIndex.innerHTML = currentIndex+"/"+numImages;
+    }
 }
 
-function setMain(){
-    var path = this.src;
-    this.src = mainImage.src;
-    mainImage.src=path;
+function showPrevImage(){
+    if(currentIndex > 1){
+        for(i = 0; i < numImages; i++){
+            images[i].style.transform = "translateX(-"+(102*(currentIndex-2)).toString()+"%)";
+        }
+        currentIndex--;
+        imgIndex.innerHTML = currentIndex+"/"+numImages;
+    }
 }
+
 
 // =============== PARTENZE =============
 var opzioniPartenza = document.getElementsByClassName("opzionePartenza");
@@ -26,8 +43,10 @@ function updateRiepilogo(){
     var dataPartenza = this.querySelector(".dataPartenza").innerHTML;
     var dataArrivo = this.querySelector(".dataArrivo").innerHTML;
     var costo = this.querySelector(".costoFinale").innerHTML;
-    
+
     riepilogo.querySelector("#riepilogoDataPartenza").innerHTML = dataPartenza;
     riepilogo.querySelector("#riepilogoDataArrivo").innerHTML = dataArrivo;
     riepilogo.querySelector("#riepilogoCosto").innerHTML = costo;
 }
+
+
