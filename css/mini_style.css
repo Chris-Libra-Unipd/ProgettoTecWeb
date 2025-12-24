@@ -60,6 +60,14 @@ h2 {
     padding: 2em 1.5em;
 }
 
+#programma-container h3 {
+    font-size: 2em;
+}
+
+.txt-container-lista-programma h4 {
+    font-size: 1.7em;
+}
+
 .img-lista-programma {
     max-width: 100%;
 }
@@ -67,6 +75,7 @@ h2 {
 .txt-container-lista-programma {
     min-width: auto;
 }
+
 
 
 

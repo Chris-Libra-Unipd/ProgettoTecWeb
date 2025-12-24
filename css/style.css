@@ -339,17 +339,18 @@ header {
     margin: 0 auto;
     height: 3000px;
     max-width: 90%;
+    text-align: center;
 }
 
 #contenuto h2 {
     text-align: center;
     font-weight: normal;
-    margin-bottom: 1em;
 }
 
 #programma-container {
     border-radius: 150px;
     padding: 2em 3em;
+    margin-top: 2em;
 }
 
 #programma-container h3 {
@@ -375,6 +376,7 @@ header {
     width: 18em;
     border-radius: 50%;
     flex-shrink: 0;
+    border: 2px solid var(--border-liquid-glass);
 }
 
 .txt-container-lista-programma {
@@ -394,6 +396,49 @@ header {
     font-size: 1.2em;
     text-align: center;
 }
+
+#punti-di-forza {
+    display: inline-block;
+    padding: 0.2em 1em;
+    border-radius: 50px;
+    margin: 1em 0;
+}
+
+
+
+#cards-list-container {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+#cards-list-container h4 {
+    font-size: 1.5em;
+}
+
+#cards-list-container li {
+    width: 300px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards-txt-container {
+    color: var(--txt-color-not-pure-white);
+    padding: 1.5em;
+}
+
+#cards-list-container li img {
+    display: block;
+    width: 100%;
+    border-radius: 0 0 50px 50px;
+}
+
+
 
 
 /* ===================== END DAMN ==================*/
@@ -448,6 +493,8 @@ header {
 .testo-404 button{
  margin-top: 30px; 
 }
+
+
 
 
 /* ===================== END CUOGO ==================*/
