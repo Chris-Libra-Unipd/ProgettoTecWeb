@@ -342,6 +342,13 @@ header {
     text-align: center;
 }
 
+#contenuto h3 {
+    text-align: center;
+    color: var(--txt-color-not-pure-white);
+    font-size: 2.5em;
+}
+
+
 #contenuto h2 {
     text-align: center;
     font-weight: normal;
@@ -353,11 +360,7 @@ header {
     margin-top: 2em;
 }
 
-#programma-container h3 {
-    text-align: center;
-    color: var(--txt-color-not-pure-white);
-    font-size: 2.5em;
-}
+    
 
 #lista-programma {
     list-style-type: none;
