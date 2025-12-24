@@ -51,10 +51,31 @@ h2 {
     margin-bottom: 1.5em;
 }
 
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
+/*================MAIN HOME====================== */
+
 #programma-container {
-    height: 2000px;
-    border-radius: 80px;
+    border-radius: 90px;
+    padding: 2em 1.5em;
 }
+
+#programma-container h3 {
+    font-size: 2em;
+}
+
+.txt-container-lista-programma h4 {
+    font-size: 1.7em;
+}
+
+.img-lista-programma {
+    max-width: 100%;
+}
+
+.txt-container-lista-programma {
+    min-width: auto;
+}
+
 
 
 
