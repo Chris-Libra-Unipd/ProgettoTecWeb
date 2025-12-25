@@ -124,6 +124,7 @@ form > input{
 #contenuto-dettagli > h1{
     margin: 0.5em auto;
     border-radius: 0.7em;    
+    width: 80%;
 }
 
 #mosaicRightColumn{
@@ -143,7 +144,7 @@ form > input{
 }
 
 .itineraryImg{
-    width: 70%;
+    width: 60%;
     margin: auto;
     margin-bottom: 0.5em;
 }
@@ -156,15 +157,33 @@ form > input{
 /* ============ PARTENZE =============*/
 
 #riepilogoAcquisto{
-    width: 50%;
+    width: 80%;
     margin:auto;
     float: none;
 }
 
 #containerPartenze{
     float: none;
-    width: 90%;
-    
+    width: 60%;
+    margin:auto;
+    min-width: fit-content;
+}
+
+.arrow-icon{
+    transform: rotate(90deg);
+}
+
+.opzionePartenza{
+    flex-direction: column;
+}
+
+.opzionePartenza > .dataArrivo{
+    border:none;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid var(--txt-color-not-pure-white);
+    padding-bottom:0.5em;
+    margin-bottom: 0.5em;
 }
 
 /* ============= RECENSIONI ==========*/

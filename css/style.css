@@ -734,6 +734,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid var(--accent-color);
     border-radius: 3em;
     font-size:2.5em;
+    transition: 1s;
 }
 
 
