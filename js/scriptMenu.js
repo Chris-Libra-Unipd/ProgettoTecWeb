@@ -7,6 +7,7 @@ const menuMobile = document.getElementById("menu-mobile");
 const buttonMenu = document.getElementById("button-menu-mobile");
 const imageButtonMenu = document.getElementById("image-button-menu-mobile")
 
+const buttunTornaSu = document.getElementById("button-torna-su");
 
 menuMobile.classList.remove("menu-mobile-aperto-alta-spec");
 menuMobile.classList.add("menu-mobile-chiuso-alta-spec");
@@ -43,7 +44,10 @@ function openCloseMenuMobile() {
     }
 }
 
-
+function scrollToTop() {
+    window.scrollTo(0,0);
+}
 
 window.addEventListener("scroll", scrollMenuEffect);
 buttonMenu.addEventListener("click", openCloseMenuMobile);
+buttunTornaSu.addEventListener("click", scrollToTop);

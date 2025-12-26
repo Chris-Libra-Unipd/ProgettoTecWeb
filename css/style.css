@@ -56,9 +56,8 @@ body {
 }
 
 .generic-liquid-glass {
-    background: var(--generic-liquid-glass-bg-coor);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
 }
 
@@ -116,13 +115,14 @@ header {
 
 
 #header-container {
+    box-sizing: border-box;
     padding: 0.5em 2em 0.5em 2em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 1200px;
-    max-width: 90%;
+    width: 1400px;
+    max-width: 97%;
 
     border: 1px solid var(--border-liquid-glass);
     background: var(--header-bg-color);
@@ -211,6 +211,7 @@ header {
 }
 
 #image-button-menu-mobile {
+    display: block;
     height: 25px;
     transition: all 0.3s;
 }
@@ -335,9 +336,8 @@ header {
 /*================MAIN HOME====================== */
 
 #contenuto {
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
-    height: 3000px;
     max-width: 90%;
     text-align: center;
 }
@@ -439,9 +439,76 @@ header {
     display: block;
     width: 100%;
     border-radius: 0 0 50px 50px;
+    border-top: 1px solid var(--border-liquid-glass);
+}
+
+/*================FOOTER====================== */
+/*================FOOTER====================== */
+/*================FOOTER====================== */
+
+footer {
+    color: var(--txt-color-not-pure-white);
+    background: linear-gradient(
+        180deg,
+        rgb(0,0,0,0) 0%,
+        rgb(0,0,0,1) 15%,
+        rgb(0,0,0,1) 100%
+    );
+    margin-top: 3em;
+    padding: 7em 0 3em 0;
+}
+
+#footer-mid-container {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 90%;
+    gap: 0.5em;
+    margin-bottom: 3em;
+}
+
+#footer-mid-container h3 {
+    margin-bottom: 0.8em;
+}
+
+#footer-mid-container ul {
+    list-style-type: none;
+}
+
+#footer-mid-container li {
+    margin-bottom: 0.5em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 
+#footer-contatti-container{
+    text-align: right;
+}
+
+#button-torna-su {
+    border-radius: 50%;
+    padding: 0.8em;
+    align-self: center;
+    border: none;
+    margin: 0 auto 1em auto;
+    display: block;
+}
+
+#img-button-torna-su {
+    height: 40px;
+}
+
+footer p {
+    display: block;
+    margin: auto;
+    max-width: 700px;
+    text-align: center;
+    font-weight: lighter;
+    padding: 0 2em;
+}
 
 
 /* ===================== END DAMN ==================*/
