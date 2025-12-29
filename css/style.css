@@ -196,7 +196,7 @@ header {
     transition: 0.5s;
 }
 
-#login-link:hover, #login-link:focus{
+#login-link:hover{
     scale: 1.1;
 }
 
@@ -744,6 +744,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
+    transition: 1s;
 }
 
 .coverImg{
@@ -813,17 +814,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ====================== PARTENZE ========================*/
 #containerPartenze{
+    width: 100%;
+}
+
+#listaPartenze{
     width: 60%;
     float: left;
     margin-left: 5%;
-}
-
-#labelSeleziona{
-    width: 100%;
-    text-align: right;
-    font-size: 0.9em;
-    margin-bottom: 0.5em;
-    margin-left: 1em;
 }
 
 .opzionePartenza{
@@ -837,7 +834,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transition: 0.5s;
 }
 
-.opzionePartenza:hover{
+.opzionePartenza:hover, .opzionePartenza:focus{
     transform: scale(1.05);
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -851,9 +848,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-right: 1em;
     margin-right: 1em;
 }
+.costoInziale{
+    display: inline;
+}
 
 .costoIniziale{
-    font-size: 0.8em;
+    font-size: 0.7em;
     text-decoration: line-through;
 }
 
@@ -861,8 +861,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 1.2em;
     text-align: center;
     margin-right: 1em;
+    margin-top:0.5em;
 }
 
+.sconto{
+    display: inline-block;
+    font-size: 0.8em;
+    background-color: var(--accent-color);
+    color: black;
+    font-weight: bold;
+    padding:0.3em;
+    border-radius: 0.3em;
+}
 
 .selectionIndicator{
     appearance: none;
@@ -889,9 +899,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: transparent;
     width: 21%;
     margin-right:5%;
-    margin-top: 2em;
     border-radius: 1.5em;
-    padding: 1% 2%;
+    padding: 1em 2em;
     float: right;
     font-size: 0.8em;
     transition: 0.5s;
@@ -938,9 +947,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid var(--accent-color);
 }
 
+
+#buyButton:focus{
+    outline: 1px solid var(--bgButton-color-not-pure-white);
+    outline-offset: 3px;
+}
+
+
 /* =============== RECENSIONI ==============*/
 
-#container-recensioni{
+#containerRecensioni{
     display: flex;
     margin:auto;
     width: 70%;
@@ -969,7 +985,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     float: left;
 }
 
-.recensione > h4{
+.recensione > h3{
     font-size: 1.5em;
     margin-left: 2.9em;
     min-height: 2.5em;

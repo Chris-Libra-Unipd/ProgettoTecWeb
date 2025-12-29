@@ -32,6 +32,7 @@ function showPrevImage(){
 
 
 // =============== PARTENZE =============
+
 var opzioniPartenza = document.getElementsByClassName("opzionePartenza");
 var riepilogo = document.getElementById("riepilogoAcquisto");
 
@@ -49,4 +50,22 @@ function updateRiepilogo(){
     riepilogo.querySelector("#riepilogoCosto").innerHTML = costo;
 }
 
+
+
+var radioButtons = document.getElementsByClassName("selectionIndicator");
+for (i = 0; i < radioButtons.length; i++){
+    radioButtons[i].addEventListener("change", updateState);
+}
+
+// Necessario controllare tutte le partenze perché il change event non è scatenato quando un radio perde il check
+function updateState(){
+    for (i = 0; i < radioButtons.length; i++){
+        if(radioButtons[i].checked){
+            radioButtons[i].setAttribute("aria-label","partenza selezionata");
+        }
+        else{
+            radioButtons[i].setAttribute("aria-label","partenza non selezionata");
+        }
+    }
+}
 

@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 1000px)">
+        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 900px)">
         <title>Nova Frontiers</title>
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
         <script src="js/scriptMenu.js" defer></script>
@@ -33,9 +33,6 @@
                                 <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
                             </li>
                             <li>
-                                <a href="scroller.html" class="menu-link">SCROLLER</a>
-                            </li>
-                            <li>
                                 INFO VIAGGIO (TO DELETE)
                             </li>
                         </ul>
@@ -48,16 +45,13 @@
                 <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
                     <ul>
                         <li>
-                            <span lang="en">HOME</span>
+                            <a href="index.html" class="menu-link"><span lang="en">HOME</span></a>
                         </li>
                         <li>
                             <a href="catalogo.html" class="menu-link">CATALOGO</a>
                         </li>
                         <li>
                             <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
-                        </li>
-                        <li>
-                            <a href="scroller.html" class="menu-link">SCROLLER</a>
                         </li>
                         <li>
                             <a href="login.html" id="login-link-mobile">ACCEDI</a>
@@ -72,15 +66,15 @@
         <main id="contenuto-dettagli">
             <h1>NOME VIAGGIO</h1>
             
-            <section id="imgScroller">
-                <img class="coverImg" src="assets/img/t0.jpg"/>
-                <img class="coverImg" src="assets/img/t2.jpg"/>
-                <img class="coverImg" src="assets/img/t1.jpeg"/>
+            <section id="imgScroller" aria-label="immagini">
+                <img class="coverImg" src="assets/img/t0.jpg" alt=""/>
+                <img class="coverImg" src="assets/img/t1.jpeg" alt=""/>
+                <img class="coverImg" src="assets/img/t5.jpg" alt=""/>
 
-                <div id="swipingController">
-                    <button id="prevImg"><img src="assets/icons/prev-arrow.png" width="15px"/></button>
+                <div id="swipingController" role="toolbar"> 
+                    <button id="prevImg" aria-label="vedi precedente"><img src="assets/icons/prev-arrow.png" width="15px" alt=""/></button>
                     <span id="imgIndex">1/3</span>
-                    <button id="nextImg"><img src="assets/icons/next-arrow.png" width="15px"/></button>
+                    <button id="nextImg" aria-label="vedi successiva"><img src="assets/icons/next-arrow.png" width="15px" alt=""/></button>
                 </div>
             </section>
 
@@ -116,90 +110,90 @@
             </ul>
 
             <h2>PARTENZE</h2>
-            <ul id="containerPartenze">
-                <p id="labelSeleziona">SELEZIONA</p>
+            <form id="containerPartenze">
+            <ul id="listaPartenze" aria-label="lista partenze">
                 <label for="choice1">
-                <li class="opzionePartenza">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px"/>
-                    <time datetime="2025-12-01" class="dataPartenza">10 Dicembre 2033</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px"/>
-                    <time datetime="2045-05-12" class="dataArrivo">18 Maggio 2075</time>
+                <li class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
                     
                     <div>
-                        <p>Totale: <span class="costoIniziale"></span></p>
-                        <p class="costoFinale">8.000.000€</p>
+                        <p>Prezzo: <span class="costoFinale">8.000.000€</span></p>
                     </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice1"/>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice1" tabindex="-1" aria-label="partenza non selezionata"/>
                 </li>
                 </label>
 
                 <label for="choice2">
-                <li class="opzionePartenza">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px"/>
-                    <time datetime="2025-12-01" class="dataPartenza">1 Dicembre 2025</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px"/>
-                    <time datetime="2045-05-12" class="dataArrivo">12 Maggio 2045</time>
-                    <div><p>Totale:</p><p class="costoIniziale">7.000.000€</p>
-                    <p class="costoFinale">4.000.000€</p></div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice2"/>
+                <li class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    
+                    <div>
+                        <p>Prezzo: <span class="costoIniziale">12.000.000€</span><span class="sconto">Sconto 30%</span></p>
+                        <p>Prezzo finale: <span class="costoFinale">8.000.000€<span></p>
+                    </div>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice2" tabindex="-1" aria-label="partenza non selezionata"/>
                 </li>
                 </label>
 
                 <label for="choice3">
-                <li class="opzionePartenza">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px"/>
-                    <time datetime="2025-12-01" class="dataPartenza">1 Dicembre 2025</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px"/>
-                    <time datetime="2045-05-12" class="dataArrivo">12 Maggio 2045</time>
-                    <div><p>Totale: <span class="costoIniziale"></span></p>
-                    <p class="costoFinale">6.000.000€</p></div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice3"/>
+                <li class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    
+                    <div>
+                        <p>Prezzo: <span class="costoFinale">8.000.000€</span></p>
+                    </div>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice3" tabindex="-1" aria-label="partenza non selezionata"/>
                 </li>
                 </label>
                 
             </ul>
 
             <div id="riepilogoAcquisto">
-                <h3>NOME VIAGGIO</h3>
+                <h3>RIEPILOGO</h3>
+                <p>Viaggio: <span>nome viaggio</span></p>
                 <p>Partenza: <time datetime="2025-12-01" id="riepilogoDataPartenza"></time></p>
                 <p>Ritorno: <time datetime="2045-05-12" id="riepilogoDataArrivo"></time></p>
                 <p>Totale: <span id="riepilogoCosto"></span></p>
                 
-                <button id="buyButton">ACQUISTA</button>
+                <button id="buyButton" tabindex="0">ACQUISTA</button>
             </div>
+            </form>
 
             <h2>RECENSIONI</h2>
-            <div id="container-recensioni">
+            <ul id="containerRecensioni" aria-label="lista recensioni">
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon"/>
-                    <h4>Paperon de Paperoni</h4>
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Paperon de Paperoni</h3>
                     <p class="valutazione">4/5</p>
                     <p>Servizio impeccabile, vista indimenticabile del cuore di Plutone. Lusso spaziale senza precedenti. Esperienza di vita, vale il prezzo!</p>
                     <p class="dataRecensione"><time datetime="2040-10-12">12/10/2040</time></p>
                 </li>
 
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon"/>
-                    <h4>Il Ranzi</h4>
-                    <p class="valutazione">4/5</p>
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Il Ranzi</h3>
+                    <p class="valutazione" >4/5</p>
                     <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
-                    <p class="dataRecensione"><time datetime="2026-12-22">22/12/2026</time></p>
+                    <p class="dataRecensione" ><time datetime="2026-12-22">22/12/2026</time></p>
                 </li>
 
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon"/>
-                    <h4>Il Ranzi</h4>
-                    <p class="valutazione">4/5</p>
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Il Ranzi</h3>
+                    <p class="valutazione" >4/5</p>
                     <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
-                    <p class="dataRecensione"><time datetime="2026-12-22">22/12/2026</time></p>
+                    <p class="dataRecensione" ><time datetime="2026-12-22">22/12/2026</time></p>
                 </li>
-
-                
-
-            </div>
-
-            
-
+            </ul>
         </main>
     </body>
 </html>
