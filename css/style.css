@@ -536,45 +536,44 @@ footer p {
     backdrop-filter: blur(15px) saturate(100%); 
     color: var(--txt-color-not-pure-white);
     margin: 0 auto;
-    background: var(--generic-liquid-glass-bg-coor);
     -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
 }
 
 .immagine-404 img{
-  width: 60%;
-  height: 50vh;
-  border-radius: 30px;
-  float: left;
+    width: 60%;
+    height: 50vh;
+    border-radius: 30px;
+    float: left;
 }
 
 .testo-404{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center; 
 }
 .testo-404 p{
     margin-top: 30px;
- font-size: 32px;
- line-height: 2;
+    font-size: 32px;
+    line-height: 2;
 
 }
 
 .testo-404 button{
- margin-top: 30px; 
+    margin-top: 30px; 
 }
 
 .button-home-errore404{
-  background-color: var(--txt-color-not-pure-white);
-  color:  var(--bg-color-dark-black);
-  border: none;
-  border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  margin-top: 50px;
+    background-color: var(--txt-color-not-pure-white);
+    color:  var(--bg-color-dark-black);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 50px;
 }
 
 
@@ -614,6 +613,7 @@ footer p {
     align-items: center; 
     justify-content: center;
     height: 1vh;
+    width: 52%;
     padding: 30px;
     border-radius: 50px;
     margin: 0 auto;
@@ -621,24 +621,10 @@ footer p {
     border: 1px solid var(--border-liquid-glass);
 }
 
-/* QUESTE TRE CLASSI SERVONO PER NON MODELLARE LA STESSA CLASSE SULLA LARGHEZZA*/
-.liquid-glass-container-informazioni-account-header-large{
-    width: 52%;
-}
-
-.liquid-glass-container-informazioni-account-header-medium{
-    width: 38%;
-}
-.liquid-glass-container-informazioni-account-header-small{
-    width: 34%;
-}
-
 .liquid-glass-container-informazioni-account-header h2{
     font-size: 32px;
     font-weight: bold;
 }
-
-
 
 .liquid-glass-container-informazioni-account-body-container{
     display: flex;        

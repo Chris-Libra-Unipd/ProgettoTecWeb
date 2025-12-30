@@ -209,6 +209,40 @@ form > input{
 /*======================= END CHRIS =====================*/
 
 /*=======================CUOGO======================*/
+/*pagina 404*/
+.liquid-glass-container-error404 {
+    width: 65%;
+    height: auto;
+    padding: 20px;  
+}
+
+.immagine-404 img {
+    width: 80%;
+    height: auto;
+    float: none;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;   
+}
+
+.testo-404 {
+    align-items: center;
+    text-align: center;
+}
+
+.testo-404 p {
+    font-size: 20px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.button-home-errore404 {
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+/*pagina area personale */
 .liquid-glass-container-informazioni-account-header h2{
     font-size: 18px;
     font-weight: bold;
