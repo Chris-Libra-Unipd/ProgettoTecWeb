@@ -23,7 +23,7 @@
    
     <img src="assets/img/planetLogin.jpg" alt="" id="planet-desktop">--
 
-     <blockquote>
+     <blockquote aria-label="citazione">
         <p> Siamo tutti nel fango,</p>
         <p>ma alcuni di noi guardano verso le stelle.</p>
         <cite>~Oscar Wilde</cite>
@@ -48,15 +48,15 @@
 
                 <label for="email"><span>Email</span><span class="error">*</span></label>
                 <p class="hiddenError" id="emailError"></p>
-                <input type="text" name="email" id="email" maxlength="40"/>
+                <input type="text" name="email" id="email" maxlength="40" required/>
 
                 <label for="username">Username<span class="error">*</span></label>
                 <p class="hiddenError" id="usernameError"></p>
-                <input type="text" name="username" id="username" maxlength="20"/>
+                <input type="text" name="username" id="username" maxlength="20" required/>
 
                 <label for="password">Password<span class="error">*</span></label>
                 <p class="hiddenError" id="passwordError"></p>
-                <input type="password" name="password" id="password" maxlength="20"/>
+                <input type="password" name="password" id="password" maxlength="20" required/>
                 <button id="showHidePsw" type="button"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
 
                 <input type="submit" name="register" value="CREA ACCOUNT"/>

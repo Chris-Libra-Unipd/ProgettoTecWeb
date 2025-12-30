@@ -156,6 +156,10 @@ form > input{
 
 /* ============ PARTENZE =============*/
 
+#containerPartenze{
+    flex-direction: column;
+}
+
 #riepilogoAcquisto{
     width: 80%;
     max-width:350px;

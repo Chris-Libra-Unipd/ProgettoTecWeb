@@ -728,13 +728,13 @@ blockquote cite{
     margin: auto;
 }
 
-form{
+#auth-form-container > form{
     margin: auto;
     margin-top: 3em;
     width: 15em;
 }
 
-form > label{
+#auth-form-container > form > label{
     display: block;
     text-align: left;
     margin-bottom: 0.3em;
@@ -742,7 +742,7 @@ form > label{
     font-weight: bold;
 }
 
-form > input{
+#auth-form-container > form > input{
     width: 100%;
     height: 1.5em;
     background-color: var(--bg-color-auth-form);
@@ -752,7 +752,7 @@ form > input{
     font-size: 1.2em;
 }
 
-form > input:focus{
+#auth-form-container > form > input:focus{
     border:none;
     border-bottom: 1px solid var(--bgButton-color-not-pure-white);
     outline: none;
@@ -772,8 +772,14 @@ input[type="submit"]{
     transition: 0.8s;
 }
 
-input[type="submit"]:hover, input[type="submit"]:focus{
+input[type="submit"]:hover{
     scale: 1.08;
+}
+
+input[type="submit"]:focus{
+    transition: 0s;
+    outline: 1px solid var(--bgButton-color-not-pure-white);
+    outline-offset: 3px;
 }
 
 input[type="date"]{
@@ -827,12 +833,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #showHidePsw{
+    width: 20px;
+    height:20px;
     background-color: transparent;
     border:none;
     outline: none;
     position: relative;
     left:8em;
     bottom: 2em;
+    border-radius: 50%;
+}
+
+#showHidePsw:focus{
+    outline: 2px solid var(--bgButton-color-not-pure-white);
+    outline-offset: 3px;
 }
 
 #showHideIcon{
@@ -938,6 +952,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* ============ ITINERARIO ===============*/
+#itineraryContainer{
+    width: 100%;
+}
 
 .itemItinerario{
     width: 60%;
@@ -954,13 +971,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ====================== PARTENZE ========================*/
 #containerPartenze{
-    width: 100%;
+    width: 90%;
+    margin:auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
 }
 
 #listaPartenze{
-    width: 60%;
-    float: left;
-    margin-left: 5%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
 }
 
 .opzionePartenza{
@@ -975,7 +996,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .opzionePartenza:hover, .opzionePartenza:focus{
-    transform: scale(1.05);
+    transform: scale(1.03);
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1012,6 +1033,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: bold;
     padding:0.3em;
     border-radius: 0.3em;
+    margin-left: 0.5em;
 }
 
 .selectionIndicator{
@@ -1037,8 +1059,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #riepilogoAcquisto{
     border: 1px solid var(--bgButton-color-not-pure-white);
     background-color: transparent;
-    width: 21%;
-    margin-right:5%;
+    width: 20%;
     border-radius: 1.5em;
     padding: 1em 2em;
     float: right;
@@ -1047,7 +1068,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #riepilogoAcquisto:hover{
-    transform: scale(1.07);
+    transform: scale(1.03);
     background-color: rgba(255, 255, 255, 0.1);
 }
 

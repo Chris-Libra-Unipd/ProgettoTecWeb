@@ -83,37 +83,38 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
 
             <h2>ITINERARIO</h2>
-            <ul>
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
-                    <div>
-                    <h3>Periodo 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ld do eiusmod tempor incididu</p>
-                    </div>
-                </li>
+            <section aria-label="itinerario" id="itineraryContainer">
+                <ul>
+                    <li class="itemItinerario">
+                        <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                        <div>
+                        <h3>Periodo 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ld do eiusmod tempor incididu</p>
+                        </div>
+                    </li>
 
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
-                    <div>
-                    <h3>Periodo 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
-                    </div>
-                </li>
+                    <li class="itemItinerario">
+                        <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                        <div>
+                        <h3>Periodo 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+                        </div>
+                    </li>
 
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
-                    <div>
-                    <h3>Periodo 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </li>
-            </ul>
+                    <li class="itemItinerario">
+                        <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                        <div>
+                        <h3>Periodo 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
 
             <h2>PARTENZE</h2>
-            <form id="containerPartenze">
-            <ul id="listaPartenze" aria-label="lista partenze">
-                <label for="choice1">
-                <li class="opzionePartenza" tabindex="0">
+            <section id="containerPartenze" aria-label="lista partenze">
+            <div id="listaPartenze">
+                <label for="choice1" class="opzionePartenza" tabindex="0">
                     <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
                     <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
                     <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
@@ -122,12 +123,10 @@
                     <div>
                         <p>Prezzo: <span class="costoFinale">8.000.000€</span></p>
                     </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice1" tabindex="-1" aria-label="partenza non selezionata"/>
-                </li>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice1" aria-label="partenza non selezionata"/>
                 </label>
 
-                <label for="choice2">
-                <li class="opzionePartenza" tabindex="0">
+                <label for="choice2" class="opzionePartenza" tabindex="0">
                     <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
                     <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
                     <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
@@ -135,38 +134,35 @@
                     
                     <div>
                         <p>Prezzo: <span class="costoIniziale">12.000.000€</span><span class="sconto">Sconto 30%</span></p>
-                        <p>Prezzo finale: <span class="costoFinale">8.000.000€<span></p>
+                        <p>Prezzo finale: <span class="costoFinale">9.000.000€</span></p>
                     </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice2" tabindex="-1" aria-label="partenza non selezionata"/>
-                </li>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice2" aria-label="partenza non selezionata"/>
                 </label>
 
-                <label for="choice3">
-                <li class="opzionePartenza" tabindex="0">
+                
+                <label for="choice3" class="opzionePartenza" tabindex="0">
                     <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
                     <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
                     <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
                     <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
                     
                     <div>
-                        <p>Prezzo: <span class="costoFinale">8.000.000€</span></p>
+                        <p>Prezzo: <span class="costoFinale">5.000.000€</span></p>
                     </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice3" tabindex="-1" aria-label="partenza non selezionata"/>
-                </li>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice3" aria-describedby="partenza non selezionata"/>
                 </label>
-                
-            </ul>
+            </div>
 
-            <div id="riepilogoAcquisto">
+            <form id="riepilogoAcquisto"  action="" method="">
                 <h3>RIEPILOGO</h3>
                 <p>Viaggio: <span>nome viaggio</span></p>
                 <p>Partenza: <time datetime="2025-12-01" id="riepilogoDataPartenza"></time></p>
                 <p>Ritorno: <time datetime="2045-05-12" id="riepilogoDataArrivo"></time></p>
                 <p>Totale: <span id="riepilogoCosto"></span></p>
                 
-                <button id="buyButton" tabindex="0">ACQUISTA</button>
-            </div>
+                <button type="submit" id="buyButton" tabindex="0">ACQUISTA</button>
             </form>
+            </section>
 
             <h2>RECENSIONI</h2>
             <ul id="containerRecensioni" aria-label="lista recensioni">
