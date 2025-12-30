@@ -698,17 +698,17 @@ footer p {
     flex-wrap: wrap;     
     gap: 20px;               
     justify-content: center;
+    margin-top: 30px;
 }
 
 .card-viaggi-area-personale{
   flex: 0 0 calc(33.33% - 20px);
   background-color: var(--bg-color-dark-black);
   width: 25%;
-  margin-top: 50px;
   text-align: center;
-  margin-bottom: 50px;
   display: flex;       
   flex-direction: column;
+  margin:0;
 }
 
 .card-viaggi-area-personale > .button-cancella-prenotazione {

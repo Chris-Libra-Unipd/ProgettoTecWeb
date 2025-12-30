@@ -209,18 +209,48 @@ form > input{
 /*======================= END CHRIS =====================*/
 
 /*=======================CUOGO======================*/
-.liquid-glass-container-informazioni-account-header p{
+.liquid-glass-container-informazioni-account-header h2{
     font-size: 18px;
     font-weight: bold;
 }
+
+.liquid-glass-container-informazioni-account-body-container {
+    flex-direction: column;  
+    align-items: center;      
+    margin-top: 10px;
+}
+.liquid-glass-container-informazioni-account-icon {
+    width: 120px;             
+    margin: 0 0 15px 0;       
+    order: -1; 
+}
+
+.liquid-glass-container-informazioni-account-body-info {
+    margin-left: 0;          
+    text-align: center;  
+    order: 0; 
+}
+.liquid-glass-container-informazioni-account{
+    width: 65%;
+}
+
+.liquid-glass-container-viaggi{
+    width: 65%;
+}
+
 
 .testo-area-personale-account{
     
     display: block;
 }
-
+.card-container-viaggi{
+    gap:12px;
+    margin-top: 20px;
+}
 .card-viaggi-area-personale {
     flex: 0 0 100%;
+    margin: 0;
+    
   }
 
 /*======================END CUOGO=======================*/
