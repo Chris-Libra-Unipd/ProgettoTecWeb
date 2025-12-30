@@ -729,6 +729,96 @@ footer p {
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
 }
+
+/* PAGINA RECENSIONI */
+#recensione-page{
+    background-image: url("../assets/img/sky_backgorund.jpg");
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+.liquid-glass-container-recensioni{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 30px;
+    border-radius: 30px; 
+    color: var(--txt-color-not-pure-white);
+    margin: 0 auto;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
+    border: 1px solid var(--border-liquid-glass);
+}
+
+.liquid-glass-container-recensioni-header{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 1vh;
+    width: 52%;
+    padding: 30px;
+    border-radius: 50px;
+    margin: 0 auto;
+    color: var(--txt-color-not-pure-white);
+    border: 1px solid var(--border-liquid-glass);
+}
+
+.opinione-recensione{
+    margin-top: 18px;
+    text-align: center;
+}
+
+.container-form-recensioni{
+    display: flex;        
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-top: 20px; 
+    gap: 15px;
+}
+
+.container-stelle-recensione{
+    display: flex;
+    justify-content: center;
+    gap: 5px; 
+    flex-direction: row-reverse;
+}
+
+.stelle-recensione {
+    font-size: 50px; 
+    cursor: pointer; 
+    color: #ccc; 
+    transition: color 0.2s; 
+}
+
+.stelle-recensione:hover,
+.stelle-recensione:hover ~ .stelle-recensione {
+  color: var(--accent-color);
+}
+
+#textarea-recensione-testo {
+    width: 60%;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border-liquid-glass);
+    background-color: var(--bgButton-color-not-pure-white);
+}
+
+#button-invia-recensiome{
+    background-color: var(--txt-color-not-pure-white);
+    color:  var(--bg-color-dark-black);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    
+}
+
 /* ===================== END CUOGO ==================*/
 
 /*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
