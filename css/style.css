@@ -580,7 +580,6 @@ footer p {
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 40vh;
     padding: 30px;
     border-radius: 30px;
     backdrop-filter: blur(15px) saturate(100%); 
@@ -598,7 +597,6 @@ footer p {
     display: flex;
     align-items: center; 
     justify-content: center;
-    
     height: 1vh;
     padding: 30px;
     border-radius: 50px;

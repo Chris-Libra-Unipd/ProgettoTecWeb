@@ -203,3 +203,20 @@ form > input{
     width: 60%;
 }
 /*======================= END CHRIS =====================*/
+
+/*=======================CUOGO======================*/
+.liquid-glass-container-informazioni-account-header p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testo-area-personale-account{
+    
+    display: block;
+}
+
+.card-viaggi-area-personale {
+    flex: 0 0 100%;
+  }
+
+/*======================END CUOGO=======================*/
