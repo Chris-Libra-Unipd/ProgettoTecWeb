@@ -579,6 +579,11 @@ footer p {
 
 
 /* PAGINA AREA PERSONALE */
+.breadcrumb-centrata-area-personale{
+    margin:-60px auto 50px auto;
+    display: block;
+    width: fit-content;
+}
 #areapersonale-page{
     background-image: url("../assets/img/sky_backgorund.jpg");
     background-size: cover;      
@@ -594,13 +599,11 @@ footer p {
     flex-direction: column;
     width: 50%;
     padding: 30px;
-    border-radius: 30px;
-    backdrop-filter: blur(15px) saturate(100%); 
+    border-radius: 30px; 
     color: var(--txt-color-not-pure-white);
     margin: 0 auto;
-    background: var(--generic-liquid-glass-bg-coor);
     -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
 }
 
@@ -630,7 +633,7 @@ footer p {
     width: 34%;
 }
 
-.liquid-glass-container-informazioni-account-header p{
+.liquid-glass-container-informazioni-account-header h2{
     font-size: 32px;
     font-weight: bold;
 }
@@ -682,13 +685,11 @@ footer p {
     width: 50%;
     padding: 30px;
     border-radius: 30px;
-    backdrop-filter: blur(15px) saturate(100%); 
     color: var(--txt-color-not-pure-white);
     margin: 0 auto;
     margin-top: 80px;
-    background: var(--generic-liquid-glass-bg-coor);
     -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
 }
 
@@ -734,12 +735,13 @@ footer p {
   padding: 10px 20px;                  
   font-size: 12px;            
   margin-top: 10px;
+  margin-bottom: 15px;
  
 }
 
-.button-recensioni-giallo{
-    border: 1px solid yellow;
-    color: yellow;
+.button-recensioni-azzurro{
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 /* ===================== END CUOGO ==================*/
 
