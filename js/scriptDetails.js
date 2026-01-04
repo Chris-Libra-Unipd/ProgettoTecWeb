@@ -10,10 +10,12 @@ var imgIndex = document.getElementById("imgIndex");
 prevButton.addEventListener("click",showPrevImage);
 nextButton.addEventListener("click",showNextImage);
 
+const shiftCoeff = 102.5;
+
 function showNextImage(){
     if(currentIndex < numImages){
         for(i = 0; i < numImages; i++){
-            images[i].style.transform = "translateX(-"+(102*currentIndex).toString()+"%)";
+            images[i].style.transform = "translateX(-"+(shiftCoeff*currentIndex).toString()+"%)";
         }
         currentIndex++;
         imgIndex.innerHTML = currentIndex+"/"+numImages;
@@ -23,7 +25,7 @@ function showNextImage(){
 function showPrevImage(){
     if(currentIndex > 1){
         for(i = 0; i < numImages; i++){
-            images[i].style.transform = "translateX(-"+(102*(currentIndex-2)).toString()+"%)";
+            images[i].style.transform = "translateX(-"+(shiftCoeff*(currentIndex-2)).toString()+"%)";
         }
         currentIndex--;
         imgIndex.innerHTML = currentIndex+"/"+numImages;

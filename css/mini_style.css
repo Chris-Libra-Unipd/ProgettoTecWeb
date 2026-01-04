@@ -113,7 +113,7 @@ blockquote{
     width: 100%;
 }
 
-form > input{
+.authField{
     background-color: var(--bg-color-dark-black);
 }
 

@@ -38,28 +38,28 @@
 
             <form action="" method=""> 
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" maxlength="30" ;/>
+                <input class="authField" type="text" name="nome" id="nome" maxlength="30"/>
 
                 <label for="cognome">Cognome</label>
-                <input type="text" name="cognome" id="cognome" maxlength="30"/>
+                <input class="authField" type="text" name="cognome" id="cognome" maxlength="30"/>
 
                 <label for="dataNascita">Data di nascita</label>
-                <input type="date" name="dataNascita" id="dataNascita" min="1950-01-01"/>
+                <input class="authField" type="date" name="dataNascita" id="dataNascita" min="1950-01-01"/>
 
                 <label for="email"><span>Email</span><span class="error">*</span></label>
                 <p class="hiddenError" id="emailError"></p>
-                <input type="text" name="email" id="email" maxlength="40" required/>
+                <input class="authField" type="text" name="email" id="email" maxlength="40" required aria-describedby="emailError"/>
 
                 <label for="username">Username<span class="error">*</span></label>
                 <p class="hiddenError" id="usernameError"></p>
-                <input type="text" name="username" id="username" maxlength="20" required/>
+                <input class="authField" type="text" name="username" id="username" maxlength="20" required aria-describedby="usernameError"/>
 
                 <label for="password">Password<span class="error">*</span></label>
                 <p class="hiddenError" id="passwordError"></p>
-                <input type="password" name="password" id="password" maxlength="20" required/>
-                <button id="showHidePsw" type="button"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
+                <input class="authField" type="password" name="password" id="password" maxlength="20" required aria-describedby="passwordError"/>
+                <button id="showHidePsw" type="button" aria-label="mostra password"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
 
-                <input type="submit" name="register" value="CREA ACCOUNT"/>
+                <input class="loginButton" type="submit" name="register" value="CREA ACCOUNT"/>
             </form>
             
             <div id="authEscapeLinks">

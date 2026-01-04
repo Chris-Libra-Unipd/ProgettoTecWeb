@@ -36,6 +36,7 @@ function checkUsername(){
     }
     usernameErr.classList.remove("shownError");
     usernameErr.classList.add("hiddenError");
+    usernameErr.focus();
     return 1;
 }
 
