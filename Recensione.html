@@ -30,12 +30,6 @@
                             <li>
                                 <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
                             </li>
-                            <li>
-                                <a href="scroller.html" class="menu-link">SCROLLER</a>
-                            </li>
-                            <li>
-                                <a href="details.html" class="menu-link">INFO VIAGGIO (TO DELETE)</a>
-                            </li>
                         </ul>
                     </nav>
                     <a href="login.html" id="login-link">ACCEDI</a>
@@ -54,9 +48,7 @@
                         <li>
                             <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
                         </li>
-                        <li>
-                            <a href="scroller.html" class="menu-link">SCROLLER</a>
-                        </li>
+                       
                         <li>
                             <a href="login.html" id="login-link-mobile">ACCEDI</a>
                         </li>
@@ -79,24 +71,23 @@
 
             
             <form class="container-form-recensioni">
-                
-            <!-- da sistemare per accessibilità -->
+
                     <fieldset class="container-stelle-recensione">
                     
                     <input type="radio" name="valutazione" id="star5" value="5">
-                    <label for="star5" title="5 stelle">★</label>
+                    <label for="star5" aria-label="5 stelle">★</label>
 
                     <input type="radio" name="valutazione" id="star4" value="4">
-                    <label for="star4" title="4 stelle">★</label>
+                    <label for="star4" aria-label="4 stelle">★</label>
 
                     <input type="radio" name="valutazione" id="star3" value="3">
-                    <label for="star3" title="3 stelle">★</label>
+                    <label for="star3" aria-label="3 stelle">★</label>
 
                     <input type="radio" name="valutazione" id="star2" value="2">
-                    <label for="star2" title="2 stelle">★</label>
+                    <label for="star2" aria-label="2 stelle">★</label>
 
                     <input type="radio" name="valutazione" id="star1" value="1">
-                    <label for="star1" title="1 stella">★</label>
+                    <label for="star1" aria-label="1 stella">★</label>
                     </fieldset>
 
                     <textarea name="testo_recensioni" id="textarea-recensione-testo" placeholder="Scrivi qui la tua recensione..." rows="4"></textarea>
