@@ -1,0 +1,14 @@
+html {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+}
+
+menu {
+  display: none; /*Per non stampare il menu*/
+}
+
+a:link:after,
+a:visited:after {
+  content: " [attr(href)] ";
+  font-size: 90%;
+}

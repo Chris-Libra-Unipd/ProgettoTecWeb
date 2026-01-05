@@ -341,6 +341,7 @@ header {
 #contenuto {
     width: 1200px;
     margin: 0 auto;
+    margin-top: 7em;
     max-width: 90%;
     text-align: center;
 }
@@ -1362,3 +1363,64 @@ blockquote cite{
 
 
 /* =================== END CHRIS ====================*/
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/* =================== GIULIO ====================*/
+
+/*================CHI SIAMO====================== */
+/*================CHI SIAMO====================== */
+/*================CHI SIAMO====================== */
+
+.generic-liquid-glass-chi-siamo {
+    display: flex;
+    color: var(--txt-color-not-pure-white);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
+    border: 1px solid var(--border-liquid-glass);
+    gap: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contenuto-principale{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.generic-liquid-glass-chi-siamo .testo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.generic-liquid-glass-chi-siamo img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.layout-colonna {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.generic-liquid-glass-chi-siamo .info-quartier-generale{
+    display: flex;
+    color: var(--txt-color-not-pure-white);
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: var(--txt-color-not-pure-white);
+}
+footer a:hover {
+    font-weight: bold;
+}
+
+/* =================== END GIULIO ====================*/
