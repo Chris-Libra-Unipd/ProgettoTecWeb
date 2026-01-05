@@ -533,34 +533,31 @@ footer p {
 }
 
 .liquid-glass-container-error404{
-    width: 70%;
-    height: 50vh;
+    width: 45%;
+    min-height: 50vh;  
     padding: 30px;
     border-radius: 30px;
-    backdrop-filter: blur(15px) saturate(100%); 
+    backdrop-filter: blur(15px) saturate(100%);
     color: var(--txt-color-not-pure-white);
     margin: 0 auto;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
 }
 
 .immagine-404{
-    width: 60%;
-    max-width: 90%;
-    height: 50vh;
-    border-radius: 30px;
-    float: left;
+    flex: 0 0 auto;     /* ❗ NON 50% */
+    max-width: 600px;   /* ← dimensione desiderata */
+    margin: 0 auto; 
+   
 }
 
 .immagine-404 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    border-radius: 30px;
-    display: block;
+    object-fit: cover;
+    border-radius: 50px;
 }
 .testo-404{
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -588,6 +585,7 @@ footer p {
     text-decoration: none;
     margin-top: 50px;
 }
+
 
 /* PAGINA AREA PERSONALE */
 .breadcrumb-centrata-area-personale{
@@ -738,7 +736,7 @@ footer p {
   font-size: 12px;            
   margin-top: 10px;
   margin-bottom: 15px;
- 
+  cursor: pointer;
 }
 
 .button-recensioni-azzurro{
@@ -783,7 +781,8 @@ footer p {
 }
 
 .opinione-recensione {
-  margin-top: 18px;
+  font-size: 30px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -812,7 +811,7 @@ footer p {
 
 .container-stelle-recensione label {
   font-size: 2rem;
-  color: var(--txt-color-not-pure-white);
+  color: var(--txt-color-gray);
   cursor: pointer;
 }
 
@@ -863,7 +862,7 @@ footer p {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  
+  cursor: pointer;
 }
 
 /* ===================== END CUOGO ==================*/
