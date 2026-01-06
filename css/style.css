@@ -166,9 +166,21 @@ header {
     width: 100%;
 }
 
+.current-menu-link {
+    font-weight: bold;
+}
+
 .menu-link {
     color: var(--link-color-not-pure-white);
     text-decoration: none;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.menu-link:visited {
+    color: var(--visited-link);
 }
 
 
@@ -462,6 +474,19 @@ footer {
     padding: 7em 0 3em 0;
 }
 
+.footer-link {
+    color: var(--txt-color-not-pure-white);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-link:visited {
+    color: var(--visited-link);
+}
+
 #footer-mid-container {
     margin: auto;
     width: 500px;
@@ -503,6 +528,7 @@ footer {
 
 #img-button-torna-su {
     height: 40px;
+    display: block;
 }
 
 footer p {
@@ -512,6 +538,11 @@ footer p {
     text-align: center;
     font-weight: lighter;
     padding: 0 2em;
+}
+
+.current-footer-link {
+    font-weight: bold;
+    text-decoration: none;
 }
 
 
@@ -1436,11 +1467,5 @@ blockquote cite{
     margin-top: 30px;
 }
 
-footer a {
-    color: var(--txt-color-not-pure-white);
-}
-footer a:hover {
-    font-weight: bold;
-}
 
 /* =================== END GIULIO ====================*/
