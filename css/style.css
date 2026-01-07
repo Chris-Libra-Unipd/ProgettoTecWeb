@@ -604,7 +604,7 @@ header {
     color: var(--txt-color-not-pure-white);
     border-radius: 30px;
     overflow: hidden;
-    width: 300px;
+    width: 350px;
     border: 1px solid var(--border-liquid-glass);
     display: flex;
     flex-direction: column;
@@ -656,11 +656,11 @@ header {
 
 .link-dettagli-container {
     text-align: center;
-    padding: 2em 0;
+    padding: 0.5em 0 2em 0;
 }
 
 .link-dettagli-container a {
-    padding: 1em;
+    padding: 1em 2em;
     background-color: black;
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
@@ -857,6 +857,7 @@ footer p {
 }
 
 #liquid-glass-container-informazioni-account{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     width: 1200px;
@@ -930,6 +931,7 @@ footer p {
 }
 
 #liquid-glass-container-viaggi{
+    box-sizing: border-box;
     width: 1200px;
     max-width: 90%;
     padding: 2rem;
