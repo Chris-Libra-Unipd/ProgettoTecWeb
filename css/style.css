@@ -909,10 +909,8 @@ footer p {
 }
 
 .liquid-glass-container-informazioni-account-icon img{
-    height: 100%;
-    width: 100%;
-    
-   
+    height: 70%;
+    width: 70%;
 }
 .testo-username-informazioni-account{
     font-size: 3rem;
