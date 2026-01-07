@@ -38,6 +38,18 @@
 
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 11em;
@@ -496,7 +508,6 @@ header {
     width: 1200px;
     max-width: 90%;
     margin: 3em auto;
-    display: flex;
 }
 
 #container-ricerca {
@@ -508,6 +519,7 @@ header {
     padding: 1em;
     flex-direction: column;
     box-sizing: border-box;
+    margin-bottom: 3em;
 }
 
 #container-ricerca h2 {
@@ -554,7 +566,7 @@ header {
     width: 50px;
     border: 1px solid var(--border-liquid-glass);
     transition: all 0.3s;
-    
+
 }
 
 #button-ricerca-catalogo {
@@ -578,6 +590,86 @@ header {
     display: block;
     margin: auto;
 }
+
+#container-lista-viaggi {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.card-viaggio {
+    background-color: var(--bg-color-dark-black);
+    color: var(--txt-color-not-pure-white);
+    border-radius: 30px;
+    overflow: hidden;
+    width: 300px;
+    border: 1px solid var(--border-liquid-glass);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-viaggio img {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--border-liquid-glass);
+}
+
+.card-viaggio-info {
+    padding: 1em;
+}
+
+.card-viaggio-info h3 {
+    margin-bottom: 0.5em;
+}
+
+.card-viaggio-info p {
+    margin-bottom: 0.5em;
+}
+
+.card-viaggio-info p span {
+    font-weight: lighter;
+}
+
+.card-viaggio-info p .prezzo-da-scontare {
+    text-decoration: line-through;
+    font-weight: normal
+}
+
+.card-viaggio-info p .sconto-viaggio {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: black;
+    font-weight: bold;
+    padding: 0.3em;
+    border-radius: 0.3em;
+}
+
+.link-dettagli-container {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.link-dettagli-container a {
+    padding: 1em;
+    background-color: black;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    margin: 1em 0;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold
+}
+
+.link-dettagli-container a:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+
+
+
 
 
 /*================FOOTER====================== */
