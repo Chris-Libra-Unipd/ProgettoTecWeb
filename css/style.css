@@ -14,7 +14,7 @@
     --bgButton-color-not-pure-white: #F0F0F0;
     --header-bg-color: rgba(12, 12, 12, 0.9);
     --generic-liquid-glass-bg-color: rgba(71, 71, 71, 0.2);
-    --generic-liquid-glass-bg-color-hover: rgba(184, 184, 184, 0.2);
+    --generic-liquid-glass-bg-color-hover-icon: rgba(180, 180, 180, 0.2);
     --bg-color-cancella-ricerca: rgba(88, 5, 5, 0.6);
     --bg-color-cancella-ricerca-hover: rgba(231, 0, 0, 0.6);
     --border-liquid-glass: rgba(255, 255, 255, 0.4);
@@ -574,7 +574,7 @@ header {
 }
 
 #button-ricerca-catalogo:hover {
-    background-color: var(--generic-liquid-glass-bg-color-hover);
+    background-color: var(--generic-liquid-glass-bg-color-hover-icon);
 }
 
 #button-elimina-ricerca-catalogo {
@@ -599,7 +599,8 @@ header {
 }
 
 .card-viaggio {
-    background-color: var(--bg-color-dark-black);
+    background-color: transparent;
+    backdrop-filter: blur(4.5px);
     color: var(--txt-color-not-pure-white);
     border-radius: 30px;
     overflow: hidden;
@@ -608,7 +609,14 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s;
 }
+
+.card-viaggio:hover {
+    background-color: var(--generic-liquid-glass-bg-color);
+    transform: scale(1.03);
+}
+
 
 .card-viaggio img {
     display: block;
