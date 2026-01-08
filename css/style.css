@@ -1649,7 +1649,7 @@ blockquote cite{
 .generic-liquid-glass-chi-siamo {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 60%;
     margin: auto;
     margin-bottom: 40px;
     color: var(--txt-color-not-pure-white);
@@ -1686,7 +1686,7 @@ blockquote cite{
 }
 
 .generic-liquid-glass-chi-siamo-info-quartier-generale{
-    width: 600px;
+    width: 60%;
     margin: auto;
     color: var(--txt-color-not-pure-white);
     -webkit-backdrop-filter: blur(4.5px);

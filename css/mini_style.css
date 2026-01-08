@@ -315,6 +315,7 @@ root {
 }
 
 .generic-liquid-glass-chi-siamo {
+    width: 90%;
     display: flex;
     flex-direction: column;
     color: var(--txt-color-not-pure-white);
@@ -324,6 +325,7 @@ root {
     gap: 10px;
     border-radius: var(--border-radius-box);
     overflow: hidden;
+    margin: auto;
     margin-bottom: 40px;
     padding: 20px;
     align-items: center;
@@ -335,6 +337,18 @@ root {
     height: auto;
     border-radius: var(--border-radius-box);
 }
+.generic-liquid-glass-chi-siamo-info-quartier-generale{
+    width: 90%;
+    margin: auto;
+    color: var(--txt-color-not-pure-white);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
+    border: 1px solid var(--border-liquid-glass);
+    border-radius: var(--border-radius-box);
+    overflow: hidden;
+    margin-bottom: 40px;
+    padding: 20px;
+}
 
 .generic-liquid-glass-chi-siamo .info-quartier-generale{
     display: flex;
@@ -342,6 +356,7 @@ root {
     justify-content: center;
     gap: 40px;
     text-align: center;
+    margin: auto;
     margin-top: 30px;
 }
 
