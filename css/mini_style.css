@@ -273,17 +273,24 @@ blockquote{
     order: -1; 
 }
 
-.liquid-glass-container-informazioni-account-body-info {
+#liquid-glass-container-informazioni-account-body-info {
     margin-left: 0;          
     text-align: center;  
     order: 0; 
-}
-.liquid-glass-container-informazioni-account{
-    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.liquid-glass-container-viaggi{
-    width: 65%;
+#liquid-glass-container-informazioni-account-body-info h3{
+  font-size: 40px;
+}
+#liquid-glass-container-informazioni-account{
+    width: 90%;
+}
+
+#liquid-glass-container-viaggi{
+    width: 90%;
 }
 
 
@@ -301,6 +308,11 @@ blockquote{
     
   }
 
+/* PAGINA RECENSIONI */
+.liquid-glass-container-recensioni-header h1{
+    font-size: 18px;
+    font-weight: bold;
+}
 /*======================END CUOGO=======================*/
 
 /*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/

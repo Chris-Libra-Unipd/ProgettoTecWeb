@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="viaggio, vacanza, spazio, nova frontier, avventura, scoperta">
+        <meta name="keywords" content="recensioni viaggio, pareri vacanza, spazio, nova frontier">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 800px)">
-        <title>Nova Frontiers</title>
+        <title>Recensioni</title>
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
         <script src="js/scriptMenu.js" defer></script>
     </head>
@@ -64,31 +64,25 @@
             <div class="liquid-glass-container-recensioni-header">
                 <h1>NOME VIAGGIO</span></h1>
             </div>
-            <h2 class="opinione-recensione">La tua opinione per noi è importantissima!</h2>
+            <h2 class="opinione-recensione">La tua opinione per noi è importante!</h2>
 
             <form class="container-form-recensioni">
 
-                    <fieldset class="container-stelle-recensione">
-                    
-                    <input type="radio" name="valutazione" id="star5" value="5">
-                    <label for="star5" aria-label="5 stelle">★</label>
-
-                    <input type="radio" name="valutazione" id="star4" value="4">
-                    <label for="star4" aria-label="4 stelle">★</label>
-
-                    <input type="radio" name="valutazione" id="star3" value="3">
-                    <label for="star3" aria-label="3 stelle">★</label>
-
-                    <input type="radio" name="valutazione" id="star2" value="2">
-                    <label for="star2" aria-label="2 stelle">★</label>
-
-                    <input type="radio" name="valutazione" id="star1" value="1">
-                    <label for="star1" aria-label="1 stella">★</label>
-                    </fieldset>
-
                     <textarea name="testo_recensioni" id="textarea-recensione-testo" placeholder="Scrivi qui la tua recensione..." rows="4"></textarea>
 
-                    <button type="submit" id="button-invia-recensione">INVIA</button>
+                    <select name="stelle" id="select-stelle" aria-label="Valutazione del viaggio" required>
+                    <option value="" disabled selected>Dacci un voto!</option>
+                    <option value="1">1 stella</option>
+                    <option value="2">2 stelle</option>
+                    <option value="3">3 stelle</option>
+                    <option value="4">4 stelle</option>
+                    <option value="5">5 stelle</option>
+                     </select>
+
+                    <div id="container-bottoni-recensione">
+                        <button type="submit" class="button-recensione">INVIA</button>
+                        <button type="button" class="button-recensione">ANNULLA</button>
+                    </div>
             </form>
             
         </div>   
