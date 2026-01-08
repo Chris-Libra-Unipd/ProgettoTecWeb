@@ -310,39 +310,30 @@ blockquote{
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
-
-.generic-liquid-glass-chi-siamo {
-  display: flex;
-  flex-direction: column;
-  color: var(--txt-color-not-pure-white);
-  -webkit-backdrop-filter: blur(4.5px);
-  backdrop-filter: blur(4.5px);
-  border: 1px solid var(--border-liquid-glass);
-  gap: 10px;
-  border-radius: 20px;
-  overflow: hidden;
-  align-items: center;
+root {
+    --border-radius-box: 15px;
 }
 
-.contenuto-principale{
+.generic-liquid-glass-chi-siamo {
     display: flex;
     flex-direction: column;
+    color: var(--txt-color-not-pure-white);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
+    border: 1px solid var(--border-liquid-glass);
     gap: 10px;
+    border-radius: var(--border-radius-box);
+    overflow: hidden;
+    margin-bottom: 40px;
+    padding: 20px;
     align-items: center;
 }
 
-.generic-liquid-glass-chi-siamo .testo {
-  flex-direction: column;
-  min-width: 0;
-  order: 2;
-}
-.generic-liquid-glass-chi-siamo img {
-  flex-direction: column;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  order: 1;
+.chi-siamo-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: var(--border-radius-box);
 }
 
 .generic-liquid-glass-chi-siamo .info-quartier-generale{
@@ -352,13 +343,6 @@ blockquote{
     gap: 40px;
     text-align: center;
     margin-top: 30px;
-}
-
-footer a {
-  color: var(--txt-color-not-pure-white);
-}
-footer a:hover {
-  font-weight: bold;
 }
 
 /* =================== END GIULIO ====================*/

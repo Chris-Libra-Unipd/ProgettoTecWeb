@@ -24,6 +24,8 @@
 
     --bg-color-auth-form: #1b1b1b;
 
+    --border-radius-box: 15px;
+
     /*PROPOSTE DI NOMI VARIABILI
     --link
     --visited-link
@@ -1646,40 +1648,56 @@ blockquote cite{
 
 .generic-liquid-glass-chi-siamo {
     display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
     color: var(--txt-color-not-pure-white);
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
     gap: 10px;
-    border-radius: 20px;
+    border-radius: var(--border-radius-box);
     overflow: hidden;
-}
-
-.contenuto-principale{
-    display: flex;
-    gap: 10px;
+    padding: 20px;
     align-items: center;
 }
 
-.generic-liquid-glass-chi-siamo .testo {
+.generic-liquid-glass-chi-siamo h2 {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    order: 1;
 }
 
-.generic-liquid-glass-chi-siamo img {
+.generic-liquid-glass-chi-siamo p {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    order: 3;
+}
+
+.chi-siamo-img {
     width: 100%;
     max-width: 350px;
     height: auto;
-    border-radius: 20px;
+    border-radius: var(--border-radius-box);
+    order: 2;
 }
 
-.layout-colonna {
-  flex-direction: column;
-  gap: 20px;
+.generic-liquid-glass-chi-siamo-info-quartier-generale{
+    width: 600px;
+    margin: auto;
+    color: var(--txt-color-not-pure-white);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
+    border: 1px solid var(--border-liquid-glass);
+    border-radius: var(--border-radius-box);
+    overflow: hidden;
+    margin-bottom: 40px;
+    padding: 20px;
 }
-
-.generic-liquid-glass-chi-siamo .info-quartier-generale{
+.generic-liquid-glass-chi-siamo-info-quartier-generale .info-quartier-generale{
     display: flex;
     color: var(--txt-color-not-pure-white);
     justify-content: center;
@@ -1687,6 +1705,5 @@ blockquote cite{
     text-align: center;
     margin-top: 30px;
 }
-
 
 /* =================== END GIULIO ====================*/
