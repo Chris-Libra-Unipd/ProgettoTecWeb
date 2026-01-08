@@ -1679,7 +1679,7 @@ blockquote cite{
 
 .chi-siamo-img {
     width: 100%;
-    max-width: 350px;
+    max-width: 80%;
     height: auto;
     border-radius: var(--border-radius-box);
     order: 2;
