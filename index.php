@@ -3,7 +3,7 @@
 
 
 
-$paginaLogin = file_get_contents("index_home.html");
+$paginaLogin = file_get_contents("index.html");
 
 echo $paginaLogin;
 
