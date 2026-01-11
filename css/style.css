@@ -515,6 +515,7 @@ header {
 #container-ricerca {
     display: flex;
     width: 100%;
+    -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
     border-radius: 40px;
@@ -562,6 +563,7 @@ header {
 }
 
 #container-bottoni-ricerca button {
+    -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border-radius: 50%;
     height: 50px;
@@ -602,6 +604,7 @@ header {
 
 .card-viaggio {
     background-color: transparent;
+    -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     color: var(--txt-color-not-pure-white);
     border-radius: 30px;
