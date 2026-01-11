@@ -10,7 +10,7 @@
     --txt-color-not-pure-white: #F0F0F0;
     --link-color-not-pure-white: #F0F0F0;
     --txt-color-dark-gray: #242424;
-    --txt-error-messages: #DF1818;
+    --txt-error-messages: #fd3d3d;
     --bgButton-color-not-pure-white: #F0F0F0;
     --header-bg-color: rgba(12, 12, 12, 0.9);
     --generic-liquid-glass-bg-color: rgba(71, 71, 71, 0.2);
@@ -1209,6 +1209,11 @@ blockquote cite{
 }
 
 /* ================== AUTHENTICATION FORMS ===================*/
+
+.errore-accesso{
+    color: var(--txt-error-messages);
+    text-align: center;
+}
 
 #auth-form-bg{
     background: var(--bg-color-auth-form);

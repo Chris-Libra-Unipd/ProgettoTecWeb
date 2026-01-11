@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # --- SERVIZIO PHP + APACHE ---
+  web:
+    build: ./docker            # Cerca il Dockerfile nella cartella 'docker'
+    container_name: sito-web
+    ports:
+      - "8080:80"              # Raggiungibile su localhost:8080
+    volumes:
+      - .:/var/www/html        # MAPPA LA CARTELLA CORRENTE (.) NEL SERVER
+    depends_on:
+      - db
+
+  # --- SERVIZIO DATABASE (MariaDB) ---
+  db:
+    image: mariadb:10.11
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Password per l'utente root
+      MYSQL_DATABASE: miodb      # Nome del DB creato all'avvio
+      MYSQL_USER: user           # Utente per la tua app
+      MYSQL_PASSWORD: userpass   # Password per la tua app
+    volumes:
+      - db_data:/var/lib/mysql   # Volume per salvare i dati
+
+  # --- SERVIZIO PHPMYADMIN ---
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - "8081:80"                # Raggiungibile su localhost:8081
+    environment:
+      PMA_HOST: db               # Si collega al servizio 'db'
+      PMA_USER: user             # Login preimpostato (opzionale)
+      PMA_PASSWORD: userpass     # Password preimpostata (opzionale)
+    depends_on:
+      - db
+
+volumes:
+  db_data:
