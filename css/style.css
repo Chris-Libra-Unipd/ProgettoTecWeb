@@ -961,7 +961,6 @@ footer p {
 }
 
 .card-viaggi-area-personale{
-  
   background-color: var(--bg-color-dark-black);
   width: 300px;
   height: 300px;
@@ -969,6 +968,9 @@ footer p {
   display: flex;       
   flex-direction: column;
   margin:0;
+  border: 1px solid var(--border-liquid-glass);
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .card-viaggi-area-personale > .button-cancella-prenotazione {
@@ -983,8 +985,8 @@ footer p {
 }
 
 .card-viaggi-area-personale img{
-    border-radius: 10px;
     width: 100%;
+    border-bottom: 1px solid var(--border-liquid-glass);
 }
 .button-orizzontali-recensioni{
     display: flex;
