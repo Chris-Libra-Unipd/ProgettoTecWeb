@@ -31,66 +31,48 @@
   <body id="home-body">
     <a href="#contenuto" class="aiuti-navigazione">salta al contenuto</a>
     <header class="header-no-scroll">
-      <div
-        id="header-container"
-        class="header-bg-liquid-glass header-container-no-scroll"
-      >
-        <div id="top-header-container">
-          <h1 id="logo"><span lang="en">Nova Frontiers</span></h1>
-          <nav id="menu" aria-label="menu di navigazione">
-            <ul>
-              <li>
-                <a href="index.html" class="menu-link">
-                  <span lang="en">HOME</span>
-                </a>
-              </li>
-              <li>
-                <a href="catalogo.html" class="menu-link">CATALOGO</a>
-              </li>
-              <li>
-                <span class="current-menu-link">CHI SIAMO</span>
-              </li>
-              <li>
-                <a href="details.html" class="menu-link"
-                  >INFO VIAGGIO (TO DELETE)</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <a href="login.html" id="login-link">ACCEDI</a>
-          <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
-            <img
-              id="image-button-menu-mobile"
-              class="image-button-menu-mobile-chiuso"
-              src="assets/icons/apri_chiudi_menu_mobile.svg"
-              alt=""
-            />
-          </button>
-        </div>
-        <nav
-          id="menu-mobile"
-          class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec"
-          aria-label="menu di navigazione"
-        >
-          <ul>
-            <li>
-              <a href="index.html" class="menu-link">
-                <span lang="en">HOME</span>
-              </a>
-            </li>
-            <li>
-              <a href="catalogo.html" class="menu-link">CATALOGO</a>
-            </li>
-            <li>
-              <span class="current-menu-link">CHI SIAMO</span>
-            </li>
-            <li>
-              <a href="login.html" id="login-link-mobile">ACCEDI</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+            <div id="header-container" class="header-bg-liquid-glass header-container-no-scroll">
+                <div id="top-header-container" >
+                    <h1 id="logo"><span lang="en">Nova Frontiers</span></h1>
+                    <nav id="menu" aria-label="menu di navigazione">
+                        <ul>
+                            <li>
+                                <a href="index.php" class="menu-link"><span lang="en">HOME</span></a>
+                            </li>
+                            <li>
+                                <a href="catalogo.php" class="menu-link">CATALOGO</a>
+                            </li>
+                            <li>
+                                <span class="current-menu-link">CHI SIAMO</span>
+                            </li>
+                            <li>
+                                <a href="dettagli.php" class="menu-link">INFO VIAGGIO (TO DELETE)</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="login.php" id="login-link">ACCEDI</a>
+                    <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
+                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
+                    </button>
+                </div>
+                <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
+                    <ul>
+                        <li>
+                            <a href="index.php" class="menu-link"><span lang="en">HOME</span></a>
+                        </li>
+                        <li>
+                            <a href="catalogo.php" class="menu-link">CATALOGO</a>
+                        </li>
+                        <li>
+                            <span class="current-menu-link">CHI SIAMO</span>
+                        </li>
+                        <li>
+                            <a href="login.php" id="login-link-mobile">ACCEDI</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
     <main id="contenuto">
       <div class="generic-liquid-glass-chi-siamo">
@@ -149,34 +131,34 @@
     </main>
     
     <footer>
-      <button id="button-torna-su">
-          <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
-      </button>
-      <div id="footer-mid-container">
-          <div>
-              <h3>Navigazione</h3>
-              <nav>
-                  <ul>
-                      <li ><a href="index.html" class="footer-link" lang="en">Home</a></li>
-                      <li><a href="catalogo.html" class="footer-link">Catalogo</a></li>
-                      <li><span class="current-footer-link">Chi siamo</span></li>
-                      <li><a href="login.html" class="footer-link">Accedi</a></li>
-                  </ul>
-              </nav>
-          </div>
-          <div id="footer-contatti-container">
-              <h3>Assistenza</h3>
-              <ul>
-                  <li class="footer-link">help@nova.frontiers</li>
-                  <li class="footer-link">123 123 1234</li>
-              </ul>
-          </div>
-      </div>
-      <p>
-          Tutti i diritti sui contenuti appartengono ai rispettivi proprietari. 
-          Questo sito non rivendica alcuna proprietà intellettuale su tali materiali. Immagini 
-          create dall'IA, riferimenti puramenti casuali.
-      </p>
-    </footer>
+            <button id="button-torna-su">
+                <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
+            </button>
+            <div id="footer-mid-container">
+                <div>
+                    <h3>Navigazione</h3>
+                    <nav>
+                        <ul>
+                            <li ><a href="index.php" class="footer-link"><span lang="en">Home</span></a></li>
+                            <li><a href="catalogo.php" class="footer-link">Catalogo</a></li>
+                            <li><span class="current-footer-link">Chi siamo</span></li>
+                            <li><a href="login.php" class="footer-link">Accedi</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="footer-contatti-container">
+                    <h3>Assistenza</h3>
+                    <ul>
+                        <li class="footer-link">help@nova.frontiers</li>
+                        <li class="footer-link">123 123 1234</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Tutti i diritti sui contenuti appartengono ai rispettivi proprietari. 
+                Questo sito non rivendica alcuna proprietà intellettuale su tali materiali. Immagini 
+                create dall'IA, riferimenti puramenti casuali.
+            </p>
+        </footer>
   </body>
 </html>
