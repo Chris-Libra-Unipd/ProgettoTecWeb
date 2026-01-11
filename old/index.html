@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Prenota il tuo viaggio nello spazio con Nova Frontier. L'avventura della tua vita inizia tra le stelle.">
+        <meta name="keywords" content="viaggio, vacanza, spazio, nova frontier, avventura, scoperta">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 800px)">
+        <title>Nova Frontiers</title>
+        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+        <script src="js/scriptMenu.js" defer></script>
+    </head>
+    <body id="home-body">
+        <a href="#contenuto" class="aiuti-navigazione">salta al contenuto</a>
+        <header class="header-no-scroll">
+            <div id="header-container" class="header-bg-liquid-glass header-container-no-scroll">
+                <div id="top-header-container" >
+                    <h1 id="logo"><span lang="en">Nova Frontiers</span></h1>
+                    <nav id="menu" aria-label="menu di navigazione">
+                        <ul>
+                            <li>
+                                <span lang="en" class="current-menu-link">HOME</span>
+                            </li>
+                            <li>
+                                <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                            </li>
+                            <li>
+                                <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                            </li>
+                            <li>
+                                <a href="details.html" class="menu-link">INFO VIAGGIO (TO DELETE)</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="login.html" id="login-link">ACCEDI</a>
+                    <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
+                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
+                    </button>
+                </div>
+                <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
+                    <ul>
+                        <li>
+                            <span lang="en" class="current-menu-link">HOME</span>
+                        </li>
+                        <li>
+                            <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                        </li>
+                        <li>
+                            <a href="login.html" id="login-link-mobile">ACCEDI</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="hero-container">
+            <article id="hero-text-container">
+                <h2>SEI PRONTO AD IMMERGERTI IN UNA INFINITÀ DI VIAGGI NELLO SPAZIO?</h2>
+                <a href="catalogo.html" id="scopri-link">SCOPRI</a>
+            </article>
+        </div>
+        
+
+        <main id="contenuto">
+            <h2>L'AGENZIA DI VIAGGI SPAZIALI NUMERO UNO DELL'INTERA GALASSIA</h2>
+            <div id="programma-container" class="generic-liquid-glass">
+                <h3>IL NOSTRO PROGRAMMA</h3>
+                <ul id="lista-programma">
+                    <li>
+                        <img src="assets/img/home/partenza.jpg" class="img-lista-programma" alt="">
+                        <div class="txt-container-lista-programma">
+                            <h4>PARTENZA</h4>
+                            <p>Vivi l'emozione del decollo: <span lang="en">check‑in</span> rapido, <span lang="en">briefing</span> dedicato e partenza puntuale per dare il via alla tua avventura spaziale</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/home/viaggio.jpg" class="img-lista-programma" alt="">
+                        <div class="txt-container-lista-programma">
+                            <h4>VIAGGIO</h4>
+                            <p>Sperimenta viste mozzafiato, attività a gravità zero e momenti indimenticabili a bordo della nostra flotta</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/home/soggiorno.jpg" class="img-lista-programma" alt="">
+                        <div class="txt-container-lista-programma">
+                            <h4>SOGGIORNO</h4>
+                            <p>Goditi sistemazioni confortevoli, attività a tema e visite guidate per esplorare la destinazione spaziale in totale relax</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/home/ritorno.jpg" class="img-lista-programma" alt="">
+                        <div class="txt-container-lista-programma">
+                            <h4>RITORNO</h4>
+                            <p>Rientro sicuro garantito con procedure di sbarco organizzate e supporto post-viaggio per conservare i migliori ricordi della tua avventura</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h3 id="punti-di-forza" class="generic-liquid-glass">I NOSTRI PUNTI DI FORZA</h3>
+            <ul id="cards-list-container">
+                <li class="generic-liquid-glass">
+                    <div class="cards-txt-container">
+                        <h4>COMMUNITY</h4>
+                        <p>Conosci nuovi amici viaggiando in gruppi con persone come te ed entra a far parte della community.</p>
+                    </div>
+                    <img src="assets/img/home/community.jpg" alt="">
+                </li>
+                <li class="generic-liquid-glass">
+                    <div class="cards-txt-container">
+                        <h4>INFINITI VIAGGI</h4>
+                        <p>Vivi esperienze uniche in più di 100 luoghi nella galassia, scegliendo il mood giusto per te</p>
+                    </div>
+                    <img src="assets/img/home/infiniti_viaggi.jpg" alt="">
+                </li>
+                <li class="generic-liquid-glass">
+                    <div class="cards-txt-container">
+                        <h4>FLESSIBILITÀ</h4>
+                        <p>Puoi bloccare il tuo posto con un acconto e cambiare idea gratuitamente fino a 31 giorni dalla partenza</p>
+                    </div>
+                    <img src="assets/img/home/flessibilita.jpg" alt="">
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <button id="button-torna-su">
+                <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
+            </button>
+            <div id="footer-mid-container">
+                <div>
+                    <h3>Navigazione</h3>
+                    <nav>
+                        <ul>
+                            <li ><span class="current-footer-link" lang="en">Home</span></li>
+                            <li><a href="catalogo.html" class="footer-link">Catalogo</a></li>
+                            <li><a href="chi_siamo.html" class="footer-link">Chi siamo</a></li>
+                            <li><a href="login.html" class="footer-link">Accedi</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="footer-contatti-container">
+                    <h3>Assistenza</h3>
+                    <ul>
+                        <li class="footer-link">help@nova.frontiers</li>
+                        <li class="footer-link">123 123 1234</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Tutti i diritti sui contenuti appartengono ai rispettivi proprietari. 
+                Questo sito non rivendica alcuna proprietà intellettuale su tali materiali. Immagini 
+                create dall'IA, riferimenti puramenti casuali.
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dettagli relativi al viaggio selezionato">
+        <meta name="keywords" content="viaggio, vacanza, spazio, nova frontier, avventura, scoperta">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 900px)">
+        <title>Nova Frontiers</title>
+        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+        <script src="js/scriptMenu.js" defer></script>
+        <script src="js/scriptDetails.js" defer></script>
+    </head>
+    <body id="details-body">
+        <a href="#contenuto-dettagli" class="aiuti-navigazione">Salta al contenuto</a>
+        <header class="header-no-scroll">
+            <div id="header-container" class="header-bg-liquid-glass header-container-no-scroll">
+                <div id="top-header-container" >
+                    <h1 id="logo"><span lang="en">Nova Frontiers</span></h1>
+                    <nav id="menu" aria-label="menu di navigazione">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="menu-link"><span lang="en">HOME</span></a>
+                            </li>
+                            <li>
+                                <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                            </li>
+                            <li>
+                                <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                            </li>
+                            <li>
+                                INFO VIAGGIO (TO DELETE)
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="login.html" id="login-link">ACCEDI</a>
+                    <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
+                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
+                    </button>
+                </div>
+                <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="menu-link"><span lang="en">HOME</span></a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                        </li>
+                        <li>
+                            <a href="login.html" id="login-link-mobile">ACCEDI</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <nav id="breadcrumb"><a href="index.html"><span lang="en">Home</span></a> / <a href="catalogo.html">Catalogo</a> / Dettagli Viaggio</nav>
+
+        <main id="contenuto-dettagli">
+            <h1>NOME VIAGGIO</h1>
+            
+            <section id="imgScroller" aria-label="immagini">
+                <img class="coverImg" src="assets/img/t0.jpg" alt=""/>
+                <img class="coverImg" src="assets/img/t1.jpeg" alt=""/>
+                <img class="coverImg" src="assets/img/t5.jpg" alt=""/>
+
+                <div id="swipingController" role="toolbar"> 
+                    <button id="prevImg" aria-label="vedi precedente"><img src="assets/icons/prev-arrow.png" width="15px" alt=""/></button>
+                    <span id="imgIndex">1/3</span>
+                    <button id="nextImg" aria-label="vedi successiva"><img src="assets/icons/next-arrow.png" width="15px" alt=""/></button>
+                </div>
+            </section>
+
+            
+            <h2>IL VIAGGIO FA PER ME?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+
+            <h2>ITINERARIO</h2>
+            <ul>
+                <li class="itemItinerario">
+                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <div>
+                    <h3>Periodo 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ld do eiusmod tempor incididu</p>
+                    </div>
+                </li>
+
+                <li class="itemItinerario">
+                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <div>
+                    <h3>Periodo 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+                    </div>
+                </li>
+
+                <li class="itemItinerario">
+                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <div>
+                    <h3>Periodo 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>PARTENZE</h2>
+            <form id="containerPartenze"  action="" method="">
+            <div id="listaPartenze">
+                <label for="choice1" class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    
+                    <div>
+                        <p>Prezzo: <span class="costoFinale">8.000.000€</span></p>
+                    </div>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice1" aria-label="partenza non selezionata"/>
+                </label>
+
+                <label for="choice2" class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    
+                    <div>
+                        <p>Prezzo: <span class="costoIniziale">12.000.000€</span><span class="sconto">Sconto 30%</span></p>
+                        <p>Prezzo finale: <span class="costoFinale">9.000.000€</span></p>
+                    </div>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice2" aria-label="partenza non selezionata"/>
+                </label>
+
+                
+                <label for="choice3" class="opzionePartenza" tabindex="0">
+                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
+                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    
+                    <div>
+                        <p>Prezzo: <span class="costoFinale">5.000.000€</span></p>
+                    </div>
+                    <input type="radio" class="selectionIndicator" name="choice" id="choice3" aria-describedby="partenza non selezionata"/>
+                </label>
+            </div>
+
+            <div id="riepilogoAcquisto">
+                <h3>RIEPILOGO</h3>
+                <p>Viaggio: <span>nome viaggio</span></p>
+                <p>Partenza: <time datetime="2025-12-01" id="riepilogoDataPartenza"></time></p>
+                <p>Ritorno: <time datetime="2045-05-12" id="riepilogoDataArrivo"></time></p>
+                <p>Totale: <span id="riepilogoCosto"></span></p>
+                
+                <button type="submit" id="buyButton" tabindex="0">ACQUISTA</button>
+            </div>
+            </form>
+
+            <h2>RECENSIONI</h2>
+            <ul id="containerRecensioni" aria-label="lista recensioni">
+                <li class="recensione">
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Paperon de Paperoni</h3>
+                    <p class="valutazione">4/5</p>
+                    <p>Servizio impeccabile, vista indimenticabile del cuore di Plutone. Lusso spaziale senza precedenti. Esperienza di vita, vale il prezzo!</p>
+                    <p class="dataRecensione"><time datetime="2040-10-12">12/10/2040</time></p>
+                </li>
+
+                <li class="recensione">
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Il Ranzi</h3>
+                    <p class="valutazione" >4/5</p>
+                    <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
+                    <p class="dataRecensione" ><time datetime="2026-12-22">22/12/2026</time></p>
+                </li>
+
+                <li class="recensione">
+                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <h3>Il Ranzi</h3>
+                    <p class="valutazione" >4/5</p>
+                    <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
+                    <p class="dataRecensione" ><time datetime="2026-12-22">22/12/2026</time></p>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <button id="button-torna-su">
+                <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
+            </button>
+            <div id="footer-mid-container">
+                <div id="footer-navigazione-container">
+                    <h3>Navigazione</h3>
+                    <nav>
+                        <ul id="footer-navigazione">
+                            <li>Home</li>
+                            <li>Catalogo</li>
+                            <li>Chi siamo</li>
+                            <li>Accedi</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="footer-contatti-container">
+                    <h3>Assistenza</h3>
+                    <ul id="footer-contatti">
+                        <li>help@nova.frontiers</li>
+                        <li>123 123 1234</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Tutti i diritti sui contenuti appartengono ai rispettivi proprietari. 
+                Questo sito non rivendica alcuna proprietà intellettuale su tali materiali. Immagini 
+                create dall'IA, riferimenti puramenti casuali.
+            </p>
+        </footer>
+    </body>
+</html>

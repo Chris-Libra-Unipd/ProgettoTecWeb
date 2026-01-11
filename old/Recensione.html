@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="recensioni viaggio, pareri vacanza, spazio, nova frontier">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 800px)">
+        <title>Recensioni</title>
+        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+        <script src="js/scriptMenu.js" defer></script>
+    </head>
+<body id="#recensione-page">
+    <a href="#contenuto" class="aiuti-navigazione">salta al contenuto</a>
+        <header class="header-no-scroll">
+            <div id="header-container" class="header-bg-liquid-glass header-container-no-scroll">
+                <div id="top-header-container" >
+                    <h1 id="logo"><span lang="en">Nova Frontiers</span></h1>
+                    <nav id="menu" aria-label="menu di navigazione">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="menu-link"><span lang="en">HOME</span></a>
+                            </li>
+                            <li>
+                                <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                            </li>
+                            <li>
+                                <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="login.html" id="login-link">ACCEDI</a>
+                    <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
+                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
+                    </button>
+                </div>
+                <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="menu-link"><span lang="en">HOME</span></a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html" class="menu-link">CATALOGO</a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html" class="menu-link">CHI SIAMO</a>
+                        </li>
+                       
+                        <li>
+                            <a href="login.html" id="login-link-mobile">ACCEDI</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <nav id="breadcrumb" class="breadcrumb-centrata-area-personale"><a href="index.html"><span lang="en">Home</span></a>/<a href="AreaPersonale.html">Area personale</a>/ Recensioni</nav>
+
+        <main>
+        <div class="liquid-glass-container-recensioni">
+            <div class="liquid-glass-container-recensioni-header">
+                <h1>NOME VIAGGIO</span></h1>
+            </div>
+            <h2 class="opinione-recensione">La tua opinione per noi è importante!</h2>
+
+            <form class="container-form-recensioni">
+
+                    <textarea name="testo_recensioni" id="textarea-recensione-testo" placeholder="Scrivi qui la tua recensione..." rows="4"></textarea>
+
+                    <select name="stelle" id="select-stelle" aria-label="Valutazione del viaggio" required>
+                    <option value="" disabled selected>Dacci un voto!</option>
+                    <option value="1">1 stella</option>
+                    <option value="2">2 stelle</option>
+                    <option value="3">3 stelle</option>
+                    <option value="4">4 stelle</option>
+                    <option value="5">5 stelle</option>
+                     </select>
+
+                    <div id="container-bottoni-recensione">
+                        <button type="submit" class="button-recensione">INVIA</button>
+                        <button type="button" class="button-recensione">ANNULLA</button>
+                    </div>
+            </form>
+            
+        </div>   
+
+        </main>
+    <footer>
+            <button id="button-torna-su">
+                <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
+            </button>
+            <div id="footer-mid-container">
+                <div id="footer-navigazione-container">
+                    <h3>Navigazione</h3>
+                    <nav>
+                        <ul id="footer-navigazione">
+                            <li>Home</li>
+                            <li>Catalogo</li>
+                            <li>Chi siamo</li>
+                            <li>Accedi</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="footer-contatti-container">
+                    <h3>Assistenza</h3>
+                    <ul id="footer-contatti">
+                        <li>help@nova.frontiers</li>
+                        <li>123 123 1234</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Tutti i diritti sui contenuti appartengono ai rispettivi proprietari. 
+                Questo sito non rivendica alcuna proprietà intellettuale su tali materiali. Immagini 
+                create dall’IA, riferimenti puramenti casuali
+            </p>
+        </footer>
+
+    </body>
+    </html>
