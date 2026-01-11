@@ -11,7 +11,9 @@ DROP TABLE IF EXISTS Tipo_Viaggio;
 CREATE TABLE Utente (
     email VARCHAR(255) PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
     data_nascita DATE
 );
 
@@ -172,3 +174,32 @@ VALUES
 (13, 'Esplorazione Rossa: Marte', 250000.00, 220000.00, '2150-08-10', '2150-08-25'),
 (14, 'Esplorazione Rossa: Marte', 280000.00, NULL, '2150-12-05', '2150-12-20'),
 (15, 'Esplorazione Rossa: Marte', 250000.00, 199000.00, '2151-03-01', '2151-03-16');
+
+
+
+
+
+
+
+-- =======================================================
+-- ======================================================
+-- utenti di test
+
+INSERT INTO Utente (email, username, nome, cognome, password_hash, data_nascita)
+VALUES 
+(
+    'mario.rossi@email.com', 
+    'AstroMario90', 
+    'Mario', 
+    'Rossi', 
+    '$2y$10$SzQDjrEsAO4sKFXTRNEBCeLR9TPBuM30QN.bUjwZWiTSGbbameeiC', -- Simulazione hash
+    '1990-05-15'
+),
+(
+    'elena.verdi@test.it', 
+    'ElenaSpace', 
+    'Elena', 
+    'Verdi', 
+    '$2y$10$e17N.YHlphyJcZ0jLHGatuxJXJ9HBSQ5E5IH2NKlVR.w/PDAwM4La', -- Simulazione hash
+    '1995-11-22'
+);
