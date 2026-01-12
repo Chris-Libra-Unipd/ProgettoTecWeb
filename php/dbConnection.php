@@ -1,5 +1,11 @@
 <?php
+
+
 namespace DB;
+
+
+use Exception;
+
 
 class DBAccess {
 
@@ -38,10 +44,38 @@ class DBAccess {
 		mysqli_close($this->connection);
 	}
 
-	public function genericQuery($query) {
+	//solo per testare
+	public function testQuery($query) {
 		return mysqli_query($this->connection, $query);
 	}
+
 	
+	public function login($username, $password) {
+		$query = "SELECT * FROM Utente WHERE username = ?";
+		
+		if (!$stmt = $this->connection->prepare($query)) {
+			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
+		}
+
+		$stmt->bind_param("s", $username);
+
+		if (!$stmt->execute()) {
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if ($result->num_rows == 1) {
+			$row = $result->fetch_assoc();
+			
+			if (password_verify($password, $row['password_hash'])) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }
 
 

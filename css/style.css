@@ -232,6 +232,43 @@ header {
     scale: 1.1;
 }
 
+#area-personale-link {
+    margin-left: auto;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#area-personale-link, #area-personale-link-mobile {
+    width: 70px;
+    display: block;
+}
+
+#area-personale-link div, #area-personale-link-mobile div {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--bgButton-color-not-pure-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-dark-black);
+    border: 1px solid var(--border-liquid-glass);
+}
+
+#area-personale-link img, #area-personale-link-mobile img {
+    height: 70%;
+    display: block;
+}
+
+#area-personale-link:hover {
+    scale: 1.1;
+}
+
+#area-personale-link-mobile {
+    margin: auto;
+}
+
+
 #button-menu-mobile {
     display: none;
     margin-left: auto;
@@ -1209,11 +1246,6 @@ blockquote cite{
 }
 
 /* ================== AUTHENTICATION FORMS ===================*/
-
-.errore-accesso{
-    color: var(--txt-error-messages);
-    text-align: center;
-}
 
 #auth-form-bg{
     background: var(--bg-color-auth-form);

@@ -192,7 +192,7 @@ VALUES
     'AstroMario90', 
     'Mario', 
     'Rossi', 
-    '$2y$10$SzQDjrEsAO4sKFXTRNEBCeLR9TPBuM30QN.bUjwZWiTSGbbameeiC', -- Simulazione hash
+    '$2y$10$1JLofMAB2vmLYqKoIf/kt.UqUTaV38LAWy0S3gpapXoDbroreAWMW', -- Simulazione hash
     '1990-05-15'
 ),
 (
@@ -200,6 +200,6 @@ VALUES
     'ElenaSpace', 
     'Elena', 
     'Verdi', 
-    '$2y$10$e17N.YHlphyJcZ0jLHGatuxJXJ9HBSQ5E5IH2NKlVR.w/PDAwM4La', -- Simulazione hash
+    '$2y$10$1JLofMAB2vmLYqKoIf/kt.UqUTaV38LAWy0S3gpapXoDbroreAWMW', -- Simulazione hash
     '1995-11-22'
 );

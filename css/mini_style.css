@@ -12,6 +12,10 @@
     display: none;
 }
 
+#area-personale-link {
+    display: none;
+}
+
 #button-menu-mobile {
     display: block;
 }
