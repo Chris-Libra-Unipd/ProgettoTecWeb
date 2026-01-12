@@ -45,7 +45,7 @@ class DBAccess {
 	}
 
 	//solo per testare
-	public function testQuery($query) {
+	public function genericQuery($query) {
 		return mysqli_query($this->connection, $query);
 	}
 
