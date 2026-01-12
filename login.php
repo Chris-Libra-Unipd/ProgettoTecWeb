@@ -20,21 +20,23 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         $password = $_POST['password'];
         try {
             if($connection->openDBConnection()) {
-                if($connection->login($username, $password)) {
+                $loginStatus = $connection->login($username, $password);
+                $connection->closeConnection();
+                if($loginStatus) {
                     $_SESSION['username'] = $username;
                     header("Location: AreaPersonale.php");
                     exit();
                 } else {
-                    $errore = "<p class=\"error\" role=\"alert\">Credenziali errate</p>";
+                    $errore = '<p class="error" role="alert">Credenziali errate</p>';
                 }
             } else {
-                $errore = "<p class=\"error\" role=\"alert\">I nostri sistemi stanno avendo problemi, riprova più tardi</p>";
+                $errore = '<p class="error" role="alert">I nostri sistemi stanno avendo problemi, riprova più tardi</p>';
             }
         } catch (Exception $e) {
-            $errore = "<p class=\"error\" role=\"alert\">I nostri sistemi stanno avendo problemi, riprova più tardi</p>";
+            $errore = '<p class="error" role="alert">I nostri sistemi stanno avendo problemi, riprova più tardi</p>';
         }
     } else {
-        $errore = "<p class=\"error\" role=\"alert\">inserire tutti i campi</p>";
+        $errore = '<p class="error" role="alert">inserire tutti i campi</p>';
     }
 }
 

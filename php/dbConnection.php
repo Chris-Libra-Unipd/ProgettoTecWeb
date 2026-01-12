@@ -41,7 +41,7 @@ class DBAccess {
 	}
 
 	public function closeConnection() {
-		mysqli_close($this->connection);
+        mysqli_close($this->connection);
 	}
 
 	//solo per testare
@@ -53,23 +53,24 @@ class DBAccess {
 	public function login($username, $password) {
 		$query = "SELECT * FROM Utente WHERE username = ?";
 		
-		if (!$stmt = $this->connection->prepare($query)) {
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
 			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
 		}
 
 		$stmt->bind_param("s", $username);
 
-		if (!$stmt->execute()) {
+		if(!$stmt->execute()) {
 			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
 		}
 
 		$result = $stmt->get_result();
 		$stmt->close();
 
-		if ($result->num_rows == 1) {
+		if($result->num_rows == 1) {
 			$row = $result->fetch_assoc();
 			
-			if (password_verify($password, $row['password_hash'])) {
+			if(password_verify($password, $row['password_hash'])) {
 				return true;
 			}
 		}
