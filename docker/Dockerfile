@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4.11-apache
 
 # Abilita i moduli per la connessione al database (mysqli e pdo)
 RUN docker-php-ext-install mysqli pdo pdo_mysql

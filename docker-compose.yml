@@ -14,7 +14,7 @@ services:
 
   # --- SERVIZIO DATABASE (MariaDB) ---
   db:
-    image: mariadb:10.11
+    image: mariadb:11.8.3
     container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: root  # Password per l'utente root
