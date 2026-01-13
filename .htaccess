@@ -2,3 +2,4 @@ DirectoryIndex index.php index.html
 
 
 ErrorDocument 404 /Error404.php
+ErrorDocument 500 /Error500.php
