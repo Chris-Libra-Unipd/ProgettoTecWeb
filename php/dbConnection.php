@@ -49,6 +49,74 @@ class DBAccess {
 		return mysqli_query($this->connection, $query);
 	}
 
+	public function checkUsernameExists($username) {
+		$query = "SELECT * FROM Utente WHERE username = ?";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
+		}
+
+		$stmt->bind_param("s", $username);
+
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function checkEmailExists($email) {
+		$query = "SELECT * FROM Utente WHERE email = ?";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
+		}
+
+		$stmt->bind_param("s", $email);
+
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function registerUser($nome, $cognome, $dataNascita, $email, $username, $passwordHash) {
+		$query = "INSERT INTO Utente (email, username, nome, cognome, password_hash, data_nascita) VALUES (?, ?, ?, ?, ?, ?)";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
+		}
+
+		$stmt->bind_param("ssssss", $email, $username, $nome, $cognome, $passwordHash, $dataNascita);
+
+		$statementStatus = $stmt->execute();
+		$stmt->close();
+
+		if($statementStatus) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
 	
 	public function login($username, $password) {
 		$query = "SELECT * FROM Utente WHERE username = ?";

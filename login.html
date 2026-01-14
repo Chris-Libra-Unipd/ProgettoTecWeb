@@ -34,10 +34,10 @@
             <form action="login.php" method="POST"> 
                 [ERRORE_ACCESSO]
                 <label for="username">Username</label>
-                <input class="authField" required type="text" name="username" id="username" maxlength="20"/>
+                <input class="authField" required type="text" name="username" id="username" autocomplete="username"/>
 
                 <label for="password">Password</label>
-                <input class="authField" required type="password" name="password" id="password" maxlength="20"/>
+                <input class="authField" required type="password" name="password" id="password" autocomplete="current-password"/>
                 <button id="showHidePsw" type="button" aria-label="mostra password"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
 
                 <input class="loginButton" type="submit" name="login" value="ACCEDI"/>

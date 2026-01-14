@@ -1,64 +1,110 @@
+const nome = document.getElementById("nome");
+const cognome = document.getElementById("cognome");
+const dataNascita = document.getElementById("dataNascita");
 const email = document.getElementById("email");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 
-function checkEmail(){ 
-    const emailErr = document.getElementById("emailError");
-    if(email.value.length == 0){
-        emailErr.classList.remove("hiddenError");
-        emailErr.classList.add("shownError");
-        emailErr.innerHTML = "Inserisci un indirizzo Email";
-        return 0;
-    }else if(email.value.search(/^[\.\w]+\@[\w+\.]+$/) != 0){
-        emailErr.classList.remove("hiddenError");
-        emailErr.classList.add("shownError");
-        emailErr.innerHTML = "Indirizzo Email non valido";
+function showError(element, message) {
+    element.innerHTML = message;
+    element.classList.remove("hiddenError");
+    element.classList.add("shownError");
+}
+
+function hideError(element) {
+    element.innerHTML = "";
+    element.classList.remove("shownError");
+    element.classList.add("hiddenError");
+}
+
+
+function checkNome(){ 
+    const nomeErr = document.getElementById("nomeError");
+    const nomeValue = nome.value.trim();
+    const regex = /^[A-Za-zÀ-ÿ' -]{2,50}$/;
+    if(!regex.test(nomeValue)){
+        showError(nomeErr, "Il nome deve avere tra 2 e 50 caratteri e contenere solo lettere, spazi, apostrofi o trattini");
+        nome.setAttribute("aria-invalid", "true");
         return 0;
     }
-    emailErr.classList.remove("shownError");
-    emailErr.classList.add("hiddenError");
+    hideError(nomeErr);
+    nome.removeAttribute("aria-invalid");
+    return 1;
+}
+
+function checkCognome(){ 
+    const cognomeErr = document.getElementById("cognomeError");
+    const cognomeValue = cognome.value.trim();
+    const regex = /^[A-Za-zÀ-ÿ' -]{2,50}$/;
+    if(!regex.test(cognomeValue)){
+        showError(cognomeErr, "Il cognome deve avere tra 2 e 50 caratteri e contenere solo lettere, spazi, apostrofi o trattini");
+        cognome.setAttribute("aria-invalid", "true");
+        return 0;
+    }   
+    hideError(cognomeErr);
+    cognome.removeAttribute("aria-invalid");
+    return 1;
+}
+
+function checkData(){ 
+    const dataErr = document.getElementById("dataError");
+    const dataValue = dataNascita.value;
+    regex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if(!regex.test(dataValue) || new Date(dataValue) < new Date('1900-01-01')){ //siamo nel futuro una persona può essere nata anche nel 3000
+        showError(dataErr, "Inserire una data valida non precedente a 01/01/1900");
+        return 0;
+    }
+    hideError(dataErr);
+    return 1;
+}
+
+function checkEmail(){ 
+    const emailErr = document.getElementById("emailError");
+    const emailValue = email.value.trim();
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$/;
+    
+    if(!regex.test(emailValue)){
+        showError(emailErr, "Indirizzo Email non valido");
+        return 0;
+    }
+    hideError(emailErr);
     return 1;
 }
 
 function checkUsername(){ 
-    var usrMinLength = 5;
     const usernameErr = document.getElementById("usernameError");
-    if(username.value.length < usrMinLength){
-        usernameErr.classList.remove("hiddenError");
-        usernameErr.classList.add("shownError");
-        usernameErr.innerHTML = "L'username deve contenere almeno " + usrMinLength.toString() + " caratteri";
-        return 0;
-    }else if(username.value.search(/^[\w\!\#\$\%\&\'\.\*\/\=\?\_]+$/) != 0){
-        usernameErr.classList.remove("hiddenError");
-        usernameErr.classList.add("shownError");
-        usernameErr.innerHTML = "L'username deve contenere caratteri alfanumerici o !#$%&'.*/=?_";
+    const usernameValue = username.value.trim();
+    console.log(usernameValue);
+    const regex = /^[a-zA-Z0-9]{5,50}$/;
+
+    if(!regex.test(usernameValue)){
+        showError(usernameErr, "L'<span lang='en'>username</span> deve avere tra 5 e 50 caratteri e contenere solo caratteri alfanumerici");
+        username.setAttribute("aria-invalid", "true");
         return 0;
     }
-    usernameErr.classList.remove("shownError");
-    usernameErr.classList.add("hiddenError");
-    usernameErr.focus();
+    hideError(usernameErr);
+    username.removeAttribute("aria-invalid");
     return 1;
 }
 
 function checkPassword(){ 
-    var pswMinLength = 8;
     const passwordErr = document.getElementById("passwordError");
-    if(password.value.length < pswMinLength){
-        passwordErr.classList.remove("hiddenError");
-        passwordErr.classList.add("shownError");
-        passwordErr.innerHTML = "La password deve contenere almeno " + pswMinLength.toString() + " caratteri";
-        return 0;
-    }else if(password.value.search(/^[\w\!\#\$\%\&\'\.\*\/\=\?\_]+$/) != 0){
-        passwordErr.classList.remove("hiddenError");
-        passwordErr.classList.add("shownError");
-        passwordErr.innerHTML = "La password deve contenere caratteri alfanumerici o !#$%&'.*/=?_";
+    const passwordValue = password.value;
+
+    if(passwordValue.length < 8){
+        showError(passwordErr, "La <span lang='en'>password</span> deve contenere almeno 8 caratteri");
+        password.setAttribute("aria-invalid", "true");
         return 0;
     }
-    passwordErr.classList.remove("shownError");
-    passwordErr.classList.add("hiddenError");
+    hideError(passwordErr);
+    password.removeAttribute("aria-invalid");
     return 1;
 }
 
+nome.addEventListener('focusout', checkNome);
+cognome.addEventListener('focusout', checkCognome);
+dataNascita.addEventListener('focusout', checkData);
 email.addEventListener('focusout', checkEmail);
 username.addEventListener('focusout', checkUsername);
 password.addEventListener('focusout', checkPassword);
