@@ -1,12 +1,83 @@
 <?php
 
+session_start();
+
+require_once "php/dbConnection.php";
+require_once "php/utils.php";
+use DB\DBAccess;
+
+$paginaCatalogo = file_get_contents("catalogo.html");
+
+if(isset($_SESSION['username'])) {
+    $paginaCatalogo = setta_link_area_personale($paginaCatalogo);
+} else {
+    $paginaCatalogo = setta_link_login($paginaCatalogo);
+}
+
+$db = new DBAccess();
+if(!$db->openDBConnection()) {
+    die("Errore: impossibile connettersi al database.");
+}
+
+$query = "
+SELECT tv.nome AS tipo_nome, tv.descrizione AS tipo_descrizione,
+       MIN(v.prezzo) AS prezzo_min,
+       MIN(v.prezzo_scontato) AS prezzo_scontato_min,
+       i.url_immagine, i.alt_text
+FROM Tipo_Viaggio tv
+JOIN Viaggio v ON v.tipo_viaggio_nome = tv.nome
+LEFT JOIN Immagini i ON i.tipo_viaggio_nome = tv.nome AND i.periodo_itinerario_id IS NULL
+GROUP BY tv.nome
+ORDER BY tv.nome ASC
+";
+
+$result = $db->genericQuery($query);
 
 
+$cardsHtml = "";
+if($result && mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $nome = htmlspecialchars($row['tipo_nome']);
+        $descrizione = htmlspecialchars($row['tipo_descrizione']);
+        $immagine = htmlspecialchars($row['url_immagine'] ?? 'assets/img/t0.jpg');
+        $alt = htmlspecialchars($row['alt_text'] ?? $nome);
 
-$paginaLogin = file_get_contents("catalogo.html");
+        //sta roba serve per mostrare il prezzo scontato
+        $prezzo = $row['prezzo_min'];
+        if(!is_null($row['prezzo_scontato_min']) && $row['prezzo_scontato_min'] < $row['prezzo_min']) {
+            $prezzo = $row['prezzo_scontato_min'];
+            $scontoHtml = "<span class=\"sconto-viaggio\"><span class=\"sr-only\">sconto</span>-30%</span>";
+        } else {
+            $scontoHtml = "";
+        }
 
-echo $paginaLogin;
+        $cardsHtml .= "
+        <li class=\"card-viaggio\">
+            <img src=\"$immagine\" alt=\"$alt\">
+            <div class=\"card-viaggio-info\">
+                <h3>$nome</h3>
+                <p><span>durata:</span> 7 giorni</p>
+                <p><span>a partire da:</span>$prezzo € $scontoHtml</p>
+            </div>
+            <div class=\"link-dettagli-container\">
+                <a href=\"dettagli.php?viaggio=".urlencode($nome)."\" class=\"dettagli-viaggio-link\">scopri<span class=\"sr-only\">$nome</span></a>
+            </div>
+        </li>
+        ";
+    }
+} else {
+    $cardsHtml = "<li>Nessun viaggio disponibile al momento.</li>";
+}
 
+$db->closeConnection();
 
+ //sostituisco la parte di html con le card che ho creato
+$paginaCatalogo = preg_replace(
+    '/<ul id="container-lista-viaggi">.*?<\/ul>/s',
+    "<ul id=\"container-lista-viaggi\">\n$cardsHtml\n</ul>",
+    $paginaCatalogo
+);
 
+echo $paginaCatalogo;
 ?>
+
