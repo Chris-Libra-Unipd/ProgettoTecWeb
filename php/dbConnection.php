@@ -176,10 +176,6 @@ class DBAccess {
 		return $result;
 	}
 
-	public function getLunghezzaViaggio() {
-		
-	}
-
 	
 // ======================= END DAM =========================
 // =========================================================
