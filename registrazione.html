@@ -59,9 +59,11 @@
                 <label for="password"><span lang="en">Password</span><span class="error">*</span></label>
                 <p class="[PASSWORD_STATUS]" id="passwordError">[PASSWORD_ERROR]</p>
                 <input class="authField" type="password" name="password" id="password" required  [PASSWORD_VALID] autocomplete="new-password" aria-describedby="passwordError"/>
-                <button id="showHidePsw" type="button" aria-label="mostra password"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
-
-                <input class="loginButton" type="submit" name="register" value="CREA ACCOUNT"/>
+                <div>
+                    <button id="showHidePsw" type="button" aria-label="mostra password"><img id="showHideIcon" src="assets/icons/showPsw.png"></button>
+                </div>
+                
+                <button class="loginButton" type="submit" name="register">CREA ACCOUNT</button>
             </form>
             
             <div id="authEscapeLinks">

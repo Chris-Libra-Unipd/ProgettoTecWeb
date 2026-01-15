@@ -10,18 +10,18 @@ DROP TABLE IF EXISTS Tipo_Viaggio;
 -- PK: Email (indicato dal pallino pieno)
 CREATE TABLE Utente (
     email VARCHAR(255) PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL UNIQUE,
     nome VARCHAR(100) NOT NULL,
     cognome VARCHAR(100) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    data_nascita DATE
+    data_nascita DATE NOT NULL
 );
 
 -- Creazione della tabella TIPO_VIAGGIO
 -- PK: Nome (indicato dal pallino pieno)
 CREATE TABLE Tipo_Viaggio (
     nome VARCHAR(100) PRIMARY KEY,
-    descrizione TEXT
+    descrizione TEXT NOT NULL
 );
 
 -- Creazione della tabella PERIODO_ITINERARIO
@@ -29,7 +29,7 @@ CREATE TABLE Tipo_Viaggio (
 CREATE TABLE Periodo_Itinerario (
     id INT PRIMARY KEY,
     tipo_viaggio_nome VARCHAR(100) NOT NULL,
-    descrizione TEXT,
+    descrizione TEXT NOT NULL,
     FOREIGN KEY (tipo_viaggio_nome) REFERENCES Tipo_Viaggio(nome) 
         ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -58,7 +58,7 @@ CREATE TABLE Viaggio (
     data_inizio DATE NOT NULL,
     data_fine DATE NOT NULL,
     FOREIGN KEY (tipo_viaggio_nome) REFERENCES Tipo_Viaggio(nome)
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Creazione della tabella RECENSIONE
@@ -67,9 +67,9 @@ CREATE TABLE Recensione (
     id INT PRIMARY KEY,
     utente_email VARCHAR(255) NOT NULL,
     tipo_viaggio_nome VARCHAR(100) NOT NULL,
-    data_recensione DATE,
-    testo TEXT,
-    punteggio INT CHECK (punteggio BETWEEN 1 AND 5),
+    data_recensione DATE NOT NULL,
+    testo TEXT NOT NULL,
+    punteggio INT NOT NULL CHECK (punteggio BETWEEN 1 AND 5),
     FOREIGN KEY (utente_email) REFERENCES Utente(email)
         ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (tipo_viaggio_nome) REFERENCES Tipo_Viaggio(nome)
@@ -83,9 +83,9 @@ CREATE TABLE Prenotazione (
     utente_email VARCHAR(255) NOT NULL,
     viaggio_id INT NOT NULL,
     FOREIGN KEY (utente_email) REFERENCES Utente(email)
-        ON UPDATE CASCADE,
+        ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (viaggio_id) REFERENCES Viaggio(id)
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
