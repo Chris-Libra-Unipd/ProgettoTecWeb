@@ -27,7 +27,6 @@ function creaCardViaggio($row) {
 
     if(!is_null($row['prezzo_scontato_min']) && $row['prezzo_scontato_min'] < $row['prezzo_min']) {
         $prezzo = number_format($row['prezzo_scontato_min'], 2, ',', '.');
-        $scontoPercentuale = $row['prezzo_min'] - $row['prezzo_scontato_min'];
         $scontoHtml = "<span class=\"sconto-viaggio\">SCONTATO!</span>";
     } else {
         $scontoHtml = "";
