@@ -146,6 +146,40 @@ class DBAccess {
 		return false;
 	}
 
+	public function getListaViaggi($nome) {
+
+		$query = "
+			SELECT tv.nome AS tipo_nome, tv.durata_giorni, MIN(v.prezzo) AS prezzo_min, MIN(v.prezzo_scontato) AS prezzo_scontato_min, MIN(i.url_immagine) AS url_immagine
+			FROM Tipo_Viaggio tv
+			JOIN Viaggio v ON v.tipo_viaggio_nome = tv.nome
+			LEFT JOIN Immagini i ON i.tipo_viaggio_nome = tv.nome AND i.periodo_itinerario_id IS NULL
+			WHERE tv.nome LIKE ?
+			GROUP BY tv.nome
+			ORDER BY tv.nome ASC
+		";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . $this->connection->error);
+		}
+
+		$parametro = "%".$nome."%";
+		$stmt->bind_param("s", $parametro);
+
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		return $result;
+	}
+
+	public function getLunghezzaViaggio() {
+		
+	}
+
 	
 // ======================= END DAM =========================
 // =========================================================
@@ -244,7 +278,6 @@ class DBAccess {
 				throw $e;
 		}
 	}
-
 }
 
 

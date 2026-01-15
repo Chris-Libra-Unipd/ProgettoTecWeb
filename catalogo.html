@@ -66,12 +66,12 @@
             <form action="" id="container-ricerca">
                 <h2>Ricerca Viaggi</h2>
                 <div id="container-input-ricerca">
-                    <input type="text" id="input-ricerca-catalogo" placeholder="Cerca il tuo viaggio...">
+                    <input type="text" id="input-ricerca-catalogo" name="nome" value="[TESTO_RICERCA]" placeholder="Cerca il tuo viaggio...">
                     <div id="container-bottoni-ricerca">
-                        <button id="button-ricerca-catalogo" type="submit" aria-label="cerca viaggio">
+                        <button id="button-ricerca-catalogo" type="submit" name="premuto" value="cerca" aria-label="cerca viaggio">
                             <img src="assets/icons/lente_ricerca.svg" alt="">
                         </button>
-                        <button id="button-elimina-ricerca-catalogo" type="submit" aria-label="elimina ricerca">
+                        <button id="button-elimina-ricerca-catalogo" type="submit" name="premuto" value="annulla" aria-label="elimina ricerca">
                             <img src="assets/icons/x_cancella_ricerca.svg" alt="">
                         </button>
                     </div>
@@ -79,94 +79,7 @@
             </form>
 
             <ul id="container-lista-viaggi">
-                <li class="card-viaggio">
-                    <img src="assets/img/viaggi/v1/p1.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€ <span class="sconto-viaggio"><span class="sr-only">sconto</span>-30%</span></p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€</p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€ <span class="sconto-viaggio"><span class="sr-only">sconto</span>-30%</span></p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€</p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>prezzo: </span>45.000.000€ <span class="sconto-viaggio"><span class="sr-only">sconto</span>-30%</span></p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€</p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€ <span class="sconto-viaggio"><span class="sr-only">sconto</span>-30%</span></p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
-                <li class="card-viaggio">
-                    <img src="assets/img/t0.jpg" alt="">
-                    <div class="card-viaggio-info">
-                        <h3>Viaggio su Marte</h3>
-                        <p><span>durata:</span> 7 giorni</p>
-                        <p><span>a partire da:</span>45.000.000€</p>
-                    </div>
-                    <div class="link-dettagli-container">
-                        <a href="dettagli.php" class="dettagli-viaggio-link">scopri<span class="sr-only">Viaggio su Marte</span></a>
-                    </div>
-                </li>
+                [LISTA_CATALOGO]
             </ul>
 
         </main>

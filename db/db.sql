@@ -21,7 +21,8 @@ CREATE TABLE Utente (
 -- PK: Nome (indicato dal pallino pieno)
 CREATE TABLE Tipo_Viaggio (
     nome VARCHAR(100) PRIMARY KEY,
-    descrizione TEXT NOT NULL
+    descrizione TEXT NOT NULL,
+    durata_giorni INT NOT NULL
 );
 
 -- Creazione della tabella PERIODO_ITINERARIO
@@ -96,10 +97,11 @@ CREATE TABLE Prenotazione (
 
 
 -- 1. Inserimento del TIPO DI VIAGGIO (Il "pacchetto" base)
-INSERT INTO Tipo_Viaggio (nome, descrizione)
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
 VALUES (
     'Grande Tour di Nettuno',
-    'Un viaggio ai confini del sistema solare per esplorare il gigante di ghiaccio. Include sorvoli ravvicinati, osservazione delle tempeste di diamanti e una sosta sulla luna Tritone.'
+    'Un viaggio ai confini del sistema solare per esplorare il gigante di ghiaccio. Include sorvoli ravvicinati, osservazione delle tempeste di diamanti e una sosta sulla luna Tritone.',
+    20
 );
 
 -- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
@@ -139,10 +141,11 @@ VALUES
 -- =======================================================
 
 -- 1. Inserimento del TIPO DI VIAGGIO
-INSERT INTO Tipo_Viaggio (nome, descrizione)
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
 VALUES (
     'Esplorazione Rossa: Marte',
-    'Un''avventura sul pianeta rosso. Visita le antiche valli fluviali, scala il Monte Olimpo (il vulcano più alto del sistema solare) e soggiorna nelle prime colonie umane terraformate.'
+    'Un''avventura sul pianeta rosso. Visita le antiche valli fluviali, scala il Monte Olimpo (il vulcano più alto del sistema solare) e soggiorna nelle prime colonie umane terraformate.',
+    15
 );
 
 -- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
@@ -177,8 +180,92 @@ VALUES
 
 
 
+-- =======================================================
+-- VIAGGIO 3: SATURNO (Cartella v3)
+-- =======================================================
+
+-- 1. Inserimento del TIPO DI VIAGGIO
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
+VALUES (
+    'Anelli di Saturno: Il Signore degli Anelli',
+    'L''esperienza visiva più spettacolare del sistema solare. Naviga attraverso gli iconici anelli, visita la luna Titano con i suoi laghi di metano e osserva la tempesta esagonale al polo nord.',
+    25
+);
+
+-- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
+INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
+VALUES 
+(7, 'Anelli di Saturno: Il Signore degli Anelli', 'Slalom negli Anelli: Navigazione di precisione tra le particelle di ghiaccio degli anelli A e B, con vista mozzafiato sulla divisione di Cassini.'),
+(8, 'Anelli di Saturno: Il Signore degli Anelli', 'Atterraggio su Titano: Esplorazione con sottomarino nei laghi di idrocarburi liquidi sotto la spessa atmosfera arancione.'),
+(9, 'Anelli di Saturno: Il Signore degli Anelli', 'Sorvolo di Encelado: Passaggio attraverso i pennacchi di vapore acqueo emessi dai geyser del polo sud di questa luna ghiacciata.');
+
+-- 3. Inserimento delle IMMAGINI (Cartella v3, path corretto: assets)
+
+-- A. Tre immagini associate al TIPO_VIAGGIO (v3/i1, v3/i2, v3/i3)
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(301, 'Saturno in controluce con gli anelli brillanti', './assets/img/viaggi/v3/i1.jpg', 'Anelli di Saturno: Il Signore degli Anelli', NULL),
+(302, 'Lounge panoramica con vista sugli anelli', './assets/img/viaggi/v3/i2.jpg', 'Anelli di Saturno: Il Signore degli Anelli', NULL),
+(303, 'La tempesta esagonale al polo nord di Saturno', './assets/img/viaggi/v3/i3.jpg', 'Anelli di Saturno: Il Signore degli Anelli', NULL);
+
+-- B. Una immagine per ogni PERIODO_ITINERARIO (v3/p1, v3/p2, v3/p3 collegate agli ID 7, 8, 9)
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(304, 'Dettaglio ravvicinato delle rocce ghiacciate degli anelli', './assets/img/viaggi/v3/p1.jpg', NULL, 7),
+(305, 'Sottomarino esplorativo nei mari di Titano', './assets/img/viaggi/v3/p2.jpg', NULL, 8),
+(306, 'Getti di vapore sulla superficie di Encelado', './assets/img/viaggi/v3/p3.jpg', NULL, 9);
+
+-- 4. Inserimento di 3 istanze di VIAGGIO
+INSERT INTO Viaggio (id, tipo_viaggio_nome, prezzo, prezzo_scontato, data_inizio, data_fine)
+VALUES 
+(16, 'Anelli di Saturno: Il Signore degli Anelli', 550000.00, 520000.00, '2150-09-01', '2150-09-25'),
+(17, 'Anelli di Saturno: Il Signore degli Anelli', 400000.00, NULL, '2151-01-05', '2151-01-30'),
+(18, 'Anelli di Saturno: Il Signore degli Anelli', 550000.00, 490000.00, '2151-04-10', '2151-05-05');
 
 
+-- =======================================================
+-- VIAGGIO 4: BUCO NERO (Cigno X-1) - Cartella v4
+-- =======================================================
+
+-- 1. Inserimento del TIPO DI VIAGGIO
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
+VALUES (
+    'Orizzonte degli Eventi: Cigno X-1',
+    'Il viaggio definitivo per gli amanti del brivido estremo. Sperimenta la dilatazione temporale, osserva il disco di accrescimento e naviga in sicurezza al limite del punto di non ritorno.',
+    15
+);
+
+-- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
+-- IDs progressivi: 10, 11, 12
+INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
+VALUES 
+(10, 'Orizzonte degli Eventi: Cigno X-1', 'Avvicinamento al Disco di Accrescimento: Osservazione sicura dei getti di raggi X e del plasma incandescente che ruota attorno alla singolarità.'),
+(11, 'Orizzonte degli Eventi: Cigno X-1', 'La Sfera di Fotoni: Navigazione nel punto in cui la gravità è così forte che la luce orbita attorno al buco nero. Potrai vedere la parte posteriore della tua stessa nave.'),
+(12, 'Orizzonte degli Eventi: Cigno X-1', 'Esperienza di Dilatazione Temporale: Stazionamento in orbita ravvicinata dove un''ora corrisponde a sette anni sulla Terra (monitoraggio medico incluso).');
+
+-- 3. Inserimento delle IMMAGINI (Cartella v4)
+
+-- A. Tre immagini associate al TIPO_VIAGGIO (Serie 400: 401, 402, 403)
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(401, 'Il buco nero che piega la luce delle stelle circostanti', './assets/img/viaggi/v4/i1.jpg', 'Orizzonte degli Eventi: Cigno X-1', NULL),
+(402, 'La nave da crociera schermata contro le radiazioni', './assets/img/viaggi/v4/i2.jpg', 'Orizzonte degli Eventi: Cigno X-1', NULL),
+(403, 'Il disco di accrescimento luminoso nel buio dello spazio', './assets/img/viaggi/v4/i3.jpg', 'Orizzonte degli Eventi: Cigno X-1', NULL);
+
+-- B. Una immagine per ogni PERIODO_ITINERARIO (Serie 400: 404, 405, 406 collegate agli ID 10, 11, 12)
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(404, 'Vista ravvicinata del plasma infuocato', './assets/img/viaggi/v4/p1.jpg', NULL, 10),
+(405, 'Effetto visivo della curvatura della luce nella sfera fotonica', './assets/img/viaggi/v4/p2.jpg', NULL, 11),
+(406, 'Orologi sincronizzati che mostrano la differenza temporale', './assets/img/viaggi/v4/p3.jpg', NULL, 12);
+
+-- 4. Inserimento di 3 istanze di VIAGGIO
+-- IDs progressivi: 19, 20, 21
+INSERT INTO Viaggio (id, tipo_viaggio_nome, prezzo, prezzo_scontato, data_inizio, data_fine)
+VALUES 
+(19, 'Orizzonte degli Eventi: Cigno X-1', 1200000.00, NULL, '2151-02-01', '2151-02-15'),
+(20, 'Orizzonte degli Eventi: Cigno X-1', 1500000.00, NULL, '2151-07-10', '2151-07-25'),
+(21, 'Orizzonte degli Eventi: Cigno X-1', 1200000.00, NULL, '2151-11-05', '2151-11-20');
 
 
 -- =======================================================

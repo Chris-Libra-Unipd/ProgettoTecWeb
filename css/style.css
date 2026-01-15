@@ -1328,6 +1328,25 @@ blockquote cite{
     color: var(--txt-error-messages);
 }
 
+.big-error{
+    padding: 0 1em;
+    background-color: var(--bg-color-dark-black);
+    border-radius: 30px;
+    border: 1px solid var(--border-liquid-glass);
+    font-size: 2em;
+    color: var(--txt-error-messages);
+}
+
+.big-message{
+    padding: 0 1em;
+    background-color: var(--bg-color-dark-black);
+    border-radius: 30px;
+    border: 1px solid var(--border-liquid-glass);
+    font-size: 2em;
+    color: var(--txt-color-not-pure-white);
+}
+
+
 #authEscapeLinks{
     margin-top: 2.5em;
     margin-bottom: 4em;
