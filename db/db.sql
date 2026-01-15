@@ -185,6 +185,7 @@ VALUES
 -- ======================================================
 -- utenti di test
 
+
 INSERT INTO Utente (email, username, nome, cognome, password_hash, data_nascita)
 VALUES 
 (
@@ -202,4 +203,46 @@ VALUES
     'Verdi', 
     '$2y$10$1JLofMAB2vmLYqKoIf/kt.UqUTaV38LAWy0S3gpapXoDbroreAWMW', -- Simulazione hash
     '1995-11-22'
+);
+
+-- PASSWORD UTENTI: test
+
+
+
+-- =======================================================
+-- ======================================================
+-- prenotazioni
+
+INSERT INTO Prenotazione (id, utente_email, viaggio_id)
+VALUES
+(
+    '1',
+    'mario.rossi@email.com',
+    '11'
+),
+(
+    '2',
+    'mario.rossi@email.com',
+    '15'
+),
+(
+    '3',
+    'mario.rossi@email.com',
+    '14'
+);
+
+
+-- =======================================================
+-- ======================================================
+-- recensioni
+
+INSERT INTO Recensione(id,utente_email,tipo_viaggio_nome,data_recensione,testo,punteggio)
+VALUES
+(
+    '1',
+    'mario.rossi@email.com',
+    'Esplorazione Rossa: Marte',
+    '2013-04-12',
+    'il tramonto blu e la bassa gravità sono mozzafiato, ma la polvere perenne e il cibo idroponico stancano. Un viaggio unico, sebbene sei mesi di claustrofobia siano una prova durissima.',
+    '4'
 );

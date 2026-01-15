@@ -145,7 +145,108 @@ class DBAccess {
 
 		return false;
 	}
+
+	
+// ======================= END DAM =========================
+// =========================================================
+// ======================= START CHRIS =====================
+	//il parametro è attendibile perché preso dalla session
+	public function getUserInfo($username){
+		//controllo $username tramite statement
+		//usa un placeholder ? per il dato
+		$query = "SELECT email, nome, cognome, data_nascita FROM Utente WHERE username=?";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("s", $username);	// s indica che il valore è una stringa (i per intero)
+		if(!$stmt->execute()){
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows == 0){
+			throw new Exception("Errore, utente non trovato");
+		}
+		if($result->num_rows != 1){
+			throw new Exception("Errore, utente duplicato");
+		}
+
+		return $result->fetch_assoc();
+	}
+
+    public function getHistory($username){
+		$query = "
+			SELECT V.tipo_viaggio_nome, V.data_inizio, V.data_fine, I.url_immagine
+			FROM Prenotazione P
+				JOIN Utente U ON
+					P.utente_email = U.email 
+				JOIN Viaggio V ON
+					P.viaggio_id = V.id 
+				JOIN Immagini I ON
+					V.tipo_viaggio_nome = I.tipo_viaggio_nome
+			WHERE U.username = ? AND 
+				I.url_immagine LIKE '%i1.jpg' 
+			";
+			//per estrarre l'immagine di copertina cerca l'url che contiene il nome default
+			$result=array();
+			$stmt = $this->connection->prepare($query);
+			$stmt->bind_param("s", $username);
+			if(!$stmt->execute()){
+				throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+			}
+			$queryResult = $stmt->get_result();
+			while($row = mysqli_fetch_assoc($queryResult)){
+				array_push($result, $row);
+			}
+			$queryResult->free();
+			$stmt->close();
+
+			return $result;
+	}
+
+	public function getReview($username, $viaggio){
+		$query = "
+			SELECT *
+			FROM Recensione R
+				JOIN Utente U ON R.utente_email = U.email
+			WHERE U.username = ? AND R.tipo_viaggio_nome=?
+		";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("ss", $username, $viaggio);	// s indica che il valore è una stringa (i per intero)
+		if(!$stmt->execute()){
+			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+		}
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows == 0){
+			throw new Exception("Errore, nessuna recensione trovata", 0);
+		}
+		if($result->num_rows != 1){
+			throw new Exception("Errore, più recensioni per lo stesso viaggio", -1);
+		}
+
+		return $result->fetch_assoc();
+	}
+
+	
+	public function checkIfReviewed($username, $viaggio){
+		try{
+			$result = $this->getReview($username, $viaggio);
+			//se getReview non lancia eccezione allora si ha una e una sola recensione
+			return true;
+		}
+		catch(Exception $e){
+			if($e->getCode() == 0)
+				return false;
+			if($e->getCode() == -1)
+				throw $e;
+		}
+	}
+
 }
+
 
 
 

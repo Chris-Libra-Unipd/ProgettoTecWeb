@@ -32,7 +32,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <a href="login.php" id="login-link">ACCEDI</a>
+                    [ACCESSO_LOGIN_DESKTOP]
                     <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
                         <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
                     </button>
@@ -49,7 +49,7 @@
                             <a href="chi_siamo.php" class="menu-link">CHI SIAMO</a>
                         </li>
                         <li>
-                            <a href="login.php" id="login-link-mobile">ACCEDI</a>
+                            [ACCESSO_LOGIN_MOBILE]
                         </li>
                     </ul>
                 </nav>
@@ -58,34 +58,22 @@
         
         <nav id="breadcrumb" class="breadcrumb-centrata-area-personale"><a href="index.php"><span lang="en">Home</span></a>/<a href="AreaPersonale.php">Area personale</a>/ Recensioni</nav>
 
-        <main>
-        <div class="liquid-glass-container-recensioni">
-            <div class="liquid-glass-container-recensioni-header">
-                <h1>NOME VIAGGIO</span></h1>
-            </div>
-            <h2 class="opinione-recensione">La tua opinione per noi è importante!</h2>
+        <main id="contenuto">
+        <section id="container-recensioni">
+            <h1>NOME VIAGGIO</h1>
+            <p class="opinione-recensione">La tua opinione per noi è importante!</p>
+            <form id="form-recensione" action="recensione.php" method="post">
+                    <textarea name="contenuto-recensione" id="contenuto-recensione" placeholder="Scrivi qui la tua recensione..." rows="5" cols="50">[TESTO-RECENSIONE]</textarea>
+                    <select name="valutazione" id="valutazione" aria-label="Valutazione del viaggio" required>
+                        [VALUTAZIONE]
+                    </select>
 
-            <form class="container-form-recensioni">
-
-                    <textarea name="testo_recensioni" id="textarea-recensione-testo" placeholder="Scrivi qui la tua recensione..." rows="4"></textarea>
-
-                    <select name="stelle" id="select-stelle" aria-label="Valutazione del viaggio" required>
-                    <option value="" disabled selected>Dacci un voto!</option>
-                    <option value="1">1 stella</option>
-                    <option value="2">2 stelle</option>
-                    <option value="3">3 stelle</option>
-                    <option value="4">4 stelle</option>
-                    <option value="5">5 stelle</option>
-                     </select>
-
-                    <div id="container-bottoni-recensione">
-                        <button type="submit" class="button-recensione">INVIA</button>
-                        <button type="button" class="button-recensione">ANNULLA</button>
+                    <div id="container-azioni-recensione">
+                        <a href="AreaPersonale.php" class="button-recensione"  aria-label="annulla e torna all'area personale">ANNULLA</a>
+                        [AZIONE]
                     </div>
             </form>
-            
-        </div>   
-
+        </section>   
         </main>
     <footer>
             <button id="button-torna-su">

@@ -18,7 +18,6 @@
     --bg-color-cancella-ricerca: rgba(88, 5, 5, 0.6);
     --bg-color-cancella-ricerca-hover: rgba(231, 0, 0, 0.6);
     --border-liquid-glass: rgba(255, 255, 255, 0.4);
-    --star-gold: #92400E;
     --visited-link: #94FBFF;
 
 
@@ -997,67 +996,30 @@ footer p {
     margin-top: 30px;
 }
 
-.card-viaggi-area-personale{
-  background-color: var(--bg-color-dark-black);
-  width: 300px;
-  height: 300px;
-  text-align: center;
-  display: flex;       
-  flex-direction: column;
-  margin:0;
-  border: 1px solid var(--border-liquid-glass);
-  border-radius: 30px;
-  overflow: hidden;
-}
 
-.card-viaggi-area-personale > .button-cancella-prenotazione {
-    margin-top: 2em; 
-    width: 50%;
-    align-self: center;
-}
-
-.card-viaggi-area-personale p{
-    font-weight: 400;
-    margin-top: 2rem;
-}
-
-.card-viaggi-area-personale img{
-    width: 100%;
-    border-bottom: 1px solid var(--border-liquid-glass);
-}
-.button-orizzontali-recensioni{
-    display: flex;
-    width: 100%;
+.azione-recensione{
     box-sizing: border-box;
-    gap: 10px;
-    padding: 0 10px;
-    margin-top: 15px;
+    gap: 1em;
+    padding: 0em 1em;
+    margin: auto;
+    margin-bottom: 1.5em;
 }
 
-.button-orizzontali-recensioni .button-cancella-prenotazione {
-    flex: 1 1 0;
-    min-width: 0;
-    margin: 0;
-    font-size: 12px;
-    padding: 8px 8px;
-    white-space: normal;
-}
-
-.button-cancella-prenotazione{
+.modifica-leggi-recensione{
     background-color: var(--bg-color-dark-black);
-    color: var(--link-color-not-pure-white);        
-    border: 1px solid var(--border-liquid-glass);
-    border-radius: 15px;        
-    padding: 10px 20px;                  
-    font-size: 12px;            
-    margin-top: 10px;
-    margin-bottom: 15px;
+    color: var(--accent-color);        
+    border: 1px solid var(--accent-color);
+    border-radius: 2em;        
+    padding: 1em 2em;                  
+    font-size: 0.8em;            
+    font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.button-recensioni-azzurro{
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
+.modifica-leggi-recensione:hover{
+    background-color: var(--accent-color);
+    color: var(--bg-color-dark-black);
 }
 
 /* PAGINA RECENSIONI */
@@ -1070,12 +1032,12 @@ footer p {
   justify-content: center;
   align-items: center;
 }
-.liquid-glass-container-recensioni {
+#container-recensioni {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 30px;
-  border-radius: 30px;
+  width: 700px;
+  max-width: 90%;
+  border-radius: 2em;
   color: var(--txt-color-not-pure-white);
   margin: 0 auto;
   -webkit-backdrop-filter: blur(3px);
@@ -1083,51 +1045,44 @@ footer p {
   border: 1px solid var(--border-liquid-glass);
 }
 
-.liquid-glass-container-recensioni-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1vh;
-  width: 52%;
-  padding: 30px;
-  border-radius: 50px;
-  margin: 0 auto;
+#container-recensioni > h1 {
+  text-align: center;
+  width: 70%;
+  padding: 0.3em 1.5em;
+  border-radius: 2em;
+  margin: 1em auto;
   color: var(--txt-color-not-pure-white);
   border: 1px solid var(--border-liquid-glass);
 }
 
-.liquid-glass-container-recensioni-header h1{
-    font-size: 32px;
-    white-space: nowrap;
-}
-
 .opinione-recensione {
-  font-size: 30px;
-  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
   text-align: center;
 }
 
-.container-form-recensioni {
+#form-recensione {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 20px;
-  gap: 15px;
+  gap: 1.5em;
 }
 
 
-#textarea-recensione-testo {
-  width: 60%;
-  padding: 12px 14px;
+#contenuto-recensione {
+  width: 70%;
+  padding: 1.5em;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.5em;
   color: var(--txt-color-not-pure-white);
   background: var(--txt-color-dark-gray);
   border: 1px solid var(--border-liquid-glass);
-  border-radius: 14px;
+  border-radius: 2em;
   resize: none;
   outline: none;
+  font-family: "Inter", "Roboto", sans-serif;
 
   transition: 
     border-color 0.2s ease,
@@ -1135,19 +1090,16 @@ footer p {
     background-color 0.2s ease;
 }
 
-#textarea-recensione-testo:focus {
-  border-color: var(--accent-color);
+#contenuto-recensione:focus {
+  border-color: var(--txt-color-not-pure-white);
 }
 
-#textarea-recensione-testo::placeholder {
-  font-style: sans-serif;
-}
 
-#select-stelle {
-  width: 100%;
-  max-width: 250px;
-  padding: 10px 12px;
-  border-radius: 14px;
+#valutazione {
+  width: 250px;
+  max-width: 50%;
+  padding: 0.5em 1em;
+  border-radius: 1em;
   border: 1px solid var(--border-liquid-glass);
   background: var(--txt-color-dark-gray);
   color: var(--txt-color-not-pure-white);
@@ -1157,25 +1109,60 @@ footer p {
   box-sizing: border-box;
 }
 
-#container-bottoni-recensione {
+#container-azioni-recensione {
   display: flex;
-  gap: 15px;
+  justify-items: stretch;
   justify-content: center;
-  width: 100%;     
-  max-width: 250px; 
+  width: 300px;     
+  max-width: 40%; 
+  gap: 20px;
   box-sizing: border-box;
+  margin-bottom: 1.5em;
 }
 .button-recensione {
-  background-color: var(--txt-color-not-pure-white);
-  color: var(--bg-color-dark-black);
-  border: none;
-  border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 16px;
+  width: 100%;
+  background-color: var(--txt-color-dark-gray);
+  border-radius: 5em;
+  padding: 0.7em 1em;
+  font-size: 1em;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.2s;
 }
+
+a.button-recensione{
+    color: var(--txt-error-messages);
+    border: 1px solid var(--txt-error-messages);    
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+a.button-recensione:hover{
+    color: var(--bg-color-dark-black);
+    background-color: var(--txt-error-messages);
+    transform: scale(1.1);
+}
+
+button.button-recensione{
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+button.button-recensione:hover:not(:disabled){
+    color: var(--bg-color-dark-black);
+    background-color: var(--accent-color);
+    transform: scale(1.07);
+}
+
+button.button-recensione:disabled{
+    color: var(--txt-color-gray);
+    border: 1px solid var(--txt-color-gray);
+    transform: scale(0.95);
+}
+
 
 /* ===================== END CUOGO ==================*/
 
