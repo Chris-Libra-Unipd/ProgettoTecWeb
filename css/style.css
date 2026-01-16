@@ -1741,7 +1741,10 @@ blockquote cite{
 }
 
 .generic-liquid-glass-chi-siamo {
+    box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 90%;
     margin: auto;
     margin-bottom: 2em;
@@ -1749,10 +1752,8 @@ blockquote cite{
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
-    /*border-radius: var(--border-radius-box);*/
-    border-radius: 7em;
-    padding: 3em 5em;
-    justify-content: space-between;
+    border-radius: 5em;
+    padding: 3em 3em;
 }
 
 .generic-liquid-glass-chi-siamo h2 {
@@ -1761,13 +1762,13 @@ blockquote cite{
 }
 
 .text-container{
-    width: 50%;
+    width: 45%;
 }
 
 .chi-siamo-img {
-    width: 45%;
+    width: 50%;
     height: auto;
-    border-radius: var(--border-radius-box);
+    border-radius: 2em;
 }
 
 #HQ{
@@ -1787,6 +1788,7 @@ blockquote cite{
 }
 
 .generic-liquid-glass-chi-siamo-info-quartier-generale{
+    box-sizing: border-box;
     width: 90%;
     margin: auto;
     display: flex;
@@ -1796,8 +1798,7 @@ blockquote cite{
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
-    border-radius: var(--border-radius-box);
-    border-radius: 7em;
+    border-radius: 5em;
     padding: 3em 5em;
     justify-content: space-between;
 }
