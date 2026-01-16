@@ -28,8 +28,8 @@
     <script src="js/scriptMenu.js" defer></script>
   </head>
 
-  <body id="home-body">
-    <a href="#contenuto" class="aiuti-navigazione">salta al contenuto</a>
+  <body id="chi-siamo-body">
+    <a href="#contenuto-chi-siamo" class="aiuti-navigazione">salta al contenuto</a>
     <header class="header-no-scroll">
             <div id="header-container" class="header-bg-liquid-glass header-container-no-scroll">
                 <div id="top-header-container" >
@@ -45,12 +45,9 @@
                             <li>
                                 <span class="current-menu-link">CHI SIAMO</span>
                             </li>
-                            <li>
-                                <a href="dettagli.php" class="menu-link">INFO VIAGGIO (TO DELETE)</a>
-                            </li>
                         </ul>
                     </nav>
-                    <a href="login.php" id="login-link">ACCEDI</a>
+                    [ACCESSO_LOGIN_DESKTOP]
                     <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
                         <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
                     </button>
@@ -67,39 +64,44 @@
                             <span class="current-menu-link">CHI SIAMO</span>
                         </li>
                         <li>
-                            <a href="login.php" id="login-link-mobile">ACCEDI</a>
+                            [ACCESSO_LOGIN_MOBILE]
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-    <main id="contenuto">
-      <div class="generic-liquid-glass-chi-siamo">
-        <h2>Siamo esploratori, sognatori e sfidiamo l'impossibile</h2>
-        <img
-        class="chi-siamo-img"
-        src="assets/img/Chi_Siamo/Persone_fluttuanti_in_vacanza.jpg"
-        alt="Persone in vacanza che fluttuano in una navicella spaziale senza gravità"
-        />
-        <p>
-          La nostra missione è trasformare il cielo stellato da semplice
-          sfondo a destinazione reale. Dal nostro quartier generale abbiamo
-          progettato esperienze capaci di portare chiunque, dai curiosi agli
-          astronauti provetti, oltre i confini del pianeta. Il nostro
-          obiettivo è proporre una vacanza fuori dal comune.
-        </p>
-      </div>
+    <nav id="breadcrumb"><a href="index.php"><span lang="en">Home</span></a> / Chi siamo</nav>
 
-      <div class="generic-liquid-glass-chi-siamo">
+    <main id="contenuto-chi-siamo">
+      <section class="generic-liquid-glass-chi-siamo">
+        <div class="text-container">
+            <h2>Siamo esploratori, sognatori e sfidiamo l'impossibile</h2>
+            <p>
+            La nostra missione è trasformare il cielo stellato da semplice
+            sfondo a destinazione reale. Dal nostro quartier generale abbiamo
+            progettato esperienze capaci di portare chiunque, dai curiosi agli
+            astronauti provetti, oltre i confini del pianeta. Il nostro
+            obiettivo è proporre una vacanza fuori dal comune.
+            </p>
+        </div>
+            <img
+            class="chi-siamo-img"
+            src="assets/img/Chi_Siamo/persone_fluttuanti.jpg"
+            alt="Persone in vacanza che fluttuano in una navicella spaziale senza gravità"
+            />
+    </section>
+
+    <section class="generic-liquid-glass-chi-siamo">
+        <img
+          class="chi-siamo-img"
+          src="assets/img/Chi_Siamo/avengers.jpg"
+          alt="Coppia ragazzo e ragazza pronti per tornare a casa dopo una vacanza. Persone in primo piano che tengono in mano il biglietto per il viaggio, in sfondo le valigie pronte ad essere caricate su una navicella spaziale."
+        />
+        <div class="text-container">
         <h2>
           E se viaggiare nello spazio fosse come prendere un aereo?
         </h2>
-        <img
-          class="chi-siamo-img"
-          src="assets/img/Chi_Siamo/Coppia_con_biglietto.jpg"
-          alt="Coppia ragazzo e ragazza pronti per tornare a casa dopo una vacanza. Persone in primo piano che tengono in mano il biglietto per il viaggio, in sfondo le valigie pronte ad essere caricate su una navicella spaziale."
-        />
         <p>
           Un gruppo di informatici, piloti galattici e designer interplanetari
           ha deciso di unire le forze per rendere l'Universo un luogo
@@ -107,27 +109,32 @@
           nostri viaggi è un piccolo passo per un uomo, ma un grande passo per
           le tue vacanze.
         </p>
-      </div>
+        </div>
+        
+    </section>
 
-      <div class="generic-liquid-glass-chi-siamo-info-quartier-generale">
-          <h2>Il nostro quartier generale</h2>
+      <section class="generic-liquid-glass-chi-siamo-info-quartier-generale">
+          <h2>Il nostro Quartier Generale</h2>
           <img
+            id="HQ"
             class="chi-siamo-img"
-            src="assets/img/Chi_Siamo/Quartier_Generale.jpg"
+            src="assets/img/Chi_Siamo/Quartier_Generale.jpeg"
             alt="Stazione spaziale con attaccate alcune navi ed altre che stanno arrivando ad attraccare, tipo un porto marittmimo per navicelle nello spazio"
           />
           <p>
-            Entrare nel nostro quartier generale significa sentire
-            immediatamente un misto di meraviglia e tranquillità: il silenzio
-            dello spazio, la vista mozzafiato del pianeta che ruota sotto di te
-            e la sensazione di far parte di qualcosa di più grande.
+            Entrare nel nostro quartier generale significa immergersi in un'atmosfera
+            unica di meraviglia e tranquillità. Superata la soglia, il silenzio dello 
+            spazio avvolge ogni cosa, mentre la vista mozzafiato del pianeta sottostante 
+            riempie l'orizzonte. Camminare tra i giardini rigogliosi delle cupole hi-tech,
+            sospesi nel vuoto cosmico, regala la profonda sensazione di far parte di qualcosa
+            di immensamente più grande.
           </p>
           <div class="info-quartier-generale">
-            <p> 200+ <br> Tecnici di formazione</p>
-            <p> 25 <br> Piloti galattici</p>
-            <p> 1M+ <br> Clienti soddisfatti</p>
+            <div><p> <abbr title="più di 200" class="quantita">200+</abbr></p><p>Tecnici di formazione</p></div>
+            <div><p> <span class="quantita" >25</span> </p><p> Piloti galattici</p></div>
+            <div><p> <abbr title="più di un milione" class="quantita">1 M+</abbr></p><p>Clienti soddisfatti</p></div>
           </div>
-      </div>
+      </section>
     </main>
     
     <footer>

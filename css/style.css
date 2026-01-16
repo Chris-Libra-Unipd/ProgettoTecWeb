@@ -403,7 +403,7 @@ header {
 /*================MAIN HOME====================== */
 /*================MAIN HOME====================== */
 
-#contenuto {
+#contenuto-home {
     width: 1200px;
     margin: 0 auto;
     margin-top: 7em;
@@ -411,14 +411,14 @@ header {
     text-align: center;
 }
 
-#contenuto h3 {
+#contenuto-home h3 {
     text-align: center;
     color: var(--txt-color-not-pure-white);
     font-size: 2.5em;
 }
 
 
-#contenuto h2 {
+#contenuto-home h2 {
     text-align: center;
     font-weight: normal;
 }
@@ -1079,7 +1079,7 @@ footer p {
 }
 
 
-#contenuto-recensione {
+#testo-recensione {
   width: 70%;
   padding: 1.5em;
   font-size: 1rem;
@@ -1098,7 +1098,7 @@ footer p {
     background-color 0.2s ease;
 }
 
-#contenuto-recensione:focus {
+#testo-recensione:focus {
   border-color: var(--txt-color-not-pure-white);
 }
 
@@ -1724,64 +1724,108 @@ blockquote cite{
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
 
+#contenuto-chi-siamo{
+    width: 1200px;
+    margin: 3em auto;
+    height: fit-content;
+    max-width: 90%;
+    color: var(--txt-color-not-pure-white);
+}
+
+#chi-siamo-body{
+    padding-top: 5em;
+}
+
+#chi-siamo-body #breadcrumb{
+    margin: 0em auto;
+    margin-top:2em;
+}
+
 .generic-liquid-glass-chi-siamo {
     display: flex;
-    flex-direction: column;
-    width: 60%;
+    width: 90%;
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 2em;
     color: var(--txt-color-not-pure-white);
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
-    gap: 10px;
-    border-radius: var(--border-radius-box);
-    overflow: hidden;
-    padding: 20px;
-    align-items: center;
+    /*border-radius: var(--border-radius-box);*/
+    border-radius: 7em;
+    padding: 3em 5em;
+    justify-content: space-between;
 }
 
 .generic-liquid-glass-chi-siamo h2 {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    order: 1;
+    font-size:2em;
+    margin-bottom: 1em;
 }
 
-.generic-liquid-glass-chi-siamo p {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    order: 3;
+.text-container{
+    width: 50%;
 }
 
 .chi-siamo-img {
-    width: 100%;
-    max-width: 80%;
+    width: 45%;
     height: auto;
     border-radius: var(--border-radius-box);
-    order: 2;
+}
+
+#HQ{
+    width: 80%;
+    margin-bottom: 2em;
+}
+
+.generic-liquid-glass-chi-siamo-info-quartier-generale h2 {
+    font-size:3em;
+    margin-bottom: 0.5em;
+}
+
+.generic-liquid-glass-chi-siamo-info-quartier-generale p{
+    width: 70%;
+    margin: auto;
+    text-align: center;
 }
 
 .generic-liquid-glass-chi-siamo-info-quartier-generale{
-    width: 60%;
+    width: 90%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: var(--txt-color-not-pure-white);
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
     border-radius: var(--border-radius-box);
-    overflow: hidden;
-    margin-bottom: 40px;
-    padding: 20px;
+    border-radius: 7em;
+    padding: 3em 5em;
+    justify-content: space-between;
 }
-.generic-liquid-glass-chi-siamo-info-quartier-generale .info-quartier-generale{
+
+.info-quartier-generale{
+    width: 97%;
+    margin: auto;
     display: flex;
     color: var(--txt-color-not-pure-white);
     justify-content: center;
-    gap: 40px;
     text-align: center;
-    margin-top: 30px;
+    justify-content: space-around;
+    margin: 1.5em auto;
+}
+
+.info-quartier-generale > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+    margin-top: 1em;
+}
+
+.quantita{
+    font-size: 1.7em;
+    text-decoration: none;
+    color: var(--accent-color);
 }
 
 /* =================== END GIULIO ====================*/

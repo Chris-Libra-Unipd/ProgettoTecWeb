@@ -43,8 +43,10 @@ $valutazione = "";
 $errore = "";
 $esito = "";
 $preview = "";
+$azioni="";
 
 try{
+
     if(!$connessione->openDBConnection()){
         throw new Exception("Errore connessione DB");
     }
@@ -56,51 +58,58 @@ try{
         }
     }
 
+
     $path=$connessione->getMainImg($nomeViaggio);
     $preview = "<img id='imgPreview' src=". $path['url_immagine'] . " alt=''>";
-    $paginaRecensione = str_replace("[PREVIEW]",$preview, $paginaRecensione);
 
     $nomeViaggioInput = "<input type='hidden' name='nomeViaggio' value='".$nomeViaggio."'>";
-    $paginaRecensione = str_replace("[NOME_VIAGGIO]",$nomeViaggio, $paginaRecensione);
-    $paginaRecensione = str_replace("[NOME_VIAGGIO_INPUT]",$nomeViaggioInput, $paginaRecensione);
 
-    // Mostra la pagine di recensione compilata a seguito di
-    // * richiesta modifica recensione da AreaPersonale
-    // * applicazione modifiche recensione
-    // * aggiunta nuova recensione
-    if(isset($_POST['modifica_recensione']) || 
-        isset($_POST['applica_modifiche']) ||
-        isset($_POST['invia_recensione'])){
+    //CRUD
+    if(isset($_POST['applica_modifiche'])){
+        $testoNuovo=$_POST['testo-recensione'];
+        $valutazioneNuova=$_POST['valutazione'];
+        $IDRecensioneModificata = $_POST['IDRecensione'];
 
-        if(isset($_POST['applica_modifiche'])){
-            $testo=$_POST['contenuto-recensione'];
-            $valutazione=$_POST['valutazione'];
-            $IDRecensioneModificata = $_POST['IDRecensione'];
+        checkReviewData($testoNuovo, $valutazioneNuova);
 
-            checkReviewData($testo, $valutazione);
+        $connessione->editReview($IDRecensioneModificata, $testoNuovo, $valutazioneNuova);
 
-            $connessione->editReview($IDRecensioneModificata, $testo, $valutazione);
+        $esito = "<p class='esito' role='alert'>Recensione modificata!</p>";
 
-            $esito = "<p class='esito' role='alert'>Recensione modificata!</p>";
-        }
-        if(isset($_POST['invia_recensione'])){
-            $testo=$_POST['contenuto-recensione'];
-            $valutazione=$_POST['valutazione'];
+        header("Location: AreaPersonale.php");
+        exit();
+    }
+    if(isset($_POST['invia_recensione'])){
+        $testoNuovo=$_POST['testo-recensione'];
+        $valutazioneNuova=$_POST['valutazione'];
 
-            checkReviewData($testo, $valutazione);
+        checkReviewData($testoNuovo, $valutazioneNuova);
 
-            $email = $connessione->getUserInfo($username)['email'];
+        $email = $connessione->getUserInfo($username)['email'];
 
-            $connessione->insertNewReview($email,$nomeViaggio,$testo,$valutazione);
-            $esito = "<p class='esito' role='alert'>Recensione aggiunta!</p>";
-        }
+        $connessione->insertNewReview($email,$nomeViaggio,$testoNuovo,$valutazioneNuova);
+        $esito = "<p class='esito' role='alert'>Recensione aggiunta!</p>";
+
+        header("Location: AreaPersonale.php");
+        exit();
+    }
+    if(isset($_POST['elimina_recensione'])){
+        $IDRecensione = $_POST['IDRecensione'];
+        $connessione->deleteReview($IDRecensione);
+        $esito = "<p class='esito' role='alert'>Recensione eliminata!</p>";
+
+        header("Location: AreaPersonale.php");
+        exit();
+    }
+    
+    // Mostra la pagine di recensione compilata a seguito di richiesta modifica recensione da AreaPersonale
+    if(isset($_POST['modifica_recensione'])){
 
         //compilazione pagina recensione
         $selezioneOpzione = array("","","","","");
 
         $infoRecensione = $connessione->getReview($username, $nomeViaggio);
-        // nel caso di visualizzazione mostra il risultato della query
-        // nel caso di aggiunta e modifica il risultato della query coincide con la recensione appena scritta (poiché max 1 recensione per viaggio)
+      
 
         $testo = $infoRecensione["testo"];
         $selezioneOpzione[intval($infoRecensione["punteggio"])-1] = "selected"; // se la seconda opzione è selezionata si ha ["","selected","","",""]
@@ -120,23 +129,10 @@ try{
         <button type='submit' name='elimina_recensione' class='button-recensione' aria-label='elimina recensione'>ELIMINA</a>
         <button type='submit' name='applica_modifiche' class='button-recensione' aria-label='applica modifiche recensione'>APPLICA MODIFICHE</button>
         ";
-
-        $paginaRecensione = str_replace("[TESTO-RECENSIONE]",$testo, $paginaRecensione);
-        $paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
-        $paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
         
     }
-    //mostra la pagina recensione non compilata a seguito di
-    // * richiesta scrittura nuova recensione da area personale
-    // * eliminazione recensione
-    else if(isset($_POST['scrivi_recensione']) ||
-        isset($_POST['elimina_recensione'])){
-
-        if(isset($_POST['elimina_recensione'])){
-            $IDRecensione = $_POST['IDRecensione'];
-            $connessione->deleteReview($IDRecensione);
-            $esito = "<p class='esito' role='alert'>Recensione eliminata!</p>";
-        }
+    //mostra la pagina recensione non compilata a seguito di richiesta scrittura nuova recensione da area personale
+    else if(isset($_POST['scrivi_recensione'])){
 
         $opzioneValutazione = "
         <option value='' disabled selected>Dacci un voto!</option>
@@ -151,10 +147,6 @@ try{
         <button type='submit' name='invia_recensione' class='button-recensione' aria-label='invia recensione'>INVIA</button>
         ";
 
-        $paginaRecensione = str_replace("[TESTO-RECENSIONE]","", $paginaRecensione);
-        $paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
-        $paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
-        
     }
 }
 catch(Exception $e){
@@ -164,6 +156,12 @@ catch(Exception $e){
 finally{
     $connessione -> closeConnection();
     
+    $paginaRecensione = str_replace("[PREVIEW]",$preview, $paginaRecensione);
+    $paginaRecensione = str_replace("[NOME_VIAGGIO]",$nomeViaggio, $paginaRecensione);
+    $paginaRecensione = str_replace("[NOME_VIAGGIO_INPUT]",$nomeViaggioInput, $paginaRecensione);
+    $paginaRecensione = str_replace("[TESTO-RECENSIONE]",$testo, $paginaRecensione);
+    $paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
+    $paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
     $paginaRecensione = str_replace("[ERRORE]",$errore, $paginaRecensione);
     $paginaRecensione = str_replace("[ESITO]",$esito, $paginaRecensione);
     
