@@ -214,9 +214,16 @@ blockquote{
     flex-direction: column;
 }
 
-.recensione{
-    width: 60%;
+#container-recensioni > h1{
+    border-radius:  2em;
 }
+
+.opinione-recensione{
+    width: 80%;
+    margin: 0em auto;
+    margin-bottom: 1em;
+}
+
 /*======================= END CHRIS =====================*/
 
 /*=======================CUOGO======================*/
@@ -326,54 +333,58 @@ blockquote{
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
-root {
-    --border-radius-box: 15px;
+#contenuto-chi-siamo{
+    max-width: 95%;   
 }
 
-.generic-liquid-glass-chi-siamo {
+.chi-siamo-img{
+    order: 1;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    color: var(--txt-color-not-pure-white);
-    -webkit-backdrop-filter: blur(4.5px);
-    backdrop-filter: blur(4.5px);
-    border: 1px solid var(--border-liquid-glass);
-    gap: 10px;
-    border-radius: var(--border-radius-box);
-    overflow: hidden;
-    margin: auto;
-    margin-bottom: 40px;
-    padding: 20px;
-    align-items: center;
+    max-width: 500px;
 }
 
-.chi-siamo-img {
+.generic-liquid-glass-chi-siamo{
     width: 100%;
-    max-width: 80%;
-    height: auto;
-    border-radius: var(--border-radius-box);
-}
-.generic-liquid-glass-chi-siamo-info-quartier-generale{
-    width: 90%;
-    margin: auto;
-    color: var(--txt-color-not-pure-white);
-    -webkit-backdrop-filter: blur(4.5px);
-    backdrop-filter: blur(4.5px);
-    border: 1px solid var(--border-liquid-glass);
-    border-radius: var(--border-radius-box);
-    overflow: hidden;
-    margin-bottom: 40px;
-    padding: 20px;
+    flex-direction: column;
+    padding: 2em 0.5em;
+    border-radius: 4em;
 }
 
-.generic-liquid-glass-chi-siamo .info-quartier-generale{
-    display: flex;
-    color: var(--txt-color-not-pure-white);
-    justify-content: center;
-    gap: 40px;
+.text-container{
+    order:0;
     text-align: center;
-    margin: auto;
-    margin-top: 30px;
+    margin-bottom: 2em;
 }
+
+.text-container{
+    width: 80%;
+}
+
+.info-quartier-generale{
+    order:3;
+    margin: 0px auto;
+}
+
+#HQ{
+    margin-bottom: 0px;
+    margin-top: 1em;
+}
+
+
+.info-quartier-generale{
+    margin: 0px auto;
+}
+
+.generic-liquid-glass-chi-siamo-info-quartier-generale{
+    width: 100%;
+    padding: 2em 0.5em;
+    border-radius: 4em;
+}
+
+.generic-liquid-glass-chi-siamo-info-quartier-generale h2{
+    text-align: center;
+}
+
+
 
 /* =================== END GIULIO ====================*/
