@@ -10,7 +10,6 @@ require_once "php/dbConnection.php";
 use DB\DBAccess;
 
 $paginaAreapersonale = file_get_contents("AreaPersonale.html");
-$errore = "";
 
 $connessione = new DBAccess();
 
@@ -89,7 +88,7 @@ try{
     }
     }
     else{
-        $stringaViaggi = "<p id='nessun_viaggio_acquistato'> Non hai ancora viaggiato con noi</p>";
+        $stringaViaggi = "<p id='nessun_viaggio_acquistato'> Non hai ancora viaggiato con noi!</p>";
     }
 
     $paginaAreapersonale = str_replace("[LISTA-STORICO-VIAGGI]", $stringaViaggi, $paginaAreapersonale);

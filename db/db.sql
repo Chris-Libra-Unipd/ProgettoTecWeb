@@ -65,7 +65,7 @@ CREATE TABLE Viaggio (
 -- Creazione della tabella RECENSIONE
 -- Relazione (1,1) con Utente e (1,1) con Tipo_Viaggio
 CREATE TABLE Recensione (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     utente_email VARCHAR(255) NOT NULL,
     tipo_viaggio_nome VARCHAR(100) NOT NULL,
     data_recensione DATE NOT NULL,
@@ -323,10 +323,9 @@ VALUES
 -- ======================================================
 -- recensioni
 
-INSERT INTO Recensione(id,utente_email,tipo_viaggio_nome,data_recensione,testo,punteggio)
+INSERT INTO Recensione(utente_email,tipo_viaggio_nome,data_recensione,testo,punteggio)
 VALUES
 (
-    '1',
     'mario.rossi@email.com',
     'Esplorazione Rossa: Marte',
     '2013-04-12',

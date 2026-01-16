@@ -60,18 +60,20 @@
 
         <main id="contenuto">
         <section id="container-recensioni">
-            <h1>NOME VIAGGIO</h1>
+            <h1>[NOME_VIAGGIO]</h1>
+            [PREVIEW]
             <p class="opinione-recensione">La tua opinione per noi è importante!</p>
             <form id="form-recensione" action="recensione.php" method="post">
+                    [NOME_VIAGGIO_INPUT]
                     <textarea name="contenuto-recensione" id="contenuto-recensione" placeholder="Scrivi qui la tua recensione..." rows="5" cols="50">[TESTO-RECENSIONE]</textarea>
                     <select name="valutazione" id="valutazione" aria-label="Valutazione del viaggio" required>
                         [VALUTAZIONE]
                     </select>
-
                     <div id="container-azioni-recensione">
-                        <a href="AreaPersonale.php" class="button-recensione"  aria-label="annulla e torna all'area personale">ANNULLA</a>
-                        [AZIONE]
+                        [AZIONI]
                     </div>
+                    [ERRORE]
+                    [ESITO]
             </form>
         </section>   
         </main>

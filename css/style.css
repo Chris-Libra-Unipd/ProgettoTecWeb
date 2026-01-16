@@ -1043,6 +1043,7 @@ footer p {
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(4.5px);
   border: 1px solid var(--border-liquid-glass);
+  padding-bottom: 1.5em;
 }
 
 #container-recensioni > h1 {
@@ -1051,14 +1052,22 @@ footer p {
   padding: 0.3em 1.5em;
   border-radius: 2em;
   margin: 1em auto;
+  margin-bottom: 0.5em;
   color: var(--txt-color-not-pure-white);
   border: 1px solid var(--border-liquid-glass);
 }
 
+#imgPreview{
+    width: 50%;
+    margin: auto;
+    border-radius: 2em;
+    margin-bottom: 1em;
+}
+
 .opinione-recensione {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
@@ -1067,7 +1076,6 @@ footer p {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1.5em;
 }
 
 
@@ -1107,6 +1115,7 @@ footer p {
   outline: none;
   cursor: pointer;
   box-sizing: border-box;
+  margin: 1.5em auto;
 }
 
 #container-azioni-recensione {
@@ -1117,7 +1126,6 @@ footer p {
   max-width: 40%; 
   gap: 20px;
   box-sizing: border-box;
-  margin-bottom: 1.5em;
 }
 .button-recensione {
   width: 100%;
@@ -1130,8 +1138,19 @@ footer p {
   cursor: pointer;
   transition: 0.2s;
 }
+/* =========== ORDINE DI QUESTE REGOLE IMPORTANTE PER LE PRIORITà ============*/
+.button-recensione{
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
 
-a.button-recensione{
+.button-recensione:hover:not(:disabled){
+    color: var(--bg-color-dark-black);
+    background-color: var(--accent-color);
+    transform: scale(1.07);
+}
+
+.button-recensione[name="elimina_recensione"]{
     color: var(--txt-error-messages);
     border: 1px solid var(--txt-error-messages);    
 
@@ -1140,27 +1159,22 @@ a.button-recensione{
     justify-content: center; 
 }
 
-a.button-recensione:hover{
+.button-recensione[name="elimina_recensione"]:hover{
     color: var(--bg-color-dark-black);
     background-color: var(--txt-error-messages);
     transform: scale(1.1);
 }
-
-button.button-recensione{
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-}
-
-button.button-recensione:hover:not(:disabled){
-    color: var(--bg-color-dark-black);
-    background-color: var(--accent-color);
-    transform: scale(1.07);
-}
-
-button.button-recensione:disabled{
+/* ===========================================================================*/
+.button-recensione:disabled{
     color: var(--txt-color-gray);
     border: 1px solid var(--txt-color-gray);
     transform: scale(0.95);
+}
+
+.esito{
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 1em;    
 }
 
 

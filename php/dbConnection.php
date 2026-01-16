@@ -189,7 +189,7 @@ class DBAccess {
 		$stmt = $this->connection->prepare($query);
 		$stmt->bind_param("s", $username);	// s indica che il valore è una stringa (i per intero)
 		if(!$stmt->execute()){
-			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+			throw new Exception("Errore nel recupero utente ");
 		}
 		$result = $stmt->get_result();
 		$stmt->close();
@@ -199,6 +199,32 @@ class DBAccess {
 		}
 		if($result->num_rows != 1){
 			throw new Exception("Errore, utente duplicato");
+		}
+
+		return $result->fetch_assoc();
+	}
+
+	public function getMainImg($nomeViaggio){
+		$query = "
+			SELECT I.url_immagine 
+			FROM Immagini I 
+			WHERE I.url_immagine LIKE '%i1.jpg' AND
+				I.tipo_viaggio_nome = ?;
+		";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("s", $nomeViaggio);	
+		if(!$stmt->execute()){
+			throw new Exception("Errore nel recuper immagine");
+		}
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows == 0){
+			throw new Exception("Errore, immagine di copertina non trovata");
+		}
+		if($result->num_rows != 1){
+			throw new Exception("Errore, più immagini di copertina per lo stesso viaggio");
 		}
 
 		return $result->fetch_assoc();
@@ -222,7 +248,7 @@ class DBAccess {
 			$stmt = $this->connection->prepare($query);
 			$stmt->bind_param("s", $username);
 			if(!$stmt->execute()){
-				throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+				throw new Exception("Errore nel recupero viaggi");
 			}
 			$queryResult = $stmt->get_result();
 			while($row = mysqli_fetch_assoc($queryResult)){
@@ -245,7 +271,7 @@ class DBAccess {
 		$stmt = $this->connection->prepare($query);
 		$stmt->bind_param("ss", $username, $viaggio);	// s indica che il valore è una stringa (i per intero)
 		if(!$stmt->execute()){
-			throw new Exception("Errore nell'esecuzione della query: " . $stmt->error);
+			throw new Exception("Errore nel recupero recensione");
 		}
 		$result = $stmt->get_result();
 		$stmt->close();
@@ -273,6 +299,48 @@ class DBAccess {
 			if($e->getCode() == -1)
 				throw $e;
 		}
+	}
+
+	public function insertNewReview($email, $nomeViaggio, $testo, $valutazione){
+		$query = "
+			INSERT INTO Recensione(utente_email,tipo_viaggio_nome,data_recensione,testo,punteggio)
+			VALUES ( ?,?,CURRENT_DATE(),?,?);
+		";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("sssi",$email, $nomeViaggio, $testo, $valutazione);
+		if(!$stmt->execute()){
+			throw new Exception("Errore nell'invio recensione"."!".$nomeViaggio."!");
+		}
+		$stmt->close();
+	}
+
+	public function editReview($IdRecensione, $testo, $valutazione){
+		$query = "
+			UPDATE Recensione
+			SET data_recensione = CURRENT_DATE(),
+				testo = ?,
+				punteggio = ?
+			WHERE id = ?;
+		";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("sii",$testo, $valutazione, $IdRecensione);
+		if(!$stmt->execute()){
+			throw new Exception("Errore nella modifica recensione");
+		}
+		$stmt->close();
+	}
+
+	public function deleteReview($IDRecensione){
+		$query = "DELETE FROM Recensione WHERE id = ?";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("i",$IDRecensione);
+		if(!$stmt->execute()){
+			throw new Exception("Errore nella rimozione recensione");
+		}
+		$stmt->close();
 	}
 }
 
