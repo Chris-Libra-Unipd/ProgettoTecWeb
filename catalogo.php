@@ -61,13 +61,13 @@ try {
                 $listaCatalogo .= creaCardViaggio($row);
             }
         } else {
-            $listaCatalogo = "<li><p class='big-message'>Nessun viaggio trovato.</p></li>";
+            $listaCatalogo = "<li><p class='big-message' role='alert'>Nessun viaggio trovato.</p></li>";
         }
     } else {
-        $listaCatalogo = "<li><p class='big-error'>I nostri sistemi stanno avendo problemi, riprova più tardi.</p></li>";
+        $listaCatalogo = "<li><p class='big-error' role='alert'>I nostri sistemi stanno avendo problemi, riprova più tardi.</p></li>";
     }
 } catch(Exception $e) {
-    $listaCatalogo = "<li><p class='big-error'>I nostri sistemi stanno avendo problemi, riprova più tardi.</p></li>";
+    $listaCatalogo = "<li><p class='big-error' role='alert'>I nostri sistemi stanno avendo problemi, riprova più tardi.</p></li>";
 }
 
 $paginaCatalogo = str_replace("[TESTO_RICERCA]", htmlspecialchars($nome), $paginaCatalogo);

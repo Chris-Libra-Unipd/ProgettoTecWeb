@@ -1260,7 +1260,7 @@ button[name="deleteAccount"]{
 }
 
 blockquote{
-    position: absolute;
+    position: fixed;
     color: var(--txt-color-gray);
     font-family: "Inter", "Roboto", sans-serif;
     font-size: 1.5em;
@@ -1397,7 +1397,6 @@ blockquote cite{
     margin-top: 2.5em;
     margin-bottom: 4em;
     color: var(--txt-color-gray);
-    font-size: 0.8em;
 }
 
 #authEscapeLinks > a{
