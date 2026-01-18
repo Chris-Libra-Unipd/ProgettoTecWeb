@@ -35,6 +35,31 @@ try{
     $email=$infoUtente["email"];
     $dataNascita=date("d/m/Y",strtotime($infoUtente["data_nascita"]));//conversione formato data
 
+    //*** Gestione evento acquisto viaggio proveniente da pagina dettaglio
+    if(isset($_POST['idPartenza'])){
+        $IdPartenza = $_POST['idPartenza'];
+        $connessione->checkVoyageExists($IdPartenza);
+        $connessione->buyVoyage($email, $IdPartenza);
+    }
+    //*** 
+    //***Gestione logout
+    if (isset($_POST['logout'])) {
+        session_unset();
+        session_destroy();
+        header('Location: AreaPersonale.php');
+        exit;
+    }
+    //***
+    //***Gestione cancella account
+    if (isset($_POST['deleteAccount'])) {
+        $connessione->deleteAccount($email);
+        session_unset();
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    }
+    //***
+    
     $paginaAreapersonale = str_replace("[USERNAME]", $username, $paginaAreapersonale);
     $paginaAreapersonale = str_replace("[NOME]", $nome, $paginaAreapersonale);
     $paginaAreapersonale = str_replace("[COGNOME]", $cognome, $paginaAreapersonale);

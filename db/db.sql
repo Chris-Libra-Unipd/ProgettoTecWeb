@@ -80,7 +80,7 @@ CREATE TABLE Recensione (
 -- Creazione della tabella PRENOTAZIONE (Relazione Molti-a-Molti)
 -- Collega UTENTE (0,N) e VIAGGIO (0,N)
 CREATE TABLE Prenotazione (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     utente_email VARCHAR(255) NOT NULL,
     viaggio_id INT NOT NULL,
     FOREIGN KEY (utente_email) REFERENCES Utente(email)
@@ -300,20 +300,17 @@ VALUES
 -- ======================================================
 -- prenotazioni
 
-INSERT INTO Prenotazione (id, utente_email, viaggio_id)
+INSERT INTO Prenotazione (utente_email, viaggio_id)
 VALUES
 (
-    '1',
     'mario.rossi@email.com',
     '11'
 ),
 (
-    '2',
     'mario.rossi@email.com',
     '15'
 ),
 (
-    '3',
     'mario.rossi@email.com',
     '14'
 );

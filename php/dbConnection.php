@@ -342,6 +342,54 @@ class DBAccess {
 		}
 		$stmt->close();
 	}
+
+	public function deleteAccount($email){
+		$query = "DELETE FROM Utente WHERE email = ?";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("s",$email);
+		if(!$stmt->execute()){
+			throw new Exception("Errore nella rimozione utente");
+		}
+		$stmt->close();
+	}
+
+	public function checkVoyageExists($idPartenza){
+		$query = "SELECT * FROM Viaggio WHERE id = ?";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query");
+		}
+
+		$stmt->bind_param("i", $idPartenza);
+
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero partenza");		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function buyVoyage($email, $idPartenza){
+		$query = "
+			INSERT INTO Prenotazione (utente_email, viaggio_id) 
+			VALUES (?,?);
+		";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("si",$email, $idPartenza);
+		if(!$stmt->execute()){
+			throw new Exception("Errore nell'acquisto viaggio");
+		}
+		$stmt->close();
+	}
 }
 
 
