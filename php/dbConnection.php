@@ -390,9 +390,177 @@ class DBAccess {
 		}
 		$stmt->close();
 	}
+
+	// =========================== START GIULIO ================================================
+
+	public function getVoyageDescription($nomeViaggio) {
+		$query = "SELECT descrizione FROM Tipo_Viaggio WHERE nome = ? LIMIT 1";
+
+		$stmt = $this->connection->prepare($query);
+		$stmt->bind_param("s", $nomeViaggio);  // 's' indica stringa
+		$stmt->execute();
+		$stmt->bind_result($descrizione);
+		
+		if (!$stmt->fetch()) {
+			$stmt->close();
+			throw new Exception("Viaggio non trovato");
+		}
+		
+		$stmt->close();
+	    return $descrizione;
+	}
+
+	public function getVoyagePeriodDescription($nomeViaggio, $numeroPeriodo) {
+		$offset = (int)($numeroPeriodo - 1);
+
+		$query = "SELECT descrizione
+				FROM Periodo_Itinerario
+				WHERE tipo_viaggio_nome = ?
+				ORDER BY id
+				LIMIT 1 OFFSET $offset";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		$stmt->execute();
+
+		$stmt->bind_result($descrizione);
+		if (!$stmt->fetch()) {
+			$stmt->close();
+			throw new Exception("Periodo viaggio non trovato");
+		}
+
+		$stmt->close();
+		return $descrizione;
+	}
+
+	public function getMainImages($nomeViaggio) {
+		$query = "
+			SELECT url_immagine, alt_text
+			FROM Immagini
+			WHERE tipo_viaggio_nome = ? AND periodo_itinerario_id IS NULL
+			ORDER BY id ASC
+		";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+		$images = [];
+		while ($row = $result->fetch_assoc()) {
+			$images[] = $row;
+		}
+
+		$stmt->close();
+		return $images; // array di array con 'url_immagine' e 'alt_text'
+	}
+
+	public function getPeriodsWithImages($nomeViaggio) {
+		$query = "
+			SELECT 
+				p.id AS periodo_id,
+				p.descrizione AS descrizione_periodo,
+				i.url_immagine,
+				i.alt_text
+			FROM Periodo_Itinerario p
+			LEFT JOIN Immagini i ON i.periodo_itinerario_id = p.id
+			WHERE p.tipo_viaggio_nome = ?
+			ORDER BY p.id ASC
+		";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+		$periodi = [];
+
+		while ($row = $result->fetch_assoc()) {
+			$periodi[] = [
+				'descrizione' => $row['descrizione_periodo'] ?? 'Descrizione non disponibile.',
+				'immagine' => [
+					'url' => $row['url_immagine'] ?? '',
+					'alt' => $row['alt_text'] ?? ''
+				]
+			];
+		}
+
+		$stmt->close();
+		return $periodi; // array di periodi con descrizione + immagine
+	}
+
+	
+	public function getDepartures($nomeViaggio) {
+		$query = "
+			SELECT id, data_inizio, data_fine, prezzo, prezzo_scontato
+			FROM Viaggio
+			WHERE tipo_viaggio_nome = ?
+			ORDER BY data_inizio ASC
+		";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+		$departures = [];
+		while ($row = $result->fetch_assoc()) {
+			$departures[] = $row;
+		}
+
+		$stmt->close();
+		return $departures; // array di partenze
+	}
+
+	public function getReviewsByVoyage($nomeViaggio) {
+		$query = "
+			SELECT 
+				U.username,
+				R.testo,
+				R.punteggio,
+				R.data_recensione
+			FROM Recensione R
+			JOIN Utente U ON R.utente_email = U.email
+			WHERE R.tipo_viaggio_nome = ?
+			ORDER BY R.data_recensione DESC
+		";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+		$reviews = [];
+
+		while ($row = $result->fetch_assoc()) {
+			$reviews[] = $row;
+		}
+
+		$stmt->close();
+		return $reviews; // array di recensioni
+	}
+
+	// =========================== END GIULIO ================================================
 }
-
-
-
 
 ?>

@@ -1702,6 +1702,7 @@ blockquote cite{
 /* =============== RECENSIONI ==============*/
 
 #containerRecensioni{
+    list-style: none;
     display: flex;
     margin:auto;
     width: 70%;
@@ -1718,6 +1719,20 @@ blockquote cite{
     padding:1em 3em;
     font-size: 0.9em;
     transition: 0.5s;
+}
+
+.no-recensioni-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.no-recensioni {
+    width: 50%;
+    border: 1px solid var(--bgButton-color-not-pure-white);
+    border-radius: 3em;
+    margin: 1em auto;
+    text-align: center;
 }
 
 .recensione:hover{
