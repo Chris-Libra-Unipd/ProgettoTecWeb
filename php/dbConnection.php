@@ -515,8 +515,38 @@ class DBAccess {
 		$stmt->close();
 		return $result;
 	}
-
 	
+	public function getAllDepartures($nomeViaggio){
+		$query = "
+			SELECT id, data_inizio, data_fine, prezzo, prezzo_scontato
+			FROM Viaggio
+			WHERE tipo_viaggio_nome = ?
+			ORDER BY data_inizio ASC
+		";
+
+		$stmt = $this->connection->prepare($query);
+		if (!$stmt) {
+			throw new Exception($this->connection->error);
+		}
+
+		$stmt->bind_param("s", $nomeViaggio);
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero partenze");		
+		}
+
+		$result=array();
+
+		$queryResult = $stmt->get_result();
+
+		while($row = mysqli_fetch_assoc($queryResult)){
+			array_push($result, $row);
+		}
+		$queryResult->free();
+
+		$stmt->close();
+		return $result;
+	}
+
 	public function getAvailableDepartures($email, $nomeViaggio) {
 		//sottrae a tutte le partenze di quel viaggio, le partenza già acquistate dall'utente
 		$query = "

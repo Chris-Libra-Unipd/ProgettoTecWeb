@@ -73,6 +73,13 @@ try {
 $paginaCatalogo = str_replace("[TESTO_RICERCA]", htmlspecialchars($nome), $paginaCatalogo);
 $paginaCatalogo = str_replace("[LISTA_CATALOGO]", $listaCatalogo, $paginaCatalogo);
 
+$footerLink="";
+if(isset($_SESSION['username']))
+    $footerLink = "<li><a href='AreaPersonale.php' class='footer-link'>Area Personale</a></li>";
+else
+    $footerLink = "<li><a href='login.php' class='footer-link'>Accedi</a></li>";
+$paginaCatalogo = str_replace("[FOOTER_LINK]", $footerLink, $paginaCatalogo);
+
 echo $paginaCatalogo;
 
 

@@ -24,12 +24,18 @@
             throw new Exception ("Errore di connessione al database");
         }
 
-        $userInfo = $db->getUserInfo($_SESSION['username']);
-        $email=$userInfo['email'];
-
+        if(isset($_SESSION['username'])){
+            $userInfo = $db->getUserInfo($_SESSION['username']);
+            $email=$userInfo['email'];
+        }
 
         //*** Gestione evento acquisto viaggio proveniente da pagina dettaglio
         if(isset($_POST['choice'])){
+            //se non autenticati si reindirizza alla login
+            if(!isset($_SESSION['username'])){
+                header("Location: login.php?");
+                exit();
+            }
             try{
                 $IdPartenza = $_POST['choice'];
                 if(!$db->checkVoyageExists($IdPartenza)){throw new Exception("Viaggio non esistente");}
@@ -51,6 +57,10 @@
 
         if(isset($_GET['viaggio']))
             $nomeViaggio = urldecode($_GET['viaggio']);
+        else{//se viaggio non specificato reindirizza al catalogo
+            header("Location: Catalogo.php?");
+            exit();
+        }
 
         if ($nomeViaggio === null) {
             throw new Exception ("Viaggio non specificato");
@@ -87,8 +97,13 @@
         $paginaDettagli = str_replace("[LISTA_PERIODI]", $periodsString, $paginaDettagli);
 
         // PARTENZE
-
-        $departures = $db->getAvailableDepartures($email, $nomeViaggio);
+        //se autenticati mostra solo le partenze non acquistate
+        //se non autenticati mostra tutte le partenze
+        if(isset($_SESSION['username']))
+            $departures = $db->getAvailableDepartures($email, $nomeViaggio);
+        else{
+            $departures = $db->getAllDepartures($nomeViaggio);
+        }
         $departuresString="";
         foreach ($departures as $i => $dep) {
             //per il formato esteso in italiano
@@ -139,7 +154,7 @@
         }
         if($departuresString == ""){
             $departuresString .= "<p class='no-result'>Nessuna partenza disponibile</p>";
-            $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTO DISATTIVATO</button>";
+            $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTA</button>";
         }
         else{
             $acquista = "<button type='submit' id='buyButton' tabindex='0'>ACQUISTA</button>";
@@ -189,6 +204,14 @@
 
     $db->closeConnection();
     $paginaDettagli = str_replace("[MESSAGGIO]", $messaggio, $paginaDettagli);
+
+    $footerLink="";
+    if(isset($_SESSION['username']))
+        $footerLink = "<li><a href='AreaPersonale.php' class='footer-link'>Area Personale</a></li>";
+    else
+        $footerLink = "<li><a href='login.php' class='footer-link'>Accedi</a></li>";
+    $paginaDettagli = str_replace("[FOOTER_LINK]", $footerLink, $paginaDettagli);
+
     echo $paginaDettagli;
 
 ?>

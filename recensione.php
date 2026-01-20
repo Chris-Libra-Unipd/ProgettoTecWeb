@@ -156,20 +156,27 @@ catch(Exception $e){
     echo $e->getMessage();
     $errore = "<p class='error' role='alert'>" . $e->getMessage() . "</p>";
 }
-finally{
-    $connessione -> closeConnection();
-    
-    $paginaRecensione = str_replace("[PREVIEW]",$preview, $paginaRecensione);
-    $paginaRecensione = str_replace("[NOME_VIAGGIO]",$nomeViaggio, $paginaRecensione);
-    $paginaRecensione = str_replace("[NOME_VIAGGIO_INPUT]",$nomeViaggioInput, $paginaRecensione);
-    $paginaRecensione = str_replace("[TESTO-RECENSIONE]",$testo, $paginaRecensione);
-    $paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
-    $paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
-    $paginaRecensione = str_replace("[ERRORE]",$errore, $paginaRecensione);
-    $paginaRecensione = str_replace("[ESITO]",$esito, $paginaRecensione);
-    
-    echo $paginaRecensione;
-}
+
+$connessione -> closeConnection();
+
+$paginaRecensione = str_replace("[PREVIEW]",$preview, $paginaRecensione);
+$paginaRecensione = str_replace("[NOME_VIAGGIO]",$nomeViaggio, $paginaRecensione);
+$paginaRecensione = str_replace("[NOME_VIAGGIO_INPUT]",$nomeViaggioInput, $paginaRecensione);
+$paginaRecensione = str_replace("[TESTO-RECENSIONE]",$testo, $paginaRecensione);
+$paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
+$paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
+$paginaRecensione = str_replace("[ERRORE]",$errore, $paginaRecensione);
+$paginaRecensione = str_replace("[ESITO]",$esito, $paginaRecensione);
+
+$footerLink="";
+if(isset($_SESSION['username']))
+    $footerLink = "<li><a href='AreaPersonale.php' class='footer-link'>Area Personale</a></li>";
+else
+    $footerLink = "<li><a href='login.php' class='footer-link'>Accedi</a></li>";
+$paginaRecensione = str_replace("[FOOTER_LINK]", $footerLink, $paginaRecensione);
+
+echo $paginaRecensione;
+
 
 
 ?>

@@ -119,10 +119,17 @@ try{
 catch(Exception $e){
     $messaggio = "<p class='messaggio' role='alert'>" . $e->getMessage() . "</p>";
 }
-finally{
-    $paginaAreapersonale = str_replace("[MESSAGGIO]", $messaggio, $paginaAreapersonale);
-    $connessione->closeConnection();
-}
+
+$paginaAreapersonale = str_replace("[MESSAGGIO]", $messaggio, $paginaAreapersonale);
+$connessione->closeConnection();
+
+$footerLink="";
+if(isset($_SESSION['username']))
+    $footerLink = "<li><a href='AreaPersonale.php' class='footer-link'>Area Personale</a></li>";
+else
+    $footerLink = "<li><a href='login.php' class='footer-link'>Accedi</a></li>";
+$paginaAreapersonale = str_replace("[FOOTER_LINK]", $footerLink, $paginaAreapersonale);
+
 
 echo $paginaAreapersonale;
 
