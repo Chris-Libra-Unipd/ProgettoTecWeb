@@ -365,7 +365,32 @@ class DBAccess {
 		$stmt->bind_param("i", $idPartenza);
 
 		if(!$stmt->execute()) {
-			throw new Exception("Errore nel recupero partenza");		}
+			throw new Exception("Errore nel recupero partenza");		
+		}
+
+		$result = $stmt->get_result();
+		$stmt->close();
+
+		if($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function checkAlreadyBought($email, $idPartenza){
+		$query = "SELECT * FROM Prenotazione WHERE utente_email = ? AND viaggio_id =?";
+		
+		$stmt = $this->connection->prepare($query);
+		if(!$stmt) {
+			throw new Exception("Errore nella preparazione della query");
+		}
+
+		$stmt->bind_param("si", $email ,$idPartenza);
+
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel controllo");		
+		}
 
 		$result = $stmt->get_result();
 		$stmt->close();
@@ -388,53 +413,33 @@ class DBAccess {
 		if(!$stmt->execute()){
 			throw new Exception("Errore nell'acquisto viaggio");
 		}
+
+		if(mysqli_affected_rows($this->connection) == 0){
+			throw new Exception("Acquisto non andato a buon fine");
+		}
+
 		$stmt->close();
 	}
 
 	// =========================== START GIULIO ================================================
 
 	public function getVoyageDescription($nomeViaggio) {
-		$query = "SELECT descrizione FROM Tipo_Viaggio WHERE nome = ? LIMIT 1";
+		$query = "SELECT descrizione FROM Tipo_Viaggio WHERE nome = ?";
 
 		$stmt = $this->connection->prepare($query);
-		$stmt->bind_param("s", $nomeViaggio);  // 's' indica stringa
-		$stmt->execute();
+		$stmt->bind_param("s", $nomeViaggio);  
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero partenza");		
+		}		
 		$stmt->bind_result($descrizione);
 		
 		if (!$stmt->fetch()) {
 			$stmt->close();
-			throw new Exception("Viaggio non trovato");
+			throw new Exception("Descrizione viaggio non trovata");
 		}
 		
 		$stmt->close();
 	    return $descrizione;
-	}
-
-	public function getVoyagePeriodDescription($nomeViaggio, $numeroPeriodo) {
-		$offset = (int)($numeroPeriodo - 1);
-
-		$query = "SELECT descrizione
-				FROM Periodo_Itinerario
-				WHERE tipo_viaggio_nome = ?
-				ORDER BY id
-				LIMIT 1 OFFSET $offset";
-
-		$stmt = $this->connection->prepare($query);
-		if (!$stmt) {
-			throw new Exception($this->connection->error);
-		}
-
-		$stmt->bind_param("s", $nomeViaggio);
-		$stmt->execute();
-
-		$stmt->bind_result($descrizione);
-		if (!$stmt->fetch()) {
-			$stmt->close();
-			throw new Exception("Periodo viaggio non trovato");
-		}
-
-		$stmt->close();
-		return $descrizione;
 	}
 
 	public function getMainImages($nomeViaggio) {
@@ -451,23 +456,31 @@ class DBAccess {
 		}
 
 		$stmt->bind_param("s", $nomeViaggio);
-		$stmt->execute();
-
-		$result = $stmt->get_result();
-		$images = [];
-		while ($row = $result->fetch_assoc()) {
-			$images[] = $row;
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero immagini");		
 		}
 
+		$result=array();
+
+		$queryResult = $stmt->get_result();
+		if($queryResult->num_rows == 0){
+			throw new Exception("Nessun immagine disponibile");
+		}
+
+		while($row = mysqli_fetch_assoc($queryResult)){
+			array_push($result, $row);
+		}
+		$queryResult->free();
 		$stmt->close();
-		return $images; // array di array con 'url_immagine' e 'alt_text'
+
+		return $result;
 	}
 
 	public function getPeriodsWithImages($nomeViaggio) {
 		$query = "
 			SELECT 
-				p.id AS periodo_id,
-				p.descrizione AS descrizione_periodo,
+				p.id,
+				p.descrizione,
 				i.url_immagine,
 				i.alt_text
 			FROM Periodo_Itinerario p
@@ -482,31 +495,38 @@ class DBAccess {
 		}
 
 		$stmt->bind_param("s", $nomeViaggio);
-		$stmt->execute();
-
-		$result = $stmt->get_result();
-		$periodi = [];
-
-		while ($row = $result->fetch_assoc()) {
-			$periodi[] = [
-				'descrizione' => $row['descrizione_periodo'] ?? 'Descrizione non disponibile.',
-				'immagine' => [
-					'url' => $row['url_immagine'] ?? '',
-					'alt' => $row['alt_text'] ?? ''
-				]
-			];
+		
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero itinerari");		
 		}
 
+		$result=array();
+
+		$queryResult = $stmt->get_result();
+		if($queryResult->num_rows == 0){
+			throw new Exception("Nessun itinerario disponibile");
+		}
+
+		while($row = mysqli_fetch_assoc($queryResult)){
+			array_push($result, $row);
+		}
+		$queryResult->free();
+
 		$stmt->close();
-		return $periodi; // array di periodi con descrizione + immagine
+		return $result;
 	}
 
 	
-	public function getDepartures($nomeViaggio) {
+	public function getAvailableDepartures($email, $nomeViaggio) {
+		//sottrae a tutte le partenze di quel viaggio, le partenza già acquistate dall'utente
 		$query = "
 			SELECT id, data_inizio, data_fine, prezzo, prezzo_scontato
 			FROM Viaggio
-			WHERE tipo_viaggio_nome = ?
+			WHERE tipo_viaggio_nome = ? AND id NOT IN (
+				SELECT viaggio_id
+				FROM Prenotazione 
+				WHERE utente_email = ?
+			)
 			ORDER BY data_inizio ASC
 		";
 
@@ -515,17 +535,22 @@ class DBAccess {
 			throw new Exception($this->connection->error);
 		}
 
-		$stmt->bind_param("s", $nomeViaggio);
-		$stmt->execute();
-
-		$result = $stmt->get_result();
-		$departures = [];
-		while ($row = $result->fetch_assoc()) {
-			$departures[] = $row;
+		$stmt->bind_param("ss", $nomeViaggio,$email);
+		if(!$stmt->execute()) {
+			throw new Exception("Errore nel recupero partenze");		
 		}
 
+		$result=array();
+
+		$queryResult = $stmt->get_result();
+
+		while($row = mysqli_fetch_assoc($queryResult)){
+			array_push($result, $row);
+		}
+		$queryResult->free();
+
 		$stmt->close();
-		return $departures; // array di partenze
+		return $result;
 	}
 
 	public function getReviewsByVoyage($nomeViaggio) {

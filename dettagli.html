@@ -34,7 +34,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <a href="login.php" id="login-link">ACCEDI</a>
+                    [ACCESSO_LOGIN_DESKTOP]
                     <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
                         <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
                     </button>
@@ -51,7 +51,7 @@
                             <a href="chi_siamo.php" class="menu-link">CHI SIAMO</a>
                         </li>
                         <li>
-                            <a href="login.php" id="login-link-mobile">ACCEDI</a>
+                            [ACCESSO_LOGIN_MOBILE]
                         </li>
                     </ul>
                 </nav>
@@ -60,13 +60,12 @@
 
         <nav id="breadcrumb"><a href="index.php"><span lang="en">Home</span></a> / <a href="catalogo.php">Catalogo</a> / Dettagli Viaggio</nav>
 
+        [MESSAGGIO]
+
         <main id="contenuto-dettagli">
             <h1>[NOME VIAGGIO]</h1>
-            
             <section id="imgScroller" aria-label="immagini">
-                <img class="coverImg" src="[IMG_VIAGGIO_1_URL]" alt="[IMG_VIAGGIO_1_ALT]"/>
-                <img class="coverImg" src="[IMG_VIAGGIO_2_URL]" alt="[IMG_VIAGGIO_2_ALT]"/>
-                <img class="coverImg" src="[IMG_VIAGGIO_3_URL]" alt="[IMG_VIAGGIO_3_ALT]"/>
+                [LISTA_IMMAGINI_PRINCIPALI]
 
                 <div id="swipingController" role="toolbar"> 
                     <button id="prevImg" aria-label="vedi precedente"><img src="assets/icons/prev-arrow.png" width="15px" alt=""/></button>
@@ -81,81 +80,23 @@
 
             <h2>ITINERARIO</h2>
             <ul>
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="[IMG_PERIODO_1_URL]" alt="[IMG_PERIODO_1_ALT]">
-                    <div>
-                        <h3>Periodo 1</h3>
-                        <p>[DESCRIZIONE_PERIODO_VIAGGIO_1]</p>
-                    </div>
-                </li>
-
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="[IMG_PERIODO_2_URL]" alt="[IMG_PERIODO_2_ALT]">
-                    <div>
-                        <h3>Periodo 2</h3>
-                        <p>[DESCRIZIONE_PERIODO_VIAGGIO_2]</p>
-                    </div>
-                </li>
-
-                <li class="itemItinerario">
-                    <img class="itineraryImg" src="[IMG_PERIODO_3_URL]" alt="[IMG_PERIODO_3_ALT]">
-                    <div>
-                        <h3>Periodo 3</h3>
-                        <p>[DESCRIZIONE_PERIODO_VIAGGIO_3]</p>
-                    </div>
-                </li>
+                [LISTA_PERIODI]
             </ul>
 
             <h2>PARTENZE</h2>
-            <form id="containerPartenze"  action="AreaPersonale.php" method="post">
+            <form id="containerPartenze"  action="dettagli.php" method="post">
             <div id="listaPartenze">
-                <label for="choice1" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
-                    <time datetime="2033-12-10" class="dataPartenza">[PARTENZA_1_DATA_INIZIO_FORMAT]</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
-                    <time datetime="2075-05-18" class="dataArrivo">[PARTENZA_1_DATA_FINE_FORMAT]</time>
-                    
-                    <div>
-                        <p>[PARTENZA_1_PREZZO]</p>
-                    </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice1" aria-label="partenza non selezionata"/>
-                </label>
-
-                <label for="choice2" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
-                    <time datetime="2033-12-10" class="dataPartenza">[PARTENZA_2_DATA_INIZIO_FORMAT]</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
-                    <time datetime="2075-05-18" class="dataArrivo">[PARTENZA_2_DATA_FINE_FORMAT]</time>
-                    
-                    <div>
-                        <p>[PARTENZA_2_PREZZO]</p>
-                    </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice2" aria-label="partenza non selezionata"/>
-                </label>
-
-                
-                <label for="choice3" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
-                    <time datetime="2033-12-10" class="dataPartenza">[PARTENZA_3_DATA_INIZIO_FORMAT]</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
-                    <time datetime="2075-05-18" class="dataArrivo">[PARTENZA_3_DATA_FINE_FORMAT]</time>
-                    
-                    <div>
-                        <p>[PARTENZA_3_PREZZO]</p>
-                    </div>
-                    <input type="radio" class="selectionIndicator" name="choice" id="choice3" aria-describedby="partenza non selezionata"/>
-                </label>
+                [LISTA_PARTENZE]
             </div>
 
             <div id="riepilogoAcquisto">
                 <h3>RIEPILOGO</h3>
-                <p>Viaggio: <span>[NOME VIAGGIO]</span></p>
+                <p><span>[NOME VIAGGIO]</span></p>
                 <p>Partenza: <time datetime="2025-12-01" id="riepilogoDataPartenza"></time></p>
                 <p>Ritorno: <time datetime="2045-05-12" id="riepilogoDataArrivo"></time></p>
                 <p>Totale: <span id="riepilogoCosto"></span></p>
                 
-                <button type="submit" id="buyButton" tabindex="0">ACQUISTA</button>
-                <input type="hidden" id="">
+                [AZIONE-ACQUISTA]
             </div>
             </form>
 

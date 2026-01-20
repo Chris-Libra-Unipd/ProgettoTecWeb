@@ -20,6 +20,8 @@ $cognome="";
 $email="";
 $dataNascita="";
 
+$messaggio="";
+
 $listaViaggiAcquistati="";
 $stringaViaggi="";
 
@@ -35,13 +37,9 @@ try{
     $email=$infoUtente["email"];
     $dataNascita=date("d/m/Y",strtotime($infoUtente["data_nascita"]));//conversione formato data
 
-    //*** Gestione evento acquisto viaggio proveniente da pagina dettaglio
-    if(isset($_POST['idPartenza'])){
-        $IdPartenza = $_POST['idPartenza'];
-        $connessione->checkVoyageExists($IdPartenza);
-        $connessione->buyVoyage($email, $IdPartenza);
-    }
-    //*** 
+    if(isset($_GET['messaggio']))
+            $messaggio="<p class='messaggio' roler='alert'>".$_GET['messaggio']."</p>";
+
     //***Gestione logout
     if (isset($_POST['logout'])) {
         session_unset();
@@ -119,9 +117,10 @@ try{
     $paginaAreapersonale = str_replace("[LISTA-STORICO-VIAGGI]", $stringaViaggi, $paginaAreapersonale);
 }
 catch(Exception $e){
-    $errore = "<p class='error' role='alert'>" . $e->getMessage() . "</p>";
+    $messaggio = "<p class='messaggio' role='alert'>" . $e->getMessage() . "</p>";
 }
 finally{
+    $paginaAreapersonale = str_replace("[MESSAGGIO]", $messaggio, $paginaAreapersonale);
     $connessione->closeConnection();
 }
 

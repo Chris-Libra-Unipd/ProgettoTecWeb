@@ -131,9 +131,6 @@ blockquote{
 /* ============ DETAIL PAGE ============*/
 /* ============ DETAIL PAGE ============*/
 /* ============ DETAIL PAGE ============*/
-#contenuto-dettagli{
-    max-width: 97%;
-}
 
 #imgScroller{
     width: 95%;
@@ -141,7 +138,12 @@ blockquote{
 
 #contenuto-dettagli > h1{
     margin: 0.5em auto;
-    border-radius: 0.7em;    
+    border-radius: 1em;    
+    padding: 0.5em;
+    width: 90%;
+}
+
+.opzionePartenza > .dataArrivo, .opzionePartenza > .dataPartenza{
     width: 80%;
 }
 

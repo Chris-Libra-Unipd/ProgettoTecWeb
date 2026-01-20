@@ -14,19 +14,48 @@
         $paginaDettagli = setta_link_login($paginaDettagli);
     }
 
-    $nomeViaggio = urldecode($_GET['viaggio'] ?? null);
-
-    if ($nomeViaggio === null) {
-        die("Viaggio non specificato");
-    }
-    $paginaDettagli = str_replace("[NOME VIAGGIO]", $nomeViaggio, $paginaDettagli);
+    $messaggio="";
+    $email="";
 
     try {
-        // Accesso al database
+         // Accesso al database
         $db = new DBAccess();
         if (!$db->openDBConnection()) {
-            die("Errore di connessione al database");
+            throw new Exception ("Errore di connessione al database");
         }
+
+        $userInfo = $db->getUserInfo($_SESSION['username']);
+        $email=$userInfo['email'];
+
+
+        //*** Gestione evento acquisto viaggio proveniente da pagina dettaglio
+        if(isset($_POST['choice'])){
+            try{
+                $IdPartenza = $_POST['choice'];
+                if(!$db->checkVoyageExists($IdPartenza)){throw new Exception("Viaggio non esistente");}
+                if($db->checkAlreadyBought($email,$IdPartenza)){throw new Exception("Partenza già prenotata");}
+                $db->buyVoyage($email, $IdPartenza);
+
+                //Redirect per seguire il pattern PostRedirectGet per evitare che con il refresh, l'acquisto venga affettuato più volte
+                $queryString=http_build_query(["messaggio"=>"Acquisto effettuato con successo!"]);
+                header("Location: AreaPersonale.php?".$queryString);
+                exit();
+            }
+            catch(Exception $e){
+                $queryString=http_build_query(["messaggio"=>"Impossibile effettuare l'acquisto, partenza selezionata già acquistata"]);
+                header("Location: AreaPersonale.php?".$queryString);
+                exit();
+            }
+        }
+        //*** 
+
+        if(isset($_GET['viaggio']))
+            $nomeViaggio = urldecode($_GET['viaggio']);
+
+        if ($nomeViaggio === null) {
+            throw new Exception ("Viaggio non specificato");
+        }
+        $paginaDettagli = str_replace("[NOME VIAGGIO]", $nomeViaggio, $paginaDettagli);
 
         // Descrizione viaggio
         $descr_viaggio = $db->getVoyageDescription($nomeViaggio);
@@ -34,68 +63,95 @@
 
         // Immagini principali
         $mainImages = $db->getMainImages($nomeViaggio);
-        foreach ($mainImages as $i => $img) {
-            $paginaDettagli = str_replace("[IMG_VIAGGIO_".($i+1)."_URL]", $img['url_immagine'], $paginaDettagli);
-            $paginaDettagli = str_replace("[IMG_VIAGGIO_".($i+1)."_ALT]", $img['alt_text'], $paginaDettagli);
+        $imagesString="";
+        foreach ($mainImages as $img) {
+            $imagesString .= "<img class='coverImg' src='".$img['url_immagine']."' alt='".$img['alt_text']."'/>";
         }
+        $paginaDettagli = str_replace("[LISTA_IMMAGINI_PRINCIPALI]", $imagesString , $paginaDettagli);
 
         // PERIODI E IMMAGINI
         $periods = $db->getPeriodsWithImages($nomeViaggio);
+        $periodsString="";
         foreach ($periods as $i => $periodo) {
             $idx = $i + 1;
-
-            // Descrizione periodo
-            $paginaDettagli = str_replace(
-                "[DESCRIZIONE_PERIODO_VIAGGIO_{$idx}]",
-                $periodo['descrizione'],
-                $paginaDettagli
-            );
-
-            // Immagini periodo
-            $paginaDettagli = str_replace("[IMG_PERIODO_{$idx}_URL]", $periodo['immagine']['url'], $paginaDettagli);
-            $paginaDettagli = str_replace("[IMG_PERIODO_{$idx}_ALT]", $periodo['immagine']['alt'], $paginaDettagli);
+            $periodsString .= "
+                <li class='itemItinerario'>
+                    <img class='itineraryImg' src='".$periodo['url_immagine']."' alt='".$periodo['alt_text']."'>
+                    <div>
+                        <h3>Periodo ".$idx."</h3>
+                        <p>".$periodo['descrizione']."</p>
+                    </div>
+                </li>
+            ";
         }
+        $paginaDettagli = str_replace("[LISTA_PERIODI]", $periodsString, $paginaDettagli);
 
         // PARTENZE
-        $departures = $db->getDepartures($nomeViaggio);
-        foreach ($departures as $i => $dep) {
-            $idx = $i + 1;
-            // DATE
-            $paginaDettagli = str_replace("[PARTENZA_{$idx}_DATA_INIZIO]", date("Y-m-d", strtotime($dep['data_inizio'])), $paginaDettagli);
-            $paginaDettagli = str_replace("[PARTENZA_{$idx}_DATA_INIZIO_FORMAT]", date("d F Y", strtotime($dep['data_inizio'])), $paginaDettagli);
-            $paginaDettagli = str_replace("[PARTENZA_{$idx}_DATA_FINE]", date("Y-m-d", strtotime($dep['data_fine'])), $paginaDettagli);
-            $paginaDettagli = str_replace("[PARTENZA_{$idx}_DATA_FINE_FORMAT]", date("d F Y", strtotime($dep['data_fine'])), $paginaDettagli);
 
+        $departures = $db->getAvailableDepartures($email, $nomeViaggio);
+        $departuresString="";
+        foreach ($departures as $i => $dep) {
+            //per il formato esteso in italiano
+            $mesi_it = [
+                1 => "gennaio", 2 => "febbraio", 3 => "marzo", 4 => "aprile",
+                5 => "maggio", 6 => "giugno", 7 => "luglio", 8 => "agosto",
+                9 => "settembre", 10 => "ottobre", 11 => "novembre", 12 => "dicembre"
+            ];
+                        
+            $dataInizio = strtotime($dep['data_inizio']);
+            $dataFine =  strtotime($dep['data_fine']);
+
+            $dataInizioITA = date("d",$dataInizio) ." ". $mesi_it[(int)date("n",$dataInizio)] ." ". date("Y",$dataInizio) ;
+            $dataFineITA = date("d",$dataFine) ." ". $mesi_it[(int)date("n",$dataFine)] ." ". date("Y",$dataFine) ;
+
+            $idx = $i + 1;
+            $departuresString .="
+                <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>
+                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35px' alt='Data partenza'/>
+                    <time datetime='".$dep['data_inizio']."' class='dataPartenza'>".$dataInizioITA."</time>
+                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35px' alt='Data arrivo'/>
+                    <time datetime='".$dep['data_fine']."' class='dataArrivo'>".$dataFineITA."</time>
+            ";
             // PREZZO
-            $prezzo = "";
             if (!empty($dep['prezzo_scontato']) && $dep['prezzo_scontato'] < $dep['prezzo']) {
                 $percent = round(
                     (($dep['prezzo'] - $dep['prezzo_scontato']) / $dep['prezzo']) * 100
                 );
 
-                $prezzo = '
-                    <p class="costoIniziale"> Prezzo :'
-                        . number_format($dep['prezzo'], 0, ',', '.') . '€
-                    </span>
-                    <span class="sconto">-' . $percent . '%</p>
-                    <p class="costoFinale"> Prezzo scontato :' 
-                        . number_format($dep['prezzo_scontato'], 0, ',', '.') . '€
-                    </p>';
-
+                $departuresString .="
+                    <div>
+                        <p>Prezzo: <span class='costoIniziale'>".number_format($dep['prezzo'],0,",",".")."€</span><span class='sconto'>Sconto ".$percent."%</span></p>
+                        <p>Prezzo finale: <span class='costoFinale'>".number_format($dep['prezzo_scontato'],0,",",".")."€</span></p>
+                    </div>
+                ";
+                
             } else {
-
-                $prezzo = '<p class="costoFinale"> Prezzo :'
-                    . number_format($dep['prezzo'], 0, ',', '.') . '€</p>';
+                $departuresString .="
+                    <div>
+                        <p>Prezzo: <span class='costoFinale'>".number_format($dep['prezzo'],0,",",".")."€</span></p>
+                    </div>
+                ";
             }
-
-            $paginaDettagli = str_replace("[PARTENZA_{$idx}_PREZZO]", $prezzo, $paginaDettagli);
-
-
+            $departuresString .=" 
+                <input type='radio' class='selectionIndicator' name='choice' id='"."choice{$idx}"."' value='".$dep['id']."' aria-label='partenza non selezionata'/>
+                </label>
+            ";
         }
+        if($departuresString == ""){
+            $departuresString .= "<p class='no-result'>Nessuna partenza disponibile</p>";
+            $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTO DISATTIVATO</button>";
+        }
+        else{
+            $acquista = "<button type='submit' id='buyButton' tabindex='0'>ACQUISTA</button>";
+        }
+        $paginaDettagli = str_replace("[LISTA_PARTENZE]", $departuresString, $paginaDettagli);
+        $paginaDettagli = str_replace("[AZIONE-ACQUISTA]", $acquista, $paginaDettagli);
+
 
         // RECENSIONI
         $recensioniHTML = "";
         $recensioni = $db->getReviewsByVoyage($nomeViaggio);
+
         if (count($recensioni) > 0) {
             foreach ($recensioni as $rec) {
                 $username = htmlspecialchars($rec['username']);
@@ -118,8 +174,8 @@
             }
         } else {
             $recensioniHTML = "
-                <li class=\"no-recensioni-wrapper\">
-                    <p class=\"no-recensioni\">Nessuna recensione disponibile per questo viaggio.</p>
+                <li class=\"no-result-wrapper\">
+                    <p class=\"no-result\">Nessuna recensione disponibile per questo viaggio.</p>
                 </li>
             ";
         }
@@ -128,9 +184,11 @@
 
 
     } catch(Exception $e) {
-        $descr_viaggio = "<li><p class='big-error' role='alert'>Viaggio non trovato in database.</p></li>";
+        $messaggio = "<p class='messaggio' role='alert'>" . $e->getMessage() . "</p>";
     }
 
+    $db->closeConnection();
+    $paginaDettagli = str_replace("[MESSAGGIO]", $messaggio, $paginaDettagli);
     echo $paginaDettagli;
 
 ?>

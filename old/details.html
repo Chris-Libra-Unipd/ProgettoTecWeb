@@ -8,12 +8,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="css/mini_style.css" media="screen and (max-width: 900px)">
         <title>Nova Frontiers</title>
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-        <script src="js/scriptMenu.js" defer></script>
-        <script src="js/scriptDetails.js" defer></script>
+        <script src="../js/scriptMenu.js" defer></script>
+        <script src="../js/scriptDetails.js" defer></script>
     </head>
     <body id="details-body">
         <a href="#contenuto-dettagli" class="aiuti-navigazione">Salta al contenuto</a>
@@ -39,7 +39,7 @@
                     </nav>
                     <a href="login.html" id="login-link">ACCEDI</a>
                     <button id="button-menu-mobile" aria-label="apri chiudi menu mobile">
-                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="assets/icons/apri_chiudi_menu_mobile.svg" alt="">
+                        <img id="image-button-menu-mobile" class="image-button-menu-mobile-chiuso" src="../assets/icons/apri_chiudi_menu_mobile.svg" alt="">
                     </button>
                 </div>
                 <nav id="menu-mobile" class="menu-mobile-chiuso-bassa-spec menu-mobile-aperto-alta-spec" aria-label="menu di navigazione">
@@ -67,14 +67,14 @@
             <h1>NOME VIAGGIO</h1>
             
             <section id="imgScroller" aria-label="immagini">
-                <img class="coverImg" src="assets/img/t0.jpg" alt=""/>
-                <img class="coverImg" src="assets/img/t1.jpeg" alt=""/>
-                <img class="coverImg" src="assets/img/t5.jpg" alt=""/>
+                <img class="coverImg" src="../assets/img/t0.jpg" alt=""/>
+                <img class="coverImg" src="../assets/img/t1.jpeg" alt=""/>
+                <img class="coverImg" src="../assets/img/t5.jpg" alt=""/>
 
                 <div id="swipingController" role="toolbar"> 
-                    <button id="prevImg" aria-label="vedi precedente"><img src="assets/icons/prev-arrow.png" width="15px" alt=""/></button>
+                    <button id="prevImg" aria-label="vedi precedente"><img src="../assets/icons/prev-arrow.png" width="15px" alt=""/></button>
                     <span id="imgIndex">1/3</span>
-                    <button id="nextImg" aria-label="vedi successiva"><img src="assets/icons/next-arrow.png" width="15px" alt=""/></button>
+                    <button id="nextImg" aria-label="vedi successiva"><img src="../assets/icons/next-arrow.png" width="15px" alt=""/></button>
                 </div>
             </section>
 
@@ -85,7 +85,7 @@
             <h2>ITINERARIO</h2>
             <ul>
                 <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <img class="itineraryImg" src="../assets/img/t2.jpg" alt="">
                     <div>
                     <h3>Periodo 1</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ld do eiusmod tempor incididu</p>
@@ -93,7 +93,7 @@
                 </li>
 
                 <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <img class="itineraryImg" src="../assets/img/t2.jpg" alt="">
                     <div>
                     <h3>Periodo 2</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
@@ -101,7 +101,7 @@
                 </li>
 
                 <li class="itemItinerario">
-                    <img class="itineraryImg" src="assets/img/t2.jpg" alt="">
+                    <img class="itineraryImg" src="../assets/img/t2.jpg" alt="">
                     <div>
                     <h3>Periodo 3</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -113,9 +113,9 @@
             <form id="containerPartenze"  action="" method="">
             <div id="listaPartenze">
                 <label for="choice1" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <img class="calendar-icon" src="../assets/icons/calendar.png" width="35px" alt="Data partenza"/>
                     <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <img class="arrow-icon" src="../assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
                     <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
                     
                     <div>
@@ -125,9 +125,9 @@
                 </label>
 
                 <label for="choice2" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <img class="calendar-icon" src="../assets/icons/calendar.png" width="35px" alt="Data partenza"/>
                     <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <img class="arrow-icon" src="../assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
                     <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
                     
                     <div>
@@ -139,10 +139,10 @@
 
                 
                 <label for="choice3" class="opzionePartenza" tabindex="0">
-                    <img class="calendar-icon" src="assets/icons/calendar.png" width="35px" alt="Data partenza"/>
-                    <time datetime="2033-12-10" class="dataPartenza">10 Dicembre 2033</time>
-                    <img class="arrow-icon" src="assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
-                    <time datetime="2075-05-18" class="dataArrivo">18 Maggio 2075</time>
+                    <img class="calendar-icon" src="../assets/icons/calendar.png" width="35px" alt="Data partenza"/>
+                    <time datetime="2033-12-10" class="dataPartenza">10 Maggio 2033</time>
+                    <img class="arrow-icon" src="../assets/icons/right-arrow.png" width="35px" alt="Data arrivo"/>
+                    <time datetime="2075-05-18" class="dataArrivo">18 Aprile 2075</time>
                     
                     <div>
                         <p>Prezzo: <span class="costoFinale">5.000.000€</span></p>
@@ -165,7 +165,7 @@
             <h2>RECENSIONI</h2>
             <ul id="containerRecensioni" aria-label="lista recensioni">
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <img src="../assets/icons/user.png" class="userIcon" alt="" />
                     <h3>Paperon de Paperoni</h3>
                     <p class="valutazione">4/5</p>
                     <p>Servizio impeccabile, vista indimenticabile del cuore di Plutone. Lusso spaziale senza precedenti. Esperienza di vita, vale il prezzo!</p>
@@ -173,7 +173,7 @@
                 </li>
 
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <img src="../assets/icons/user.png" class="userIcon" alt="" />
                     <h3>Il Ranzi</h3>
                     <p class="valutazione" >4/5</p>
                     <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
@@ -181,7 +181,7 @@
                 </li>
 
                 <li class="recensione">
-                    <img src="assets/icons/user.png" class="userIcon" alt="" />
+                    <img src="../assets/icons/user.png" class="userIcon" alt="" />
                     <h3>Il Ranzi</h3>
                     <p class="valutazione" >4/5</p>
                     <p>Cucina e comfort incredibili. Il viaggio è molto lungo, ma l'arrivo sulla Sputnik Planitia ripaga. Quattro stelle per l'attesa
@@ -191,7 +191,7 @@
         </main>
         <footer>
             <button id="button-torna-su">
-                <img src="assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
+                <img src="../assets/icons/torna_su.svg" id="img-button-torna-su" alt="">
             </button>
             <div id="footer-mid-container">
                 <div id="footer-navigazione-container">

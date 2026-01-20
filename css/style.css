@@ -986,6 +986,7 @@ footer p {
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
+
 }
 
 .card-container-viaggi{
@@ -1055,6 +1056,17 @@ button[name="deleteAccount"]{
     border: 1px solid var(--txt-error-messages);    
 }
 
+.messaggio{
+    margin: auto;
+    background-color: var(--txt-color-dark-gray);
+    color: rgb(235, 235, 0);
+    border: 1px solid rgb(235, 235, 0);
+    padding: 0.5em 1em;
+    border-radius: 4em;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 1.5em;
+}
 
 /* PAGINA RECENSIONI */
 #recensione-page {
@@ -1469,6 +1481,7 @@ blockquote cite{
 
 
 #contenuto-dettagli > h1{
+    box-sizing: border-box;
     text-align: center;
     background-color: var(--bg-color-auth-form);
     margin: 1.2em auto;
@@ -1477,6 +1490,7 @@ blockquote cite{
     border-radius: 3em;
     font-size:2.5em;
     transition: 1s;
+    padding: 0.5em 1em;
 }
 
 
@@ -1593,8 +1607,10 @@ blockquote cite{
     padding-right: 1em;
     margin-right: 1em;
 }
-.costoInziale{
-    display: inline;
+
+.opzionePartenza > .dataArrivo, .opzionePartenza > .dataPartenza{
+    width: 20%;
+    text-align: center;
 }
 
 .costoIniziale{
@@ -1664,11 +1680,13 @@ blockquote cite{
 }
 
 #riepilogoAcquisto > p{
+    text-align: center;
     margin-bottom: 0.5em;
 }
 
 #riepilogoAcquisto span, #riepilogoAcquisto time{
     font-size: 1.2em;
+    font-weight: bold;
 }
 
 #buyButton{
@@ -1682,7 +1700,7 @@ blockquote cite{
     border-radius: 2em;
     border: none;
     outline: none;
-    padding: 0.5em 0em;
+    padding: 0.5em 0.5em;
     background-color: var(--accent-color);
 }
 
@@ -1721,18 +1739,19 @@ blockquote cite{
     transition: 0.5s;
 }
 
-.no-recensioni-wrapper {
+.no-result-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.no-recensioni {
+.no-result {
     width: 50%;
     border: 1px solid var(--bgButton-color-not-pure-white);
     border-radius: 3em;
     margin: 1em auto;
     text-align: center;
+    padding: 0.5em 1em;
 }
 
 .recensione:hover{

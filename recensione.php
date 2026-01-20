@@ -76,7 +76,8 @@ try{
 
         $esito = "<p class='esito' role='alert'>Recensione modificata!</p>";
 
-        header("Location: AreaPersonale.php");
+        $queryString=http_build_query(["messaggio"=>"Recensione modificatata con successo!"]);
+        header("Location: AreaPersonale.php?".$queryString);
         exit();
     }
     if(isset($_POST['invia_recensione'])){
@@ -90,7 +91,8 @@ try{
         $connessione->insertNewReview($email,$nomeViaggio,$testoNuovo,$valutazioneNuova);
         $esito = "<p class='esito' role='alert'>Recensione aggiunta!</p>";
 
-        header("Location: AreaPersonale.php");
+        $queryString=http_build_query(["messaggio"=>"Recensione inviata!"]);
+        header("Location: AreaPersonale.php?".$queryString);
         exit();
     }
     if(isset($_POST['elimina_recensione'])){
@@ -98,7 +100,8 @@ try{
         $connessione->deleteReview($IDRecensione);
         $esito = "<p class='esito' role='alert'>Recensione eliminata!</p>";
 
-        header("Location: AreaPersonale.php");
+        $queryString=http_build_query(["messaggio"=>"Recensione eliminata con successo!"]);
+        header("Location: AreaPersonale.php?".$queryString);
         exit();
     }
     

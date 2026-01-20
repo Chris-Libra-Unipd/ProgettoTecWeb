@@ -41,7 +41,7 @@ function creaCardViaggio($row) {
             <p><span>a partire da: </span>$prezzo € $scontoHtml</p>
         </div>
         <div class=\"link-dettagli-container\">
-            <a href=\"dettagli.php?viaggio=".urlencode($nome)."\" class=\"dettagli-viaggio-link\">scopri<span class=\"sr-only\">$nome</span></a>
+            <a href=\"dettagli.php?viaggio=".urlencode($nome)."\" class=\"dettagli-viaggio-link\">SCOPRI<span class=\"sr-only\">$nome</span></a>
         </div>
     </li>
     ";
