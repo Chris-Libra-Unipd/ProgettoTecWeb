@@ -31,15 +31,17 @@
 
         //*** Gestione evento acquisto viaggio proveniente da pagina dettaglio
         if(isset($_POST['choice'])){
+            $IdPartenza = $_POST['choice'];
             //se non autenticati si reindirizza alla login
             if(!isset($_SESSION['username'])){
                 header("Location: login.php?");
                 exit();
             }
-            try{
-                $IdPartenza = $_POST['choice'];
-                if(!$db->checkVoyageExists($IdPartenza)){throw new Exception("Viaggio non esistente");}
-                if($db->checkAlreadyBought($email,$IdPartenza)){throw new Exception("Partenza già prenotata");}
+
+            try {
+                if(!$db->checkVoyageExists($IdPartenza)){
+                    throw new Exception("Viaggio non esistente");
+                }
                 $db->buyVoyage($email, $IdPartenza);
 
                 //Redirect per seguire il pattern PostRedirectGet per evitare che con il refresh, l'acquisto venga affettuato più volte
@@ -47,13 +49,16 @@
                 header("Location: AreaPersonale.php?".$queryString);
                 exit();
             }
-            catch(Exception $e){
-                $queryString=http_build_query(["messaggio"=>"Impossibile effettuare l'acquisto, partenza selezionata già acquistata"]);
+            catch (Exception $e) {
+                // qualunque altro errore
+                $queryString = http_build_query([
+                    "messaggio" => "Errore durante l'acquisto del viaggio"
+                ]);
                 header("Location: AreaPersonale.php?".$queryString);
                 exit();
             }
         }
-        //*** 
+        //***
 
         if(isset($_GET['viaggio']))
             $nomeViaggio = urldecode($_GET['viaggio']);
@@ -153,7 +158,7 @@
             ";
         }
         if($departuresString == ""){
-            $departuresString .= "<p class='no-result'>Nessuna partenza disponibile</p>";
+            $departuresString .= "<p class='no-result'>Nessuna partenza disponibile.</p>";
             $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTA</button>";
         }
         else{

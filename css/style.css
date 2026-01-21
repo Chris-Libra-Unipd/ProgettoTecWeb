@@ -1753,7 +1753,8 @@ blockquote cite{
     width: 50%;
     border: 1px solid var(--bgButton-color-not-pure-white);
     border-radius: 3em;
-    margin: 1em auto;
+    margin: auto;
+    margin-top: 6em;
     text-align: center;
     padding: 0.5em 1em;
 }

@@ -83,6 +83,8 @@ CREATE TABLE Prenotazione (
     id INT PRIMARY KEY AUTO_INCREMENT,
     utente_email VARCHAR(255) NOT NULL,
     viaggio_id INT NOT NULL,
+    CONSTRAINT unique_prenotazione
+        UNIQUE (utente_email, viaggio_id),
     FOREIGN KEY (utente_email) REFERENCES Utente(email)
         ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (viaggio_id) REFERENCES Viaggio(id)
