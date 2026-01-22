@@ -18,11 +18,6 @@ a:visited:after {
     display: none !important;
   }
 
-  #breadcrumb-catalogo,
-  #breadcrumb {
-    display: none !important;
-  }
-
   #container-ricerca {
     display: none !important;
   }
