@@ -30,3 +30,17 @@ a:visited:after {
   #footer-contatti-container{
     display: none !important;
   }
+
+  .img-lista-programma,
+  .chi-siamo-img,
+  #immagine-404,
+  #planet-desktop{
+    display: none !important;
+  }
+
+  .liquid-glass-container-informazioni-account-icon img,
+  #container-lista-viaggi img,
+  #cards-list-container img{
+  display: none !important;
+}
+
