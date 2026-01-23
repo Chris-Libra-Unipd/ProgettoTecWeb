@@ -112,7 +112,7 @@ INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
 VALUES 
 (1, 'Grande Tour di Nettuno', 'Arrivo e Inserimento Orbitale: Avvicinamento al pianeta blu profondo e stabilizzazione nell''orbita alta per ammirare gli anelli scuri.'),
 (2, 'Grande Tour di Nettuno', 'Discesa nella Termosfera: Un tuffo controllato negli strati esterni dell''atmosfera per osservare i venti supersonici.'),
-(3, 'Grande Tour di Nettuno', 'Spedizione su Tritone: Atterraggio sulla luna ghiacciata per osservare i geyser di azoto liquido.');
+(3, 'Grande Tour di Nettuno', 'Spedizione su Tritone: Atterraggio sulla luna ghiacciata per osservare i <span lang="en">geyser</span> di azoto liquido.');
 
 -- 3. Inserimento delle IMMAGINI (Totale 6)
 
@@ -199,7 +199,7 @@ INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
 VALUES 
 (7, 'Anelli di Saturno: Il Signore degli Anelli', 'Slalom negli Anelli: Navigazione di precisione tra le particelle di ghiaccio degli anelli A e B, con vista mozzafiato sulla divisione di Cassini.'),
 (8, 'Anelli di Saturno: Il Signore degli Anelli', 'Atterraggio su Titano: Esplorazione con sottomarino nei laghi di idrocarburi liquidi sotto la spessa atmosfera arancione.'),
-(9, 'Anelli di Saturno: Il Signore degli Anelli', 'Sorvolo di Encelado: Passaggio attraverso i pennacchi di vapore acqueo emessi dai geyser del polo sud di questa luna ghiacciata.');
+(9, 'Anelli di Saturno: Il Signore degli Anelli', 'Sorvolo di Encelado: Passaggio attraverso i pennacchi di vapore acqueo emessi dai <span lang="en">geyser</span> del polo sud di questa luna ghiacciata.');
 
 -- 3. Inserimento delle IMMAGINI (Cartella v3, path corretto: assets)
 
@@ -268,6 +268,96 @@ VALUES
 (19, 'Orizzonte degli Eventi: Cigno X-1', 1200000.00, NULL, '2151-02-01', '2151-02-15'),
 (20, 'Orizzonte degli Eventi: Cigno X-1', 1500000.00, NULL, '2151-07-10', '2151-07-25'),
 (21, 'Orizzonte degli Eventi: Cigno X-1', 1200000.00, NULL, '2151-11-05', '2151-11-20');
+
+
+-- =======================================================
+-- VIAGGIO 5: LA LUNA (Cartella v5)
+-- =======================================================
+
+-- 1. Inserimento del TIPO DI VIAGGIO
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
+VALUES (
+    'Luna: un nuovo volto',
+    'Goditi la vista più bella della Terra dal nostro resort nel Mare della Tranquillità. Un mix perfetto di relax a bassa gravità e tour storici nei luoghi dei primi allunaggi.',
+    7
+);
+
+-- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
+-- IDs progressivi: 13, 14, 15
+INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
+VALUES 
+(13, 'Luna: un nuovo volto', 'Sulle orme di Apollo 11: Visita guidata al sito storico originale del 1969, preservato sotto una cupola di vetro protettiva.'),
+(14, 'Luna: un nuovo volto', 'Cena "Earthrise": Esperienza gastronomica gourmet in una cupola panoramica mentre la Terra sorge all''orizzonte lunare.'),
+(15, 'Luna: un nuovo volto', 'Il Lato Oscuro: Escursione in rover sul lato nascosto della Luna per un''osservazione stellare priva di qualsiasi inquinamento luminoso terrestre.');
+
+-- 3. Inserimento delle IMMAGINI (Cartella v5 - Serie 500)
+
+-- A. Tre immagini associate al TIPO_VIAGGIO
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(501, 'Il resort lunare con la Terra sullo sfondo', './assets/img/viaggi/v5/i1.jpg', 'Luna: un nuovo volto', NULL),
+(502, 'Piscina a bassa gravità all interno dell hotel', './assets/img/viaggi/v5/i2.jpg', 'Luna: un nuovo volto', NULL),
+(503, 'Turisti che camminano sulla superficie grigia', './assets/img/viaggi/v5/i3.jpg', 'Luna: un nuovo volto', NULL);
+
+-- B. Una immagine per ogni PERIODO_ITINERARIO
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(504, 'Il modulo lunare Eagle originale protetto dalla cupola', './assets/img/viaggi/v5/p1.jpg', NULL, 13),
+(505, 'Vista della Terra crescente da un tavolo ristorante', './assets/img/viaggi/v5/p2.jpg', NULL, 14),
+(506, 'Il cielo stellato densissimo visto dal lato oscuro', './assets/img/viaggi/v5/p3.jpg', NULL, 15);
+
+-- 4. Inserimento di 3 istanze di VIAGGIO
+-- IDs progressivi: 22, 23, 24
+INSERT INTO Viaggio (id, tipo_viaggio_nome, prezzo, prezzo_scontato, data_inizio, data_fine)
+VALUES 
+(22, 'Luna: un nuovo volto', 80000.00, 75000.00, '2150-07-01', '2150-07-07'),
+(23, 'Luna: un nuovo volto', 95000.00, NULL, '2150-12-24', '2150-12-31'), -- Natale sulla Luna
+(24, 'Luna: un nuovo volto', 80000.00, 60000.00, '2151-02-14', '2151-02-21'); -- San Valentino
+
+
+-- =======================================================
+-- VIAGGIO 6: GIOVE (Cartella v6)
+-- =======================================================
+
+-- 1. Inserimento del TIPO DI VIAGGIO
+INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
+VALUES (
+    'Giove: Il Re dei Pianeti',
+    'Un safari spaziale nel sistema gioviano. Osserva la Grande Macchia Rossa da vicino, evita i vulcani attivi di Io e cerca forme di vita nell''oceano sotterraneo di Europa.',
+    20
+);
+
+-- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
+-- IDs progressivi: 16, 17, 18
+INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
+VALUES 
+(16, 'Giove: Il Re dei Pianeti', 'L''Occhio del Ciclone: Sorvolo a bassa quota della Grande Macchia Rossa, una tempesta più grande della Terra intera.'),
+(17, 'Giove: Il Re dei Pianeti', 'I Vulcani di Io: Navigazione pericolosa tra le nubi di zolfo e le eruzioni costanti della luna più geologicamente attiva del sistema.'),
+(18, 'Giove: Il Re dei Pianeti', 'Perforazione su Europa: Atterraggio sulla crosta ghiacciata e utilizzo di droni sottomarini per esplorare l''oceano sottostante.');
+
+-- 3. Inserimento delle IMMAGINI (Cartella v6 - Serie 600)
+
+-- A. Tre immagini associate al TIPO_VIAGGIO
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(601, 'Giove e le sue lune visti da lontano', './assets/img/viaggi/v6/i1.jpg', 'Giove: Il Re dei Pianeti', NULL),
+(602, 'La stazione spaziale orbitante attorno a Giove', './assets/img/viaggi/v6/i2.jpg', 'Giove: Il Re dei Pianeti', NULL),
+(603, 'Dettaglio delle bande nuvolose colorate', './assets/img/viaggi/v6/i3.jpg', 'Giove: Il Re dei Pianeti', NULL);
+
+-- B. Una immagine per ogni PERIODO_ITINERARIO
+INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
+VALUES
+(604, 'La Grande Macchia Rossa vista dall alto', './assets/img/viaggi/v6/p1.jpg', NULL, 16),
+(605, 'Eruzione vulcanica su Io', './assets/img/viaggi/v6/p2.jpg', NULL, 17),
+(606, 'Il ghiaccio azzurro di Europa con crepe scure', './assets/img/viaggi/v6/p3.jpg', NULL, 18);
+
+-- 4. Inserimento di 3 istanze di VIAGGIO
+-- IDs progressivi: 25, 26, 27
+INSERT INTO Viaggio (id, tipo_viaggio_nome, prezzo, prezzo_scontato, data_inizio, data_fine)
+VALUES 
+(25, 'Giove: Il Re dei Pianeti', 350000.00, 320000.00, '2150-10-01', '2150-10-20'),
+(26, 'Giove: Il Re dei Pianeti', 380000.00, NULL, '2151-03-15', '2151-04-05'),
+(27, 'Giove: Il Re dei Pianeti', 350000.00, 299000.00, '2151-08-01', '2151-08-20');
 
 
 -- =======================================================
