@@ -4,6 +4,8 @@ const dataNascita = document.getElementById("dataNascita");
 const email = document.getElementById("email");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
+const formRegistrazione = document.getElementsByTagName("form")[0];
+
 
 function showError(element, message) {
     element.innerHTML = message;
@@ -102,9 +104,23 @@ function checkPassword(){
     return 1;
 }
 
+function preventSubmit(event) {
+    const errori = document.getElementsByClassName("shownError");
+    if(errori.length > 0) {
+        event.preventDefault();
+        const errorP = document.createElement("p");
+        errorP.classList.add("error");
+        errorP.setAttribute("role", "alert");
+        errorP.innerText = "Errori nei campi inseriti, si prega di ricontrollare";
+        formRegistrazione.insertBefore(errorP, formRegistrazione.firstChild);
+        return;
+    }
+}
+
 nome.addEventListener('focusout', checkNome);
 cognome.addEventListener('focusout', checkCognome);
 dataNascita.addEventListener('focusout', checkData);
 email.addEventListener('focusout', checkEmail);
 username.addEventListener('focusout', checkUsername);
 password.addEventListener('focusout', checkPassword);
+formRegistrazione.addEventListener('submit', preventSubmit);
