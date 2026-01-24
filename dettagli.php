@@ -79,8 +79,12 @@
         // Immagini principali
         $mainImages = $db->getMainImages($nomeViaggio);
         $imagesString="";
-        foreach ($mainImages as $img) {
-            $imagesString .= "<img class='coverImg' src='".$img['url_immagine']."' alt='".$img['alt_text']."'/>";
+        foreach ($mainImages as $index => $img) {
+            if($index != 0){
+                $imagesString .= "<img class='coverImg' src='".$img['url_immagine']."' aria-hidden='true' alt='".$img['alt_text']."'/>";
+            } else {
+                $imagesString .= "<img class='coverImg' src='".$img['url_immagine']."' alt='".$img['alt_text']."'/>";
+            }
         }
         $paginaDettagli = str_replace("[LISTA_IMMAGINI_PRINCIPALI]", $imagesString , $paginaDettagli);
 
@@ -127,10 +131,10 @@
             $idx = $i + 1;
             $departuresString .="
                 <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>
-                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35px' alt='Data partenza'/>
-                    <time datetime='".$dep['data_inizio']."' class='dataPartenza'>".$dataInizioITA."</time>
-                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35px' alt='Data arrivo'/>
-                    <time datetime='".$dep['data_fine']."' class='dataArrivo'>".$dataFineITA."</time>
+                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35px' alt=''/>
+                    <time datetime='".$dep['data_inizio']."' class='dataPartenza'><span class='sr-only'>Data partenza: </span>".$dataInizioITA."</time>
+                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35px' alt=''/>
+                    <time datetime='".$dep['data_fine']."' class='dataArrivo'><span class='sr-only'>Data ritorno: </span>".$dataFineITA."</time>
             ";
             // PREZZO
             if (!empty($dep['prezzo_scontato']) && $dep['prezzo_scontato'] < $dep['prezzo']) {
