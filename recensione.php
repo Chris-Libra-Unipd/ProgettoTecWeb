@@ -73,7 +73,7 @@ try{
 
         $connessione->editReview($IDRecensioneModificata, $testoNuovo, $valutazioneNuova);
 
-        $queryString=http_build_query(["messaggio"=>"Recensione modificatata con successo!"]);
+        $queryString=http_build_query(["messaggio"=>"Recensione modificata con successo!"]);
         header("Location: AreaPersonale.php?".$queryString);
         exit();
     }
@@ -124,7 +124,7 @@ try{
 
         $azione = "
         <input type='hidden' name='IDRecensione' value='".$IDRecensioneModificata."'>
-        <button type='submit' name='elimina_recensione' class='button-recensione' aria-label='elimina recensione'>ELIMINA</a>
+        <button type='submit' name='elimina_recensione' class='button-recensione' aria-label='elimina recensione'>ELIMINA</button>
         <button type='submit' name='applica_modifiche' class='button-recensione' aria-label='applica modifiche recensione'>APPLICA MODIFICHE</button>
         ";
         

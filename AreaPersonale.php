@@ -39,9 +39,9 @@ try{
     $dataNascita=date("d/m/Y",strtotime($infoUtente["data_nascita"]));//conversione formato data
 
     if(isset($_GET['messaggio']))
-            $messaggio="<p class='messaggio' roler='alert'>".$_GET['messaggio']."</p>";
+            $messaggio="<p class='messaggio'>".$_GET['messaggio']."</p>";
     if(isset($_GET['errore']))
-            $errore="<p class='messaggio errore' roler='alert'>".$_GET['errore']."</p>";
+            $errore="<p class='messaggio errore'>".$_GET['errore']."</p>";
 
     //***Gestione logout
     if (isset($_POST['logout'])) {
@@ -120,7 +120,7 @@ try{
     $paginaAreapersonale = str_replace("[LISTA-STORICO-VIAGGI]", $stringaViaggi, $paginaAreapersonale);
 }
 catch(Exception $e){
-    $errore = "<p class=messaggio errore' role='alert'>" . $e->getMessage() . "</p>";
+    $errore = "<p class=messaggio errore'>" . $e->getMessage() . "</p>";
 }
 
 $paginaAreapersonale = str_replace("[MESSAGGIO]", $messaggio, $paginaAreapersonale);
