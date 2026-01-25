@@ -28,7 +28,7 @@ class DBAccess {
 
 	public function openDBConnection() {
 
-		mysqli_report(MYSQLI_REPORT_ERROR);
+		mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 		$this->connection = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
 
@@ -403,6 +403,23 @@ class DBAccess {
 	}
 
 	public function buyVoyage($email, $idPartenza){
+		try {
+			$query = "
+				INSERT INTO Prenotazione (utente_email, viaggio_id) 
+				VALUES (?,?)
+			";
+
+			$stmt = $this->connection->prepare($query);
+			$stmt->bind_param("si",$email, $idPartenza);
+			$stmt->execute();
+			$stmt->close();
+
+		} catch (\mysqli_sql_exception $e) {
+			throw new Exception("Errore nell'acquisto viaggio");
+		}
+	}
+/*
+	public function buyVoyage($email, $idPartenza){
 		$query = "
 			INSERT INTO Prenotazione (utente_email, viaggio_id) 
 			VALUES (?,?);
@@ -419,7 +436,7 @@ class DBAccess {
 		}
 
 		$stmt->close();
-	}
+	}*/
 
 	// =========================== START GIULIO ================================================
 

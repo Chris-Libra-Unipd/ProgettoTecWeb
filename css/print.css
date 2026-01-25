@@ -3,12 +3,44 @@ html {
   font-size: 12pt;
 }
 
-menu {
-  display: none; /*Per non stampare il menu*/
-}
-
 a:link:after,
 a:visited:after {
   content: " [attr(href)] ";
   font-size: 90%;
 }
+
+#header-container,
+  #top-header-container,
+  #menu,
+  #menu-mobile,
+  #button-menu-mobile,
+  header {
+    display: none !important;
+  }
+
+  #container-ricerca {
+    display: none !important;
+  }
+
+  #button-torna-su{
+    display: none !important;
+  }
+
+  #footer-mid-container,
+  #footer-contatti-container{
+    display: none !important;
+  }
+
+  .img-lista-programma,
+  .chi-siamo-img,
+  #immagine-404,
+  #planet-desktop{
+    display: none !important;
+  }
+
+  .liquid-glass-container-informazioni-account-icon img,
+  #container-lista-viaggi img,
+  #cards-list-container img{
+  display: none !important;
+}
+

@@ -1760,7 +1760,8 @@ blockquote cite{
     width: 50%;
     border: 1px solid var(--bgButton-color-not-pure-white);
     border-radius: 3em;
-    margin: 1em auto;
+    margin: auto;
+    margin-top: 6em;
     text-align: center;
     padding: 0.5em 1em;
 }
@@ -1906,3 +1907,18 @@ blockquote cite{
 }
 
 /* =================== END GIULIO ====================*/
+h2 strong {
+    all: unset;
+    font: inherit;    
+}
+
+p strong {
+    font-weight: normal;   
+    font-family: inherit;  
+    font-size: inherit;   
+    line-height: inherit;
+}
+
+em {
+    font-style: normal; 
+}

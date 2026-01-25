@@ -15,6 +15,11 @@ const shiftCoeff = 102.5;
 function showNextImage(){
     if(currentIndex < numImages){
         for(i = 0; i < numImages; i++){
+            if(i != currentIndex){
+                images[i].setAttribute("aria-hidden", "true");
+            } else {
+                images[i].removeAttribute("aria-hidden");
+            }
             images[i].style.transform = "translateX(-"+(shiftCoeff*currentIndex).toString()+"%)";
         }
         currentIndex++;
@@ -26,6 +31,11 @@ function showPrevImage(){
     if(currentIndex > 1){
         for(i = 0; i < numImages; i++){
             images[i].style.transform = "translateX(-"+(shiftCoeff*(currentIndex-2)).toString()+"%)";
+            if(i != currentIndex -2){
+                images[i].setAttribute("aria-hidden", "true");
+            } else {
+                images[i].removeAttribute("aria-hidden");
+            }
         }
         currentIndex--;
         imgIndex.innerHTML = currentIndex+"/"+numImages;
@@ -43,10 +53,12 @@ for (i = 0; i < opzioniPartenza.length; i++){
 }
 
 function updateRiepilogo(){
-    var dataPartenza = this.querySelector(".dataPartenza").innerHTML;
-    var dataArrivo = this.querySelector(".dataArrivo").innerHTML;
-    var costo = this.querySelector(".costoFinale").innerHTML;
-
+    var dataPartenza = this.querySelector(".dataPartenza").innerText;
+    var dataArrivo = this.querySelector(".dataArrivo").innerText;
+    var costo = this.querySelector(".costoFinale").innerText;
+    dataPartenza = dataPartenza.replace("Data partenza:","");
+    dataArrivo = dataArrivo.replace("Data ritorno:","");
+    
     riepilogo.querySelector("#riepilogoDataPartenza").innerHTML = dataPartenza;
     riepilogo.querySelector("#riepilogoDataArrivo").innerHTML = dataArrivo;
     riepilogo.querySelector("#riepilogoCosto").innerHTML = costo;
