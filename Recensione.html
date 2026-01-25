@@ -13,6 +13,7 @@
         <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
         <script src="js/scriptMenu.js" defer></script>
     </head>
+    [ERRORE]
 <body id="#recensione-page">
     <a href="#contenuto-recensione" class="aiuti-navigazione">salta al contenuto</a>
         <header class="header-no-scroll">
@@ -65,7 +66,7 @@
             <p class="opinione-recensione">La tua opinione per noi è importante!</p>
             <form id="form-recensione" action="recensione.php" method="post">
                     [NOME_VIAGGIO_INPUT]
-                    <textarea name="testo-recensione" id="testo-recensione" placeholder="Scrivi qui la tua recensione..." rows="5" cols="50">[TESTO-RECENSIONE]</textarea>
+                    <textarea name="testo-recensione" id="testo-recensione" placeholder="Scrivi qui la tua recensione..." rows="5" cols="50" required>[TESTO-RECENSIONE]</textarea>
                     <select name="valutazione" id="valutazione" aria-label="Valutazione del viaggio" required>
                         [VALUTAZIONE]
                     </select>
@@ -73,8 +74,6 @@
                     <div id="container-azioni-recensione">
                         [AZIONI]
                     </div>
-                    [ERRORE]
-                    [ESITO]
             </form>
         </section>   
         </main>

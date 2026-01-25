@@ -806,6 +806,7 @@ footer p {
 .current-footer-link {
     font-weight: bold;
     text-decoration: none;
+    color: var(--txt-color-not-pure-white);
 }
 
 
@@ -1063,13 +1064,19 @@ button[name="deleteAccount"]{
 .messaggio{
     margin: auto;
     background-color: var(--txt-color-dark-gray);
-    color: rgb(235, 235, 0);
-    border: 1px solid rgb(235, 235, 0);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     padding: 0.5em 1em;
     border-radius: 4em;
     text-align: center;
     width: fit-content;
     margin-bottom: 1.5em;
+
+}
+
+.errore{
+    color: var(--txt-error-messages);
+    border: 1px solid var(--txt-error-messages);
 }
 
 /* PAGINA RECENSIONI */

@@ -21,6 +21,7 @@ $email="";
 $dataNascita="";
 
 $messaggio="";
+$errore="";
 
 $listaViaggiAcquistati="";
 $stringaViaggi="";
@@ -39,6 +40,8 @@ try{
 
     if(isset($_GET['messaggio']))
             $messaggio="<p class='messaggio' roler='alert'>".$_GET['messaggio']."</p>";
+    if(isset($_GET['errore']))
+            $errore="<p class='messaggio errore' roler='alert'>".$_GET['errore']."</p>";
 
     //***Gestione logout
     if (isset($_POST['logout'])) {
@@ -117,15 +120,16 @@ try{
     $paginaAreapersonale = str_replace("[LISTA-STORICO-VIAGGI]", $stringaViaggi, $paginaAreapersonale);
 }
 catch(Exception $e){
-    $messaggio = "<p class='messaggio' role='alert'>" . $e->getMessage() . "</p>";
+    $errore = "<p class=messaggio errore' role='alert'>" . $e->getMessage() . "</p>";
 }
 
 $paginaAreapersonale = str_replace("[MESSAGGIO]", $messaggio, $paginaAreapersonale);
+$paginaAreapersonale = str_replace("[ERRORE]", $errore, $paginaAreapersonale);
 $connessione->closeConnection();
 
 $footerLink="";
 if(isset($_SESSION['username']))
-    $footerLink = "<li><a href='AreaPersonale.php' class='footer-link'>Area Personale</a></li>";
+    $footerLink = "<li><span class='current-footer-link'>Area Personale</span></li>";
 else
     $footerLink = "<li><a href='login.php' class='footer-link'>Accedi</a></li>";
 $paginaAreapersonale = str_replace("[FOOTER_LINK]", $footerLink, $paginaAreapersonale);

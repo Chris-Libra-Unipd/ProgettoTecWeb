@@ -3,17 +3,14 @@
 session_start();
 require_once "php/utils.php";
 
+$paginaRecensione = file_get_contents("recensione.html");
+
 if(!isset($_SESSION["username"])){
     header("Location: login.php");
     exit();
 }
-
-$paginaRecensione = file_get_contents("recensione.html");
-
-if(isset($_SESSION['username'])) {
+else{
     $paginaRecensione = setta_link_area_personale($paginaRecensione);
-} else {
-    $paginaRecensione = setta_link_login($paginaRecensione);
 }
 
 
@@ -41,7 +38,7 @@ $nomeViaggio = "";
 $testo = "";
 $valutazione = "";
 $errore = "";
-$esito = "";
+$opzioneValutazione="";
 $preview = "";
 $azioni="";
 
@@ -53,9 +50,11 @@ try{
 
     if(isset($_POST['nomeViaggio'])){
         $nomeViaggio = $_POST['nomeViaggio'];
-        if(strlen($nomeViaggio) == 0){
-            throw new Exception("Valutazione vuota");
-        }
+    }
+    else{
+        $queryString=http_build_query(["errore"=>"Nessun viaggio da recensire selezionato"]);
+        header("Location: AreaPersonale.php?".$queryString);
+        exit();
     }
 
 
@@ -74,8 +73,6 @@ try{
 
         $connessione->editReview($IDRecensioneModificata, $testoNuovo, $valutazioneNuova);
 
-        $esito = "<p class='esito' role='alert'>Recensione modificata!</p>";
-
         $queryString=http_build_query(["messaggio"=>"Recensione modificatata con successo!"]);
         header("Location: AreaPersonale.php?".$queryString);
         exit();
@@ -89,7 +86,6 @@ try{
         $email = $connessione->getUserInfo($username)['email'];
 
         $connessione->insertNewReview($email,$nomeViaggio,$testoNuovo,$valutazioneNuova);
-        $esito = "<p class='esito' role='alert'>Recensione aggiunta!</p>";
 
         $queryString=http_build_query(["messaggio"=>"Recensione inviata!"]);
         header("Location: AreaPersonale.php?".$queryString);
@@ -98,7 +94,6 @@ try{
     if(isset($_POST['elimina_recensione'])){
         $IDRecensione = $_POST['IDRecensione'];
         $connessione->deleteReview($IDRecensione);
-        $esito = "<p class='esito' role='alert'>Recensione eliminata!</p>";
 
         $queryString=http_build_query(["messaggio"=>"Recensione eliminata con successo!"]);
         header("Location: AreaPersonale.php?".$queryString);
@@ -154,7 +149,7 @@ try{
 }
 catch(Exception $e){
     echo $e->getMessage();
-    $errore = "<p class='error' role='alert'>" . $e->getMessage() . "</p>";
+    $errore = "<p class='messaggio errore' role='alert'>" . $e->getMessage() . "</p>";
 }
 
 $connessione -> closeConnection();
@@ -166,7 +161,6 @@ $paginaRecensione = str_replace("[TESTO-RECENSIONE]",$testo, $paginaRecensione);
 $paginaRecensione = str_replace("[VALUTAZIONE]",$opzioneValutazione, $paginaRecensione);
 $paginaRecensione = str_replace("[AZIONI]",$azione, $paginaRecensione);
 $paginaRecensione = str_replace("[ERRORE]",$errore, $paginaRecensione);
-$paginaRecensione = str_replace("[ESITO]",$esito, $paginaRecensione);
 
 $footerLink="";
 if(isset($_SESSION['username']))
