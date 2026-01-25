@@ -1900,3 +1900,18 @@ blockquote cite{
 }
 
 /* =================== END GIULIO ====================*/
+h2 strong {
+    all: unset;
+    font: inherit;    
+}
+
+p strong {
+    font-weight: normal;   
+    font-family: inherit;  
+    font-size: inherit;   
+    line-height: inherit;
+}
+
+em {
+    font-style: normal; 
+}
