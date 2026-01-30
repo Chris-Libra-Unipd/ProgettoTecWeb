@@ -1,13 +1,13 @@
 <?php
     function setta_link_area_personale(&$pagina) {
         $linkAreaPersonaleDesktop = 
-        '<a href="AreaPersonale.php" id="area-personale-link">
+        '<a href="AreaPersonale.php" id="area-personale-link" aria-label="Area Personale">
             <div>
                 <img src="assets/img/astronauta.svg" alt="">
             </div>
         </a>';
         $linkAreaPersonaleMobile = 
-        '<a href="AreaPersonale.php" id="area-personale-link-mobile">
+        '<a href="AreaPersonale.php" id="area-personale-link-mobile" aria-label="Area Personale">
             <div>
                 <img src="assets/img/astronauta.svg" alt="">
             </div>

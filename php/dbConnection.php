@@ -10,20 +10,20 @@ use Exception;
 class DBAccess {
 
 	//queste per server math.unipd
-	
+	/*
 	private const HOST_DB = "localhost";
 	private const DATABASE_NAME = "dberti";
 	private const USERNAME = "dberti";
 	private const PASSWORD = "phao0wieZiix3eeh";
-	
+	*/
 
-	/*
+	
 	//queste si usano per docker
 	private const HOST_DB = "db";
 	private const DATABASE_NAME = "miodb";
 	private const USERNAME = "user";
 	private const PASSWORD = "userpass";
-	*/
+	
 	private $connection;
 
 	public function openDBConnection() {
