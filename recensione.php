@@ -3,7 +3,7 @@
 session_start();
 require_once "php/utils.php";
 
-$paginaRecensione = file_get_contents("recensione.html");
+$paginaRecensione = file_get_contents("Recensione.html");
 
 if(!isset($_SESSION["username"])){
     header("Location: login.php");
@@ -131,7 +131,7 @@ try{
     }
     //mostra la pagina recensione non compilata a seguito di richiesta scrittura nuova recensione da area personale
     else if(isset($_POST['scrivi_recensione'])){
-
+        
         $opzioneValutazione = "
         <option value='' disabled selected>Dacci un voto!</option>
         <option value='1'>1 Mai più</option>
@@ -144,7 +144,7 @@ try{
         $azione = "
         <button type='submit' name='invia_recensione' class='button-recensione' aria-label='invia recensione'>INVIA</button>
         ";
-
+        
     }
 }
 catch(Exception $e){

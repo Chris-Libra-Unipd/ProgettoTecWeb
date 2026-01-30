@@ -10,25 +10,25 @@ use Exception;
 class DBAccess {
 
 	//queste per server math.unipd
-	/*
+	
 	private const HOST_DB = "localhost";
 	private const DATABASE_NAME = "dberti";
 	private const USERNAME = "dberti";
 	private const PASSWORD = "phao0wieZiix3eeh";
-	*/
+	
 
-
+	/*
 	//queste si usano per docker
 	private const HOST_DB = "db";
 	private const DATABASE_NAME = "miodb";
 	private const USERNAME = "user";
 	private const PASSWORD = "userpass";
-
+	*/
 	private $connection;
 
 	public function openDBConnection() {
 
-		mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+		mysqli_report(MYSQLI_REPORT_ERROR);
 
 		$this->connection = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
 
