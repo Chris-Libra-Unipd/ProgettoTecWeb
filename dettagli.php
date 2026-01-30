@@ -131,9 +131,9 @@
             $idx = $i + 1;
             $departuresString .="
                 <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>
-                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35px' alt=''/>
+                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35' alt=''/>
                     <time datetime='".$dep['data_inizio']."' class='dataPartenza'><span class='sr-only'>Data partenza: </span>".$dataInizioITA."</time>
-                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35px' alt=''/>
+                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35' alt=''/>
                     <time datetime='".$dep['data_fine']."' class='dataArrivo'><span class='sr-only'>Data ritorno: </span>".$dataFineITA."</time>
             ";
             // PREZZO
