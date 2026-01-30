@@ -1,0 +1,17 @@
+Su tutte le pagine mettere aria label sul nav del footer
+
+Su tutte le pagine dice che manca il testo ancora dei link accedi e area personale , ma non servono
+
+Home OK
+Chi siamo (aria label sul nav?)
+CATALOGO OK (action vuota)
+LOGIN OK (mancherebbe il tag main/ il ruolo contenuto)
+REGISTRAZIONE OK(stesso prob login e contrasto basso nell auth body)
+AREA PERSONALE (mettere fieldset o legend sulle targehtte perche i bottoni sono duplicati FATTO)
+SCRIVI RECENSIONE (mancano gli h2, mettere il paragrafo come h2)
+DETTAGLI NOT OK (togliere px da width e height FATTO
+ togliere i div da dentro i label e' html incorretto
+aggiungere i fieldset NON CAMBIA GLI ERRORI MA POTREBBE ESSERE UTILE
+capire che cazzo di problema ce coi label -> i label dovrebbero andare dopo linput con i radio button
+aria label vorrebbe del testo informativo sul viaggio ma sia attacca=> magari inserire nell aria label anche la data di partenza e arrivo
+)
