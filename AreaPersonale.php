@@ -100,12 +100,16 @@ try{
                 <input type='hidden' name='nomeViaggio' value='" . $viaggio['tipo_viaggio_nome'] . "'>";
             if($connessione->checkIfReviewed($username,$viaggio['tipo_viaggio_nome'])){
                 $stringaViaggi .= "
-                <button type='submit' name='modifica_recensione' class='modifica-leggi-recensione'>MODIFICA RECENSIONE</button>
+                <fieldset>
+                    <button type='submit' name='modifica_recensione' class='modifica-leggi-recensione'>MODIFICA RECENSIONE</button>
+                </fieldset>
                 ";
             }
             else{
                 $stringaViaggi .= "
-                <button type='submit' name='scrivi_recensione' class='modifica-leggi-recensione'>SCRIVI RECENSIONE</button>
+                <fieldset>
+                    <button type='submit' name='scrivi_recensione' class='modifica-leggi-recensione'>SCRIVI RECENSIONE</button>
+                </fieldset>
                 ";
             }
         $stringaViaggi .= "</form>
