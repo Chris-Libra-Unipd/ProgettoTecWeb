@@ -177,9 +177,6 @@ class DBAccess {
 	}
 
 	
-// ======================= END DAM =========================
-// =========================================================
-// ======================= START CHRIS =====================
 	//il parametro è attendibile perché preso dalla session
 	public function getUserInfo($username){
 		//controllo $username tramite statement
@@ -418,27 +415,7 @@ class DBAccess {
 			throw new Exception("Errore nell'acquisto viaggio");
 		}
 	}
-/*
-	public function buyVoyage($email, $idPartenza){
-		$query = "
-			INSERT INTO Prenotazione (utente_email, viaggio_id) 
-			VALUES (?,?);
-		";
 
-		$stmt = $this->connection->prepare($query);
-		$stmt->bind_param("si",$email, $idPartenza);
-		if(!$stmt->execute()){
-			throw new Exception("Errore nell'acquisto viaggio");
-		}
-
-		if(mysqli_affected_rows($this->connection) == 0){
-			throw new Exception("Acquisto non andato a buon fine");
-		}
-
-		$stmt->close();
-	}*/
-
-	// =========================== START GIULIO ================================================
 
 	public function getVoyageDescription($nomeViaggio) {
 		$query = "SELECT descrizione FROM Tipo_Viaggio WHERE nome = ?";
@@ -631,8 +608,6 @@ class DBAccess {
 		$stmt->close();
 		return $reviews; // array di recensioni
 	}
-
-	// =========================== END GIULIO ================================================
 }
 
 ?>

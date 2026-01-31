@@ -70,21 +70,6 @@ try{
     //compilazione viaggi
     $listaViaggiAcquistati = $connessione->getHistory($username);
 
-    /*
-    TEMPLATE
-    <li class="card-viaggio">
-        <img src="assets/img/Gemini_Generated_Image_spirale.jpg" alt="">
-        <div class="card-viaggio-info">
-            <h3>Giardino indimenticabile</h3>
-            <p>Partenza: <time datetime="2030-05-15"> 15 Maggio 2030 </time></p>
-            <p>Ritorno: <time datetime="2034-12-30">30 Dicembre 2034</time></p>
-        </div>
-        <form class="azione-recensione" action="recensione.php" method="post">
-            <input type="hidden" name="azione" value="modifica">
-            <input type="hidden" name="nomeViaggio" value="Giardino indimenticabile">                        
-            <button type="submit" class='modifica-leggi-recensione'>MODIFICA RECENSIONE</button>
-        </form>
-    </li>*/
 
     if($listaViaggiAcquistati){
     foreach($listaViaggiAcquistati as $viaggio){

@@ -4,39 +4,24 @@
 }
 
 :root {
-    --bg-color-dark-black: #000000;
-    --bg-color-dark-gray: #242424;
+    --bg-color-main: #000000;
+    --bg-color-pressed-buy: #242424;
     --txt-color-gray: #8B8B8B;
-    --txt-color-not-pure-white: #F0F0F0;
-    --link-color-not-pure-white: #F0F0F0;
-    --txt-color-dark-gray: #242424;
+    --txt-color-1: #F0F0F0;
+    --link-color: #F0F0F0;
+    --txt-color-2: #242424;
     --txt-error-messages: #fd3d3d;
-    --bgButton-color-not-pure-white: #F0F0F0;
+    --bgButton-color: #F0F0F0;
     --header-bg-color: rgba(12, 12, 12, 0.9);
     --generic-liquid-glass-bg-color: rgba(71, 71, 71, 0.2);
-    --generic-liquid-glass-bg-color-hover-icon: rgba(180, 180, 180, 0.2);
+    --generic-liquid-glass-bg-color-hover: rgba(180, 180, 180, 0.2);
     --bg-color-cancella-ricerca: rgba(88, 5, 5, 0.6);
     --bg-color-cancella-ricerca-hover: rgba(231, 0, 0, 0.6);
     --border-liquid-glass: rgba(255, 255, 255, 0.4);
     --visited-link: #94FBFF;
-
-
     --bg-color-auth-form: #1b1b1b;
-
     --border-radius-box: 15px;
-
-    /*PROPOSTE DI NOMI VARIABILI
-    --link
-    --visited-link
-    --normal-text
-    --error-te
-    --secondary-text
-    --border
-    --button-bg
-    --accent-color-1
-    */
     --accent-color: #94FBFF;
-
 }
 
 .sr-only {
@@ -64,7 +49,7 @@ html, body {
 
 
 body {
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     background-image: url("../assets/img/sky_backgorund.jpg");
     background-attachment: fixed;
     padding-top: 11em;
@@ -82,7 +67,7 @@ body {
 
 h2 {
     font-size: 2.5em;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
 fieldset {
@@ -98,8 +83,8 @@ fieldset {
     z-index: 1001;
     top: 10px;
     left: -999em;
-    color: var(--txt-color-not-pure-white);
-    background-color: var(--bg-color-dark-black);
+    color: var(--txt-color-1);
+    background-color: var(--bg-color-main);
     border-radius: 40px;
     padding: 1em;
     text-decoration: none;
@@ -191,7 +176,7 @@ header {
 }
 
 .menu-link {
-    color: var(--link-color-not-pure-white);
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -213,14 +198,14 @@ header {
 }
 
 #menu li {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     text-decoration: none;
     margin: 1.5em 0 1.5em 0;
 }
 
 #login-link{
-    color: var(--txt-color-dark-gray);
-    background-color: var(--bgButton-color-not-pure-white);
+    color: var(--txt-color-2);
+    background-color: var(--bgButton-color);
     text-decoration: none;
     font-size: 0.9em;
     font-weight: bold;
@@ -250,11 +235,11 @@ header {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: var(--bgButton-color-not-pure-white);
+    background-color: var(--bgButton-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     border: 1px solid var(--border-liquid-glass);
 }
 
@@ -313,14 +298,14 @@ header {
 #menu-mobile ul li {
     width: 100%;
     text-align: center;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-size: 1.5em;
 }
 
 
 #login-link-mobile {
-    color: var(--txt-color-dark-gray);
-    background-color: var(--bgButton-color-not-pure-white);
+    color: var(--txt-color-2);
+    background-color: var(--bgButton-color);
     text-decoration: none;
     padding: 0.2em 0.5em;
     border-radius: 60px;
@@ -384,7 +369,7 @@ header {
 
 
 #hero-text-container h2 {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     max-width: 60%;
     margin-bottom: 0.5em;
     font-weight: normal;
@@ -393,8 +378,8 @@ header {
 
 #scopri-link {
     display: inline-block;
-    color: var(--txt-color-dark-gray);
-    background-color: var(--bgButton-color-not-pure-white);
+    color: var(--txt-color-2);
+    background-color: var(--bgButton-color);
     text-decoration: none;
     font-size: 2em;
     padding: 0.5em;
@@ -422,7 +407,7 @@ header {
 
 #contenuto-home h3 {
     text-align: center;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-size: 2.5em;
 }
 
@@ -467,13 +452,13 @@ header {
 }
 
 .txt-container-lista-programma h4 {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-size: 2em;
     text-align: center;
 }
 
 .txt-container-lista-programma p {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-size: 1.2em;
     text-align: center;
 }
@@ -509,7 +494,7 @@ header {
 }
 
 .cards-txt-container {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     padding: 1.5em;
 }
 
@@ -531,7 +516,7 @@ header {
 #breadcrumb-catalogo {
     margin: 0 auto;
     width: fit-content;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     background: var(--header-bg-color);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3.5px);
@@ -542,7 +527,7 @@ header {
 }
 
 #breadcrumb-catalogo a {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-weight: normal;
     text-decoration: none;
 }
@@ -572,7 +557,7 @@ header {
 
 #container-ricerca h2 {
     display: block;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     text-align: center;
     width: 100%;
     margin-bottom: 0.5em;
@@ -594,8 +579,8 @@ header {
     border: 1px solid var(--border-liquid-glass);
     padding: 0 1em;
     font-size: 1em;
-    color: var(--txt-color-not-pure-white);
-    background-color: var(--bg-color-dark-black);
+    color: var(--txt-color-1);
+    background-color: var(--bg-color-main);
     outline: none;
     box-sizing: border-box;
 }
@@ -623,7 +608,7 @@ header {
 }
 
 #button-ricerca-catalogo:hover {
-    background-color: var(--generic-liquid-glass-bg-color-hover-icon);
+    background-color: var(--generic-liquid-glass-bg-color-hover);
 }
 
 #button-elimina-ricerca-catalogo {
@@ -651,7 +636,7 @@ header {
     background-color: transparent;
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     border-radius: 30px;
     overflow: hidden;
     width: 350px;
@@ -735,7 +720,7 @@ header {
 /*================FOOTER====================== */
 
 footer {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     background: linear-gradient(
         180deg,
         rgb(0,0,0,0) 0%,
@@ -747,7 +732,7 @@ footer {
 }
 
 .footer-link {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     text-decoration: none;
 }
 
@@ -815,15 +800,9 @@ footer p {
 .current-footer-link {
     font-weight: bold;
     text-decoration: none;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
-
-/* ===================== END DAMN ==================*/
-
-/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
-
-/* ================== CUOGO =================== */
 
 /* PAGINA 404*/
 #error404-page{
@@ -842,7 +821,7 @@ footer p {
     padding: 30px;
     border-radius: 50px;
     backdrop-filter: blur(15px) saturate(100%);
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     margin: 0 auto;
     border: 1px solid var(--border-liquid-glass);
     box-sizing: border-box;
@@ -878,8 +857,8 @@ footer p {
 }
 
 .button-home-errore404{
-    background-color: var(--txt-color-not-pure-white);
-    color:  var(--bg-color-dark-black);
+    background-color: var(--txt-color-1);
+    color:  var(--bg-color-main);
     border: none;
     border-radius: 999px;
     padding: 10px 20px;
@@ -922,7 +901,7 @@ footer p {
     max-width: 90%;
     padding: 1rem;
     border-radius: 30px; 
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     margin: 0 auto;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4.5px);
@@ -939,7 +918,7 @@ footer p {
     padding: 1.5rem;
     border-radius: 50px;
     margin: 0 auto;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     border: 1px solid var(--border-liquid-glass);
 }
 
@@ -956,7 +935,7 @@ footer p {
     margin-top: 20px; 
 }
 #liquid-glass-container-informazioni-account-body-info{
-   color: var(--txt-color-not-pure-white);
+   color: var(--txt-color-1);
    margin-left: 80px;
    flex:1;
 }
@@ -969,7 +948,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--bg-color-dark-black);
+    background: var(--bg-color-main);
     border: 1px solid var(--border-liquid-glass);
     margin-left: -20px;
     margin-right: 30px;
@@ -994,7 +973,7 @@ footer p {
     max-width: 90%;
     padding: 2rem;
     border-radius: 30px;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     margin: 0 auto;
     margin-top: 80px;
     -webkit-backdrop-filter: blur(3px);
@@ -1021,7 +1000,7 @@ footer p {
 }
 
 .modifica-leggi-recensione{
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     color: var(--accent-color);        
     border: 1px solid var(--accent-color);
     border-radius: 2em;        
@@ -1034,7 +1013,7 @@ footer p {
 
 .modifica-leggi-recensione:hover{
     background-color: var(--accent-color);
-    color: var(--bg-color-dark-black);
+    color: var(--bg-color-main);
 }
 
 #azioniAccount{
@@ -1049,7 +1028,7 @@ button[name="logout"],button[name="deleteAccount"]{
   font-weight: bold;
   box-sizing: border-box;
   width: 50%;
-  background-color: var(--txt-color-dark-gray);
+  background-color: var(--txt-color-2);
   border-radius: 5em;
   padding: 0.7em 1em;
   transition: 0.4s;
@@ -1061,8 +1040,8 @@ button[name="logout"]:hover,button[name="deleteAccount"]:hover{
 }
 
 button[name="logout"]{
-    color: var(--txt-color-not-pure-white);
-    border: 1px solid var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
+    border: 1px solid var(--txt-color-1);
 }
 
 button[name="deleteAccount"]{
@@ -1072,7 +1051,7 @@ button[name="deleteAccount"]{
 
 .messaggio{
     margin: auto;
-    background-color: var(--txt-color-dark-gray);
+    background-color: var(--txt-color-2);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
     padding: 0.5em 1em;
@@ -1104,7 +1083,7 @@ button[name="deleteAccount"]{
   width: 700px;
   max-width: 90%;
   border-radius: 2em;
-  color: var(--txt-color-not-pure-white);
+  color: var(--txt-color-1);
   margin: 0 auto;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(4.5px);
@@ -1119,7 +1098,7 @@ button[name="deleteAccount"]{
   border-radius: 2em;
   margin: 1em auto;
   margin-bottom: 0.5em;
-  color: var(--txt-color-not-pure-white);
+  color: var(--txt-color-1);
   border: 1px solid var(--border-liquid-glass);
 }
 
@@ -1150,8 +1129,8 @@ button[name="deleteAccount"]{
   padding: 1.5em;
   font-size: 1rem;
   line-height: 1.5em;
-  color: var(--txt-color-not-pure-white);
-  background: var(--txt-color-dark-gray);
+  color: var(--txt-color-1);
+  background: var(--txt-color-2);
   border: 1px solid var(--border-liquid-glass);
   border-radius: 2em;
   resize: none;
@@ -1165,7 +1144,7 @@ button[name="deleteAccount"]{
 }
 
 #testo-recensione:focus {
-  border-color: var(--txt-color-not-pure-white);
+  border-color: var(--txt-color-1);
 }
 
 
@@ -1175,8 +1154,8 @@ button[name="deleteAccount"]{
   padding: 0.5em 1em;
   border-radius: 1em;
   border: 1px solid var(--border-liquid-glass);
-  background: var(--txt-color-dark-gray);
-  color: var(--txt-color-not-pure-white);
+  background: var(--txt-color-2);
+  color: var(--txt-color-1);
   font-size: 1rem;
   outline: none;
   cursor: pointer;
@@ -1197,7 +1176,7 @@ button[name="deleteAccount"]{
 }
 .button-recensione {
   width: 100%;
-  background-color: var(--txt-color-dark-gray);
+  background-color: var(--txt-color-2);
   border-radius: 5em;
   padding: 0.7em 1em;
   font-size: 1em;
@@ -1241,18 +1220,11 @@ button[name="deleteAccount"]{
     margin-top: 1em;    
 }
 
-
-/* ===================== END CUOGO ==================*/
-
-/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
-
-/*================ CHRIS ================*/
-
 /* ========= AUTHENTICATION PAGES  ============*/
 /* ========= AUTHENTICATION PAGES  ============*/
 /* ========= AUTHENTICATION PAGES  ============*/
 #auth-body {
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     background-image: none;
     background-attachment: fixed;
     padding-top: 0em;
@@ -1274,7 +1246,7 @@ button[name="deleteAccount"]{
     background: var(--header-bg-color);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3.5px);
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     border: 1px solid var(--border-liquid-glass);
     padding: 0.3em 1em;
     border-radius: 1em;
@@ -1287,7 +1259,7 @@ button[name="deleteAccount"]{
 }
 
 #breadcrumb a {
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     font-weight: normal;
 }
 
@@ -1319,7 +1291,7 @@ blockquote cite{
     min-height: fit-content;
     float:right;
     text-align: center;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     display: flex;
     align-items: center;
 }
@@ -1349,14 +1321,14 @@ blockquote cite{
     height: 1.5em;
     background-color: var(--bg-color-auth-form);
     border:none;
-    border-bottom: 1px solid var(--bgButton-color-not-pure-white);
-    color: var(--txt-color-not-pure-white);
+    border-bottom: 1px solid var(--bgButton-color);
+    color: var(--txt-color-1);
     font-size: 1.2em;
 }
 
 .authField:focus{
     border:none;
-    border-bottom: 1px solid var(--bgButton-color-not-pure-white);
+    border-bottom: 1px solid var(--bgButton-color);
     outline: none;
 }
 
@@ -1369,8 +1341,8 @@ blockquote cite{
     border: none;
     font-weight: bold;
     font-size: 1.1em;
-    background: var(--bgButton-color-not-pure-white);
-    color: var(--txt-color-dark-gray);
+    background: var(--bgButton-color);
+    color: var(--txt-color-2);
     transition: 0.8s;
 }
 
@@ -1380,7 +1352,7 @@ blockquote cite{
 
 .loginButton:focus{
     transition: 0s;
-    outline: 1px solid var(--bgButton-color-not-pure-white);
+    outline: 1px solid var(--bgButton-color);
     outline-offset: 3px;
 }
 
@@ -1408,7 +1380,7 @@ blockquote cite{
 
 .big-error{
     padding: 0 1em;
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     border-radius: 30px;
     border: 1px solid var(--border-liquid-glass);
     font-size: 2em;
@@ -1417,11 +1389,11 @@ blockquote cite{
 
 .big-message{
     padding: 0 1em;
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
     border-radius: 30px;
     border: 1px solid var(--border-liquid-glass);
     font-size: 2em;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
 
@@ -1465,7 +1437,7 @@ blockquote cite{
 }
 
 #showHidePsw:focus{
-    outline: 2px solid var(--bgButton-color-not-pure-white);
+    outline: 2px solid var(--bgButton-color);
     outline-offset: 3px;
 }
 
@@ -1496,7 +1468,7 @@ blockquote cite{
     border-radius: 3em;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4.5px);
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
 
@@ -1536,7 +1508,7 @@ blockquote cite{
     bottom: 10px;
     right: 5px;
     background-color: rgba(0, 0, 0, 0.75);
-    border: 1px solid var(--bgButton-color-not-pure-white);
+    border: 1px solid var(--bgButton-color);
     border-radius: 0.5em;
     display: flex;
     align-items: center;
@@ -1562,7 +1534,7 @@ blockquote cite{
     width: 50%;
     text-align: center;
     margin: 0.5em auto;
-    border-bottom: 1px solid var(--txt-color-not-pure-white);
+    border-bottom: 1px solid var(--txt-color-1);
     font-size:2em;
 
 }
@@ -1605,7 +1577,7 @@ blockquote cite{
 .opzionePartenza{
     display: flex;
     align-items: center;
-    border: 1px solid var(--bgButton-color-not-pure-white);
+    border: 1px solid var(--bgButton-color);
     background-color: transparent;
     border-radius: 0.5em;
     padding:0.5em;
@@ -1615,7 +1587,7 @@ blockquote cite{
 
 .opzionePartenza:hover, .opzionePartenza:focus{
     transform: scale(1.03);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--generic-liquid-glass-bg-color-hover);
 }
 
 .opzionePartenza > time{
@@ -1623,7 +1595,7 @@ blockquote cite{
 }
 
 .opzionePartenza > .dataArrivo{
-    border-right: 2px solid var(--bgButton-color-not-pure-white);
+    border-right: 2px solid var(--bgButton-color);
     padding-right: 1em;
     margin-right: 1em;
 }
@@ -1665,7 +1637,7 @@ blockquote cite{
     width: 2em;
     height: 2em;
     margin-left: auto;
-    border: 2px solid var(--bgButton-color-not-pure-white);
+    border: 2px solid var(--bgButton-color);
     border: 2px solid var(--accent-color);
 
  }
@@ -1677,7 +1649,7 @@ blockquote cite{
 }
 
 #riepilogoAcquisto{
-    border: 1px solid var(--bgButton-color-not-pure-white);
+    border: 1px solid var(--bgButton-color);
     background-color: transparent;
     width: 20%;
     border-radius: 1.5em;
@@ -1689,7 +1661,7 @@ blockquote cite{
 
 #riepilogoAcquisto:hover{
     transform: scale(1.03);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--generic-liquid-glass-bg-color-hover);
 }
 
 #riepilogoAcquisto > h3{
@@ -1725,14 +1697,14 @@ blockquote cite{
 }
 
 #buyButton:hover{
-    background-color: var(--bg-color-dark-gray);
+    background-color: var(--bg-color-pressed-buy);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
 
 
 #buyButton:focus{
-    outline: 1px solid var(--bgButton-color-not-pure-white);
+    outline: 1px solid var(--bgButton-color);
     outline-offset: 3px;
 }
 
@@ -1750,7 +1722,7 @@ blockquote cite{
 
 .recensione{
     width: 30%;
-    border: 1px solid var(--bgButton-color-not-pure-white);
+    border: 1px solid var(--bgButton-color);
     border-radius: 3em;
     margin: 1em auto;
     display: inline-block;
@@ -1767,7 +1739,7 @@ blockquote cite{
 
 .no-result {
     width: 50%;
-    border: 1px solid var(--bgButton-color-not-pure-white);
+    border: 1px solid var(--bgButton-color);
     border-radius: 3em;
     margin: auto;
     margin-top: 6em;
@@ -1800,12 +1772,6 @@ blockquote cite{
 }
 
 
-/* =================== END CHRIS ====================*/
-
-/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
-
-/* =================== GIULIO ====================*/
-
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
 /*================CHI SIAMO====================== */
@@ -1815,7 +1781,7 @@ blockquote cite{
     margin: 3em auto;
     height: fit-content;
     max-width: 90%;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
 #chi-siamo-body{
@@ -1835,7 +1801,7 @@ blockquote cite{
     width: 90%;
     margin: auto;
     margin-bottom: 2em;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
@@ -1881,7 +1847,7 @@ blockquote cite{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);
@@ -1894,7 +1860,7 @@ blockquote cite{
     width: 97%;
     margin: auto;
     display: flex;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
     justify-content: center;
     text-align: center;
     justify-content: space-around;
@@ -1915,7 +1881,6 @@ blockquote cite{
     color: var(--accent-color);
 }
 
-/* =================== END GIULIO ====================*/
 h2 strong {
     all: unset;
     font: inherit;    
