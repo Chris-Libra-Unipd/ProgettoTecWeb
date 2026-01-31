@@ -392,15 +392,20 @@ header {
 
 
 #scopri-link {
+    display: inline-block;
     color: var(--txt-color-dark-gray);
     background-color: var(--bgButton-color-not-pure-white);
     text-decoration: none;
     font-size: 2em;
     padding: 0.5em;
-    border-radius: 60px;
+    border-radius: 30px;
     border: none;
+    transition: all 0.5s;
 }
 
+#scopri-link:hover {
+    scale: 1.1;
+}
 
 
 /*================MAIN HOME====================== */
