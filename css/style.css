@@ -377,13 +377,14 @@ header {
 
 
 #scopri-link {
+    font-weight: bold;
     display: inline-block;
     color: var(--txt-color-2);
     background-color: var(--bgButton-color);
     text-decoration: none;
-    font-size: 2em;
-    padding: 0.5em;
-    border-radius: 30px;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    border-radius: 20px;
     border: none;
     transition: all 0.5s;
 }
