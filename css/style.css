@@ -244,7 +244,7 @@ header {
 }
 
 #area-personale-link img, #area-personale-link-mobile img {
-    height: 70%;
+    height: 90%;
     display: block;
 }
 
@@ -782,6 +782,11 @@ footer {
     border: none;
     margin: 0 auto 1em auto;
     display: block;
+    transition: all 0.3s;
+}
+
+#button-torna-su:hover {
+    transform: scale(1.1);
 }
 
 #img-button-torna-su {

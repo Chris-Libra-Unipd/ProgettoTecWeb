@@ -71,6 +71,7 @@
             throw new Exception ("Viaggio non specificato");
         }
         $paginaDettagli = str_replace("[NOME VIAGGIO]", $nomeViaggio, $paginaDettagli);
+        $paginaDettagli = str_replace("[NAME_TITLE]", $nomeViaggio, $paginaDettagli);
 
         // Descrizione viaggio
         $descr_viaggio = $db->getVoyageDescription($nomeViaggio);
