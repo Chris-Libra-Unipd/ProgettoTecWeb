@@ -192,6 +192,10 @@ blockquote{
     transform: rotate(90deg);
 }
 
+.selectionIndicator{
+    margin-bottom: 1em;
+}
+
 .opzionePartenza{
     flex-direction: column;
 }
@@ -210,6 +214,7 @@ blockquote{
     margin-left: 15%;
 }
 
+
 /* ============= RECENSIONI DETTAGLIO ==========*/
 #containerRecensioni{
     width: 90%;
@@ -219,6 +224,7 @@ blockquote{
 
 .recensione{
     width: 70%;
+    max-width:300px;
 }
 
 /* ============= RECENSIONI PAGINA ==========*/
