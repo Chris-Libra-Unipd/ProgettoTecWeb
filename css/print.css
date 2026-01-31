@@ -15,32 +15,32 @@ a:visited:after {
   #menu-mobile,
   #button-menu-mobile,
   header {
-    display: none !important;
+    display: none;
   }
 
   #container-ricerca {
-    display: none !important;
+    display: none;
   }
 
   #button-torna-su{
-    display: none !important;
+    display: none;
   }
 
   #footer-mid-container,
   #footer-contatti-container{
-    display: none !important;
+    display: none;
   }
 
   .img-lista-programma,
   .chi-siamo-img,
   #immagine-404,
   #planet-desktop{
-    display: none !important;
+    display: none;
   }
 
   .liquid-glass-container-informazioni-account-icon img,
   #container-lista-viaggi img,
   #cards-list-container img{
-  display: none !important;
+  display: none;
 }
 
