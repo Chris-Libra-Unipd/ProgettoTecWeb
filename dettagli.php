@@ -130,43 +130,45 @@
 
             $idx = $i + 1;
             $departuresString .="
-                <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>
-                    <img class='calendar-icon' src='assets/icons/calendar.png' width='35' alt=''/>
-                    <time datetime='".$dep['data_inizio']."' class='dataPartenza'><span class='sr-only'>Data partenza: </span>".$dataInizioITA."</time>
-                    <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35' alt=''/>
-                    <time datetime='".$dep['data_fine']."' class='dataArrivo'><span class='sr-only'>Data ritorno: </span>".$dataFineITA."</time>
+                <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>";
+
+            $departuresString .="
+                <input type='radio' class='selectionIndicator' name='choice' id='"."choice{$idx}"."' value='".$dep['id']."'/>
+                <img class='calendar-icon' src='assets/icons/calendar.png' width='35' alt=''/>
+                <time datetime='".$dep['data_inizio']."' class='dataPartenza'><span class='sr-only'>Data partenza: </span>".$dataInizioITA."</time>
+                <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35' alt=''/>
+                <time datetime='".$dep['data_fine']."' class='dataArrivo'><span class='sr-only'>Data ritorno: </span>".$dataFineITA."</time>
             ";
             // PREZZO
             if (!empty($dep['prezzo_scontato']) && $dep['prezzo_scontato'] < $dep['prezzo']) {
-                $percent = round(
-                    (($dep['prezzo'] - $dep['prezzo_scontato']) / $dep['prezzo']) * 100
-                );
+                $percent = round((($dep['prezzo'] - $dep['prezzo_scontato']) / $dep['prezzo']) * 100);
 
-                $departuresString .="
+                /*$departuresString .="
                     <div>
                         <p>Prezzo: <span class='costoIniziale'>".number_format($dep['prezzo'],0,",",".")."€</span><span class='sconto'>Sconto ".$percent."%</span></p>
                         <p>Prezzo finale: <span class='costoFinale'>".number_format($dep['prezzo_scontato'],0,",",".")."€</span></p>
                     </div>
-                ";
-                
+                ";*/
+
+                $departuresString .="
+                    <span class='containerPrezzi'>
+                        <span>Prezzo: <span class='costoIniziale'>".number_format($dep['prezzo'],0,",",".")."€</span><span class='sconto'>Sconto ".$percent."%</span></span>
+                        <span class='costoFinale'>Prezzo finale: ".number_format($dep['prezzo_scontato'],0,",",".")."€</span>
+                    </span>
+                    ";
             } else {
                 $departuresString .="
-                    <div>
-                        <p>Prezzo: <span class='costoFinale'>".number_format($dep['prezzo'],0,",",".")."€</span></p>
-                    </div>
+                    <span>Prezzo: <span class='costoFinale'> ".number_format($dep['prezzo'],0,",",".")."€</span></span>
                 ";
             }
-            $departuresString .=" 
-                <input type='radio' class='selectionIndicator' name='choice' id='"."choice{$idx}"."' value='".$dep['id']."' aria-label='partenza non selezionata'/>
-                </label>
-            ";
+            $departuresString .= "</label>";
         }
         if($departuresString == ""){
             $departuresString .= "<p class='no-result'>Nessuna partenza disponibile.</p>";
             $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTA</button>";
         }
         else{
-            $acquista = "<button type='submit' id='buyButton' tabindex='0'>ACQUISTA</button>";
+            $acquista = "<button type='submit' id='buyButton' tabindex='0'>ACQUISTA</button>"; 
         }
         $paginaDettagli = str_replace("[LISTA_PARTENZE]", $departuresString, $paginaDettagli);
         $paginaDettagli = str_replace("[AZIONE-ACQUISTA]", $acquista, $paginaDettagli);
