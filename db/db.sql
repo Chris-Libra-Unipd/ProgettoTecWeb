@@ -101,27 +101,27 @@ CREATE TABLE Prenotazione (
 -- 1. Inserimento del TIPO DI VIAGGIO (Il "pacchetto" base)
 INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
 VALUES (
-    'Grande Tour di Nettuno',
+    'Orizzonte cobalto su Nettuno',
     'Un viaggio ai confini del sistema solare per esplorare il gigante di ghiaccio. Include sorvoli ravvicinati, osservazione delle tempeste di diamanti e una sosta sulla luna Tritone.',
     20
 );
 
 -- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
--- Nota: Collego questi periodi al 'Grande Tour di Nettuno'
+-- Nota: Collego questi periodi al 'Orizzonte cobalto su Nettuno'
 INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
 VALUES 
-(1, 'Grande Tour di Nettuno', 'Arrivo e Inserimento Orbitale: Avvicinamento al pianeta blu profondo e stabilizzazione nell''orbita alta per ammirare gli anelli scuri.'),
-(2, 'Grande Tour di Nettuno', 'Discesa nella Termosfera: Un tuffo controllato negli strati esterni dell''atmosfera per osservare i venti supersonici.'),
-(3, 'Grande Tour di Nettuno', 'Spedizione su Tritone: Atterraggio sulla luna ghiacciata per osservare i <span lang="en">geyser</span> di azoto liquido.');
+(1, 'Orizzonte cobalto su Nettuno', 'Arrivo e Inserimento Orbitale: Avvicinamento al pianeta blu profondo e stabilizzazione nell''orbita alta per ammirare gli anelli scuri.'),
+(2, 'Orizzonte cobalto su Nettuno', 'Discesa nella Termosfera: Un tuffo controllato negli strati esterni dell''atmosfera per osservare i venti supersonici.'),
+(3, 'Orizzonte cobalto su Nettuno', 'Spedizione su Tritone: Atterraggio sulla luna ghiacciata per osservare i <span lang="en">geyser</span> di azoto liquido.');
 
 -- 3. Inserimento delle IMMAGINI (Totale 6)
 
 -- A. Tre immagini associate direttamente al TIPO_VIAGGIO (periodo_itinerario_id è NULL)
 INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
 VALUES
-(101, 'Vista panoramica di Nettuno dallo spazio profondo', './assets/img/viaggi/v1/i1.jpg', 'Grande Tour di Nettuno', NULL),
-(102, 'Interno della cabina di lusso con vista sugli anelli', './assets/img/viaggi/v1/i2.jpg', 'Grande Tour di Nettuno', NULL),
-(103, 'Il pianeta blu con la Grande Macchia Scura visibile', './assets/img/viaggi/v1/i3.jpg', 'Grande Tour di Nettuno', NULL);
+(101, 'Vista panoramica di Nettuno dallo spazio profondo', './assets/img/viaggi/v1/i1.jpg', 'Orizzonte cobalto su Nettuno', NULL),
+(102, 'Interno della cabina di lusso con vista sugli anelli', './assets/img/viaggi/v1/i2.jpg', 'Orizzonte cobalto su Nettuno', NULL),
+(103, 'Il pianeta blu con la Grande Macchia Scura visibile', './assets/img/viaggi/v1/i3.jpg', 'Orizzonte cobalto su Nettuno', NULL);
 
 -- B. Una immagine per ogni PERIODO_ITINERARIO (tipo_viaggio_nome è NULL per evitare ridondanza, ci colleghiamo all'ID del periodo)
 INSERT INTO Immagini (id, alt_text, url_immagine, tipo_viaggio_nome, periodo_itinerario_id)
@@ -133,9 +133,9 @@ VALUES
 -- 4. Inserimento di una istanza di VIAGGIO (La data specifica di partenza)
 INSERT INTO Viaggio (id, tipo_viaggio_nome, prezzo, prezzo_scontato, data_inizio, data_fine)
 VALUES 
-(10, 'Grande Tour di Nettuno',450000.00, 420000.00, '2150-06-01','2150-06-20'),
-(11, 'Grande Tour di Nettuno', 500000.00,NULL,'2150-12-20','2151-01-10'),
-(12, 'Grande Tour di Nettuno', 450000.00, 380000.00, '2151-05-15', '2151-06-05');
+(10, 'Orizzonte cobalto su Nettuno',450000.00, 420000.00, '2150-06-01','2150-06-20'),
+(11, 'Orizzonte cobalto su Nettuno', 500000.00,NULL,'2150-12-20','2151-01-10'),
+(12, 'Orizzonte cobalto su Nettuno', 450000.00, 380000.00, '2151-05-15', '2151-06-05');
 
 
 -- =======================================================
@@ -153,8 +153,8 @@ VALUES (
 -- 2. Inserimento dei 3 PERIODI DELL'ITINERARIO
 INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
 VALUES 
-(4, 'Esplorazione Rossa: Marte', 'Atterraggio e Valles Marineris: Discesa nel canyon più grande del sistema solare, lungo 4000 km e profondo 7 km.'),
-(5, 'Esplorazione Rossa: Marte', 'Scalata del Monte Olimpo: Escursione guidata con tute potenziate sulle pendici del vulcano scudo alto 21 km.'),
+(4, 'Esplorazione Rossa: Marte', 'Atterraggio e Valles Marineris: Discesa nel <span lang="en">canyon</span> più grande del sistema solare, lungo 4000 <abbr title="chilometri">km</abbr> e profondo 7 <abbr title="chilometri">km</abbr>.'),
+(5, 'Esplorazione Rossa: Marte', 'Scalata del Monte Olimpo: Escursione guidata con tute potenziate sulle pendici del vulcano scudo alto 21 <abbr title="chilometri">km</abbr>.'),
 (6, 'Esplorazione Rossa: Marte', 'Vita nella Colonia Alpha: Esperienza di vita in una cupola biosfera con coltivazioni idroponiche e simulazione di gravità terrestre.');
 
 -- 3. Inserimento delle IMMAGINI (Cartella v2)
@@ -278,7 +278,7 @@ VALUES
 INSERT INTO Tipo_Viaggio (nome, descrizione, durata_giorni)
 VALUES (
     'Luna: un nuovo volto',
-    'Goditi la vista più bella della Terra dal nostro resort nel Mare della Tranquillità. Un mix perfetto di relax a bassa gravità e tour storici nei luoghi dei primi allunaggi.',
+    'Goditi la vista più bella della Terra dal nostro resort nel Mare della Tranquillità. Un <span lang="en">mix</span> perfetto di <span lang="en">relax</span> a bassa gravità e tour storici nei luoghi dei primi allunaggi.',
     7
 );
 
@@ -287,8 +287,8 @@ VALUES (
 INSERT INTO Periodo_Itinerario (id, tipo_viaggio_nome, descrizione)
 VALUES 
 (13, 'Luna: un nuovo volto', 'Sulle orme di Apollo 11: Visita guidata al sito storico originale del 1969, preservato sotto una cupola di vetro protettiva.'),
-(14, 'Luna: un nuovo volto', 'Cena "Earthrise": Esperienza gastronomica gourmet in una cupola panoramica mentre la Terra sorge all''orizzonte lunare.'),
-(15, 'Luna: un nuovo volto', 'Il Lato Oscuro: Escursione in rover sul lato nascosto della Luna per un''osservazione stellare priva di qualsiasi inquinamento luminoso terrestre.');
+(14, 'Luna: un nuovo volto', 'Cena "<span lang="en">Earthrise</span>": Esperienza gastronomica gourmet in una cupola panoramica mentre la Terra sorge all''orizzonte lunare.'),
+(15, 'Luna: un nuovo volto', 'Il Lato Oscuro: Escursione in <span lang="en">rover</span> sul lato nascosto della Luna per un''osservazione stellare priva di qualsiasi inquinamento luminoso terrestre.');
 
 -- 3. Inserimento delle IMMAGINI (Cartella v5 - Serie 500)
 
