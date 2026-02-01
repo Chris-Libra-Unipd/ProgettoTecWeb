@@ -115,7 +115,7 @@ blockquote{
     background: transparent;
     width:100%;
     float:none;
-    color: var(--txt-color-not-pure-white);
+    color: var(--txt-color-1);
 }
 
 #auth-form-container{
@@ -123,7 +123,7 @@ blockquote{
 }
 
 .authField{
-    background-color: var(--bg-color-dark-black);
+    background-color: var(--bg-color-main);
 }
 
 /* ============ DETAIL PAGE ============*/
@@ -202,7 +202,7 @@ blockquote{
     border:none;
     margin: 0px;
     padding: 0px;
-    border-bottom: 1px solid var(--txt-color-not-pure-white);
+    border-bottom: 1px solid var(--txt-color-1);
     padding-bottom:0.5em;
     margin-bottom: 0.5em;
 }

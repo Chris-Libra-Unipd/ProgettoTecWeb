@@ -154,7 +154,7 @@
                 $departuresString .="
                     <span class='containerPrezzi'>
                         <span>Prezzo: <span class='costoIniziale'>".number_format($dep['prezzo'],0,",",".")."€</span><span class='sconto'>Sconto ".$percent."%</span></span>
-                        <span class='costoFinale'>Prezzo finale: ".number_format($dep['prezzo_scontato'],0,",",".")."€</span>
+                        <span>Prezzo finale: <span class='costoFinale'>".number_format($dep['prezzo_scontato'],0,",",".")."€</span></span>
                     </span>
                     ";
             } else {

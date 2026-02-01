@@ -307,8 +307,10 @@ header {
     color: var(--txt-color-2);
     background-color: var(--bgButton-color);
     text-decoration: none;
-    padding: 0.2em 0.5em;
-    border-radius: 60px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0.7em 1em;
+    border-radius: 1.2em;
     border: none;
 }
 
@@ -711,6 +713,11 @@ header {
     color: black;
 }
 
+.link-dettagli-container a:focus {
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;
+}
+
 
 
 
@@ -1022,6 +1029,12 @@ footer p {
     color: var(--bg-color-main);
 }
 
+.modifica-leggi-recensione:focus{
+    transition: 0s;     
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;
+}
+
 #azioniAccount{
     display: flex;
     justify-content: flex-end;
@@ -1043,6 +1056,12 @@ button[name="logout"],button[name="deleteAccount"]{
 
 button[name="logout"]:hover,button[name="deleteAccount"]:hover{
     transform: scale(1.07);
+}
+
+button[name="logout"]:focus,button[name="deleteAccount"]:focus{
+    transition: 0s;     
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;
 }
 
 button[name="logout"]{
@@ -1150,7 +1169,9 @@ button[name="deleteAccount"]{
 }
 
 #testo-recensione:focus {
-  border-color: var(--txt-color-1);
+    transition: 0s;
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;
 }
 
 
@@ -1167,6 +1188,11 @@ button[name="deleteAccount"]{
   cursor: pointer;
   box-sizing: border-box;
   margin: 1.5em auto;
+}
+
+#valutazione:focus{
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;  
 }
 
 
@@ -1191,6 +1217,14 @@ button[name="deleteAccount"]{
   cursor: pointer;
   transition: 0.2s;
 }
+
+
+.button-recensione:focus{
+    transition: 0s;     
+    outline: 1px solid var(--bgButton-color);
+    outline-offset: 3px;
+}
+
 /* =========== ORDINE DI QUESTE REGOLE IMPORTANTE PER LE PRIORITà ============*/
 .button-recensione{
     color: var(--accent-color);
