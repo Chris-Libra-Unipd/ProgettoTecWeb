@@ -109,7 +109,7 @@ try{
         $infoRecensione = $connessione->getReview($username, $nomeViaggio);
       
 
-        $testo = $infoRecensione["testo"];
+        $testo = htmlspecialchars($infoRecensione["testo"]);
         $selezioneOpzione[intval($infoRecensione["punteggio"])-1] = "selected"; // se la seconda opzione è selezionata si ha ["","selected","","",""]
         $IDRecensioneModificata = $infoRecensione["id"];
         
