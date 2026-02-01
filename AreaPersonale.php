@@ -33,15 +33,15 @@ try{
 
     //compilazione info utente
     $infoUtente = $connessione->getUserInfo($username);
-    $nome=$infoUtente["nome"];
-    $cognome=$infoUtente["cognome"];
-    $email=$infoUtente["email"];
-    $dataNascita=date("d/m/Y",strtotime($infoUtente["data_nascita"]));//conversione formato data
+    $nome=htmlspecialchars($infoUtente["nome"]);
+    $cognome=htmlspecialchars($infoUtente["cognome"]);
+    $email=htmlspecialchars($infoUtente["email"]);
+    $dataNascita=htmlspecialchars(date("d/m/Y",strtotime($infoUtente["data_nascita"])));//conversione formato data
 
     if(isset($_GET['messaggio']))
-            $messaggio="<p class='messaggio'>".$_GET['messaggio']."</p>";
+            $messaggio="<p class='messaggio'>".htmlspecialchars($_GET['messaggio'])."</p>";
     if(isset($_GET['errore']))
-            $errore="<p class='messaggio errore'>".$_GET['errore']."</p>";
+            $errore="<p class='messaggio errore'>".htmlspecialchars($_GET['errore'])."</p>";
 
     //***Gestione logout
     if (isset($_POST['logout'])) {
