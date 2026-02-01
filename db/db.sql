@@ -368,20 +368,12 @@ VALUES
 INSERT INTO Utente (email, username, nome, cognome, password_hash, data_nascita)
 VALUES 
 (
-    'mario.rossi@email.com', 
-    'AstroMario90', 
+    'user@email.com', 
+    'user', 
     'Mario', 
     'Rossi', 
-    '$2y$10$1JLofMAB2vmLYqKoIf/kt.UqUTaV38LAWy0S3gpapXoDbroreAWMW', -- Simulazione hash
+    '$2y$12$BWzWETgj3JTHyMbzhcB2COX65KfoT1YojBtTLwYZGJtw4xztWNj/K', -- Simulazione hash
     '1990-05-15'
-),
-(
-    'elena.verdi@test.it', 
-    'ElenaSpace', 
-    'Elena', 
-    'Verdi', 
-    '$2y$10$1JLofMAB2vmLYqKoIf/kt.UqUTaV38LAWy0S3gpapXoDbroreAWMW', -- Simulazione hash
-    '1995-11-22'
 );
 
 -- PASSWORD UTENTI: test
@@ -395,15 +387,15 @@ VALUES
 INSERT INTO Prenotazione (utente_email, viaggio_id)
 VALUES
 (
-    'mario.rossi@email.com',
+    'user@email.com',
     '11'
 ),
 (
-    'mario.rossi@email.com',
+    'user@email.com',
     '15'
 ),
 (
-    'mario.rossi@email.com',
+    'user@email.com',
     '14'
 );
 
@@ -415,7 +407,7 @@ VALUES
 INSERT INTO Recensione(utente_email,tipo_viaggio_nome,data_recensione,testo,punteggio)
 VALUES
 (
-    'mario.rossi@email.com',
+    'user@email.com',
     'Esplorazione Rossa: Marte',
     '2013-04-12',
     'il tramonto blu e la bassa gravità sono mozzafiato, ma la polvere perenne e il cibo idroponico stancano. Un viaggio unico, sebbene sei mesi di claustrofobia siano una prova durissima.',
