@@ -1719,6 +1719,11 @@ blockquote cite{
     margin-bottom: 0.3em;
 }
 
+#riepilogoAcquisto legend {
+    font-size: 1.3em;
+    
+}
+
 #riepilogoAcquisto > p{
     text-align: center;
     margin-bottom: 0.5em;

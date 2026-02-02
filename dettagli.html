@@ -86,15 +86,16 @@
             <h2>PARTENZE</h2>
             <form id="containerPartenze"  action="dettagli.php" method="post">
             <fieldset id="listaPartenze">
+                <legend>Seleziona una partenza:</legend>
                 [LISTA_PARTENZE]
             </fieldset>
 
             <fieldset id="riepilogoAcquisto">
-                <h3>RIEPILOGO</h3>
+                <legend>RIEPILOGO ACQUISTO</legend>
                 <p><span>[NOME VIAGGIO]</span></p>
-                <p>Partenza: <time datetime="2025-12-01" id="riepilogoDataPartenza"></time></p>
-                <p>Ritorno: <time datetime="2045-05-12" id="riepilogoDataArrivo"></time></p>
-                <p>Totale: <span id="riepilogoCosto"></span></p>
+                <p>Partenza: <time id="riepilogoDataPartenza">non selezionato</time></p>
+                <p>Ritorno: <time id="riepilogoDataArrivo">non selezionato</time></p>
+                <p>Totale: <span id="riepilogoCosto">non selezionato</span></p>
                 
                 [AZIONE-ACQUISTA]
             </fieldset>
