@@ -89,7 +89,7 @@ try{
                         if($viaggio2['tipo_viaggio_nome'] === $viaggio['tipo_viaggio_nome']) {
                             $stringaViaggi .=
                             "<li>
-                                <p>Partenza " . $nPartenza . "  <span class='sr-only'>per" .$viaggio2['tipo_viaggio_nome'] . "</span>:</p>
+                                <p>Partenza " . $nPartenza . "<span class='sr-only'>per" .$viaggio2['tipo_viaggio_nome'] . "</span>:</p>
                                 <p>Partenza: <time datetime='" . $viaggio2['data_inizio'] . "'>" . date('d/m/Y',strtotime($viaggio2['data_inizio'])) . "</time></p>
                                 <p>Ritorno: <time datetime='" . $viaggio2['data_fine'] . "'>" . date('d/m/Y',strtotime($viaggio2['data_fine'])) . "</time></p>
                             </li>";
