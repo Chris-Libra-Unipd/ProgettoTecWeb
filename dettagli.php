@@ -134,7 +134,7 @@
                 <label for='"."choice{$idx}"."' class='opzionePartenza' tabindex='0'>";
 
             $departuresString .="
-                <input type='radio' class='selectionIndicator' name='choice' id='"."choice{$idx}"."' value='".$dep['id']."'/>
+                <input type='radio' required class='selectionIndicator' name='choice' id='"."choice{$idx}"."' value='".$dep['id']."'/>
                 <img class='calendar-icon' src='assets/icons/calendar.png' width='35' alt=''/>
                 <time datetime='".$dep['data_inizio']."' class='dataPartenza'><span class='sr-only'>Data partenza: </span>".$dataInizioITA."</time>
                 <img class='arrow-icon' src='assets/icons/right-arrow.png' width='35' alt=''/>
