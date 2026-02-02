@@ -1074,6 +1074,18 @@ button[name="deleteAccount"]{
     border: 1px solid var(--txt-error-messages);    
 }
 
+.elenco-partenze-acquistate li {
+    list-style-type: none;
+    border: 1px solid var(--border-liquid-glass);
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+}
+
+.elenco-partenze-acquistate li p {
+    margin: 0;
+}
+
 .messaggio{
     margin: auto;
     background-color: var(--txt-color-2);

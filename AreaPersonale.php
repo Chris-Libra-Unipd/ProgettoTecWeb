@@ -70,31 +70,45 @@ try{
     //compilazione viaggi
     $listaViaggiAcquistati = $connessione->getHistory($username);
 
+    $viaggiGiaAggiunti = array();
 
     if($listaViaggiAcquistati){
     foreach($listaViaggiAcquistati as $viaggio){
+        if(in_array($viaggio['tipo_viaggio_nome'], $viaggiGiaAggiunti)){
+            continue;
+        }
+        array_push($viaggiGiaAggiunti, $viaggio['tipo_viaggio_nome']);
         $stringaViaggi .= "
         <li class='card-viaggio'>
             <img src='" . $viaggio['url_immagine'] . "' alt=''>
             <div class='card-viaggio-info'>
                 <h3>" . $viaggio['tipo_viaggio_nome'] ."</h3>
-                <p>Partenza: <time datetime='" . $viaggio['data_inizio'] . "'>" . date('d/m/Y',strtotime($viaggio['data_inizio'])) . "</time></p>
-                <p>Ritorno: <time datetime='" . $viaggio['data_fine'] . "'>" . date('d/m/Y',strtotime($viaggio['data_fine'])) . "</time></p>
+                <ul class='elenco-partenze-acquistate'>";
+                    $nPartenza = 1;
+                    foreach($listaViaggiAcquistati as $viaggio2) {
+                        if($viaggio2['tipo_viaggio_nome'] === $viaggio['tipo_viaggio_nome']) {
+                            $stringaViaggi .=
+                            "<li>
+                                <p>Partenza " . $nPartenza . "  <span class='sr-only'>per" .$viaggio2['tipo_viaggio_nome'] . "</span>:</p>
+                                <p>Partenza: <time datetime='" . $viaggio2['data_inizio'] . "'>" . date('d/m/Y',strtotime($viaggio2['data_inizio'])) . "</time></p>
+                                <p>Ritorno: <time datetime='" . $viaggio2['data_fine'] . "'>" . date('d/m/Y',strtotime($viaggio2['data_fine'])) . "</time></p>
+                            </li>";
+                            $nPartenza++;
+                        }
+                    }
+                    $stringaViaggi .= 
+                "</ul>
             </div>
             <form class='azione-recensione' action='recensione.php' method='post'>
                 <input type='hidden' name='nomeViaggio' value='" . $viaggio['tipo_viaggio_nome'] . "'>";
             if($connessione->checkIfReviewed($username,$viaggio['tipo_viaggio_nome'])){
                 $stringaViaggi .= "
-                <fieldset>
-                    <button type='submit' name='modifica_recensione' class='modifica-leggi-recensione'>MODIFICA RECENSIONE</button>
-                </fieldset>
+                    <button type='submit' name='modifica_recensione' class='modifica-leggi-recensione'>MODIFICA RECENSIONE <span class='sr-only'> per " . $viaggio['tipo_viaggio_nome'] . "</span></button>
                 ";
             }
             else{
                 $stringaViaggi .= "
-                <fieldset>
-                    <button type='submit' name='scrivi_recensione' class='modifica-leggi-recensione'>SCRIVI RECENSIONE</button>
-                </fieldset>
+                    <button type='submit' name='scrivi_recensione' class='modifica-leggi-recensione'>SCRIVI RECENSIONE<span class='sr-only'> per " . $viaggio['tipo_viaggio_nome'] . "</span></button>
                 ";
             }
         $stringaViaggi .= "</form>
