@@ -864,9 +864,8 @@ footer p {
     text-align: center;
 }
 #testo-404 p{
-    margin-left: 30px;
-    margin-top: 30px;
-    font-size: 27px;
+    margin-top: 1em;
+    font-size: 1.5em;
 }
 
 .button-home-errore404{
@@ -874,13 +873,11 @@ footer p {
     color:  var(--bg-color-main);
     border: none;
     border-radius: 999px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 0.5em 1.25em;
+    font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
-    margin-top: 50px;
-    margin: 30px auto;
-    width: 30%;
+    margin: 2em auto;
     text-align: center;
     transition: 0.5s;
 }
