@@ -6,6 +6,7 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const formRegistrazione = document.getElementsByTagName("form")[0];
 
+let isTopErrorPresent = false;
 
 function showError(element, message) {
     element.innerHTML = message;
@@ -108,11 +109,14 @@ function preventSubmit(event) {
     const errori = document.getElementsByClassName("shownError");
     if(errori.length > 0) {
         event.preventDefault();
-        const errorP = document.createElement("p");
-        errorP.classList.add("error");
-        errorP.setAttribute("role", "alert");
-        errorP.innerText = "Errori nei campi inseriti, si prega di ricontrollare";
-        formRegistrazione.insertBefore(errorP, formRegistrazione.firstChild);
+        if(!isTopErrorPresent){
+            const errorP = document.createElement("p");
+            errorP.classList.add("error");
+            errorP.setAttribute("role", "alert");
+            errorP.innerText = "Errori nei campi inseriti, si prega di ricontrollare";
+            formRegistrazione.insertBefore(errorP, formRegistrazione.firstChild);
+            isTopErrorPresent = true;
+        }
         return;
     }
 }

@@ -31,16 +31,18 @@ function scrollMenuEffect() {
 function openCloseMenuMobile() {
     if(isMenuOpen) {
         isMenuOpen = false;
+        buttonMenu.setAttribute("aria-label", "apri menu mobile");
         menuMobile.classList.remove("menu-mobile-aperto-alta-spec")
         menuMobile.classList.add("menu-mobile-chiuso-alta-spec")
         imageButtonMenu.classList.remove("image-button-menu-mobile-aperto")
         imageButtonMenu.classList.add("image-button-menu-mobile-chiuso")
     } else {
         isMenuOpen = true;
-        menuMobile.classList.remove("menu-mobile-chiuso-alta-spec")
-        menuMobile.classList.add("menu-mobile-aperto-alta-spec")
-        imageButtonMenu.classList.remove("image-button-menu-mobile-chiuso")
-        imageButtonMenu.classList.add("image-button-menu-mobile-aperto")
+        buttonMenu.setAttribute("aria-label", "chiudi menu mobile");
+        menuMobile.classList.remove("menu-mobile-chiuso-alta-spec");
+        menuMobile.classList.add("menu-mobile-aperto-alta-spec");
+        imageButtonMenu.classList.remove("image-button-menu-mobile-chiuso");
+        imageButtonMenu.classList.add("image-button-menu-mobile-aperto");
     }
 }
 
