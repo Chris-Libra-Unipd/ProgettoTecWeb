@@ -831,14 +831,13 @@ footer p {
 #liquid-glass-container-error404{
     width: 850px;
     max-width: 90%; 
-    padding: 30px;
+    padding: 1em;
     border-radius: 50px;
     backdrop-filter: blur(15px) saturate(100%);
     color: var(--txt-color-1);
     margin: 0 auto;
     border: 1px solid var(--border-liquid-glass);
     box-sizing: border-box;
-    margin-top: -30px;
 }
 
 #immagine-404{
@@ -933,7 +932,7 @@ footer p {
 }
 
 .liquid-glass-container-informazioni-account-header h2{
-    font-size: 32px;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -942,11 +941,11 @@ footer p {
     flex-direction: row;   
     justify-content: flex-start; 
     align-items: center; 
-    margin-top: 20px; 
+    margin-top: 1.5em; 
 }
 #liquid-glass-container-informazioni-account-body-info{
    color: var(--txt-color-1);
-   margin-left: 80px;
+   margin-left: 5em;
    flex:1;
 }
 
@@ -960,8 +959,7 @@ footer p {
     align-items: center;
     background: var(--bg-color-main);
     border: 1px solid var(--border-liquid-glass);
-    margin-left: -20px;
-    margin-right: 30px;
+    margin-right: 2em;
 }
 
 .liquid-glass-container-informazioni-account-icon img{
@@ -985,7 +983,7 @@ footer p {
     border-radius: 30px;
     color: var(--txt-color-1);
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 5em;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(4.5px);
     border: 1px solid var(--border-liquid-glass);

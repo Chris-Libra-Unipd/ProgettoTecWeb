@@ -2,6 +2,15 @@
 session_start();
 
 $paginaHTML = file_get_contents("Error404.html");
+require_once "php/utils.php";
+
+
+if(isset($_SESSION['username'])) {
+    $paginaHTML = setta_link_area_personale($paginaHTML);
+} else {
+    $paginaHTML = setta_link_login($paginaHTML);
+}
+
 
 $footerLink="";
 if(isset($_SESSION['username']))

@@ -1,7 +1,15 @@
 <?php
     session_start();
+    require_once "php/utils.php";
+
 
     $paginaHTML = file_get_contents("Error500.html");
+
+    if(isset($_SESSION['username'])) {
+        $paginaHTML = setta_link_area_personale($paginaHTML);
+    } else {
+        $paginaHTML = setta_link_login($paginaHTML);
+    }
 
     $footerLink="";
     if(isset($_SESSION['username']))
