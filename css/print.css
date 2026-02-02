@@ -5,8 +5,39 @@ html {
 
 a:link:after,
 a:visited:after {
-  content: " [attr(href)] ";
-  font-size: 90%;
+  content: "";
+}
+
+html, body, main, header, footer, section, div, h1, h2, h3, h4, h5, h6, span, a, li {
+    color: #000000;
+}
+#programma-container h3, .txt-container-lista-programma h4, .txt-container-lista-programma p{
+  color: #000000;
+}
+h3#punti-di-forza.generic-liquid-glass {
+    color: #000000;
+  }
+.generic-liquid-glass-chi-siamo-info-quartier-generale p{
+  color:#000000;
+}
+#azioniAccount, button{
+ display: none;
+}
+
+main#contenuto-recensione form button.button-recensione {
+    display: none;
+}
+.quantita{
+  color: #000000;
+}
+.modifica-leggi-recensione button{
+  display: none;
+}
+#scopri-link{
+  display: none;
+}
+#hero-container h2{
+  color: #000000;
 }
 
 #header-container,
@@ -18,29 +49,38 @@ a:visited:after {
     display: none;
   }
 
-  #container-ricerca {
+main #cards-list-container li.generic-liquid-glass img{
+  display: none;
+}
+#container-ricerca {
     display: none;
   }
 
-  #button-torna-su{
+#button-torna-su{
     display: none;
   }
 
-  #footer-mid-container,
-  #footer-contatti-container{
+#footer-mid-container,
+#footer-contatti-container{
     display: none;
   }
 
-  .img-lista-programma,
-  .chi-siamo-img,
-  #immagine-404,
-  #planet-desktop{
+.img-lista-programma,
+.chi-siamo-img,
+#immagine-404,
+#planet-desktop{
     display: none;
   }
 
-  .liquid-glass-container-informazioni-account-icon img,
-  #container-lista-viaggi img,
-  #cards-list-container img{
+.liquid-glass-container-informazioni-account-icon img,
+#cards-list-container img{
   display: none;
 }
 
+#container-lista-viaggi .link-dettagli-container {
+    display: none;
+}
+
+#swipingController button,img{
+  display: none;
+}
