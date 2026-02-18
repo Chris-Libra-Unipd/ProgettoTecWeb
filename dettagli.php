@@ -165,7 +165,7 @@
             $departuresString .= "</label>";
         }
         if($departuresString == ""){
-            $departuresString .= "<p class='no-result'>Nessuna partenza disponibile.</p>";
+            $departuresString .= "<p class='no-result'>Nessuna partenza disponibile, ma presto ne saranno disponibili altre!</p>";
             $acquista = "<button type='submit' id='buyButton' tabindex='0' disabled>ACQUISTA</button>";
         }
         else{

@@ -299,7 +299,7 @@ header {
     width: 100%;
     text-align: center;
     color: var(--txt-color-1);
-    font-size: 1.5em;
+    font-size: 2.3em;
 }
 
 
@@ -622,6 +622,10 @@ header {
     background-color: var(--bg-color-cancella-ricerca-hover);
 }
 
+#button-ricerca-catalogo:hover, #button-elimina-ricerca-catalogo:hover {
+    transform: scale(1.1);
+}
+
 #container-bottoni-ricerca img {
     height: 25px;
     display: block;
@@ -739,9 +743,14 @@ footer {
     padding: 7em 0 3em 0;
 }
 
+footer li {
+    padding: 0.3em;
+}
+
 .footer-link {
     color: var(--txt-color-1);
     text-decoration: none;
+    font-size: 1.2em;
 }
 
 .footer-link:hover {
@@ -814,6 +823,7 @@ footer p {
     font-weight: bold;
     text-decoration: none;
     color: var(--txt-color-1);
+    font-size: 1.2em;
 }
 
 
@@ -1012,8 +1022,7 @@ footer p {
     color: var(--accent-color);        
     border: 1px solid var(--accent-color);
     border-radius: 2em;        
-    padding: 1em 2em;                  
-    font-size: 0.8em;            
+    padding: 1.2em 2em;                              
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
@@ -1308,6 +1317,11 @@ button[name="deleteAccount"]{
 #breadcrumb a {
     color: var(--txt-color-1);
     font-weight: normal;
+    text-decoration: none;
+}
+
+#breadcrumb a:hover {
+    text-decoration: underline;
 }
 
 blockquote{
@@ -1563,13 +1577,17 @@ blockquote cite{
 
 #imgIndex{
     margin: 0em 0.5em;
-    font-size: 0.7em;
+    font-size: 1.2em;
 }
 
 #nextImg, #prevImg{
     background-color: transparent;
     border:none;
     transition: 0.5s;
+}
+
+#nextImg img, #prevImg img {
+    min-width: 44px;
 }
 
 #nextImg:hover, #prevImg:hover{
