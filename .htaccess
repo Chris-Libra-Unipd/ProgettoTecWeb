@@ -3,3 +3,11 @@ DirectoryIndex index.php index.html
 
 ErrorDocument 404 /Error404.php
 ErrorDocument 500 /Error500.php
+
+RewriteEngine On
+
+#reindirizza a .php
+RewriteRule ^(.*)\.html$ /dberti/$1.php [R=301,L]
+
+#blocca accesso a /db
+RewriteRule ^db/ - [R=403,L]
