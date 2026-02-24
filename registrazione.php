@@ -10,6 +10,8 @@ if(isset($_SESSION["username"])){
     exit;
 }
 
+$maxData = date('Y-m-d'); //data massima per il campo data di nascita
+
 $topError = "";                 //errore generale in cima al form
 $errorStatus = false;           //indica se c'è un errore nel form
 $serverError = false;           //indica se c'è stato un errore di connessione al db
@@ -75,12 +77,12 @@ if(isset($_POST["register"])) {
         $errorStatus = true;
     }
 
-    if(isset($_POST["dataNascita"]) && preg_match("/^\d{4}-\d{2}-\d{2}$/", $_POST["dataNascita"]) && ($_POST["dataNascita"] >= '1900-01-01')) {
+    if(isset($_POST["dataNascita"]) && preg_match("/^\d{4}-\d{2}-\d{2}$/", $_POST["dataNascita"]) && ($_POST["dataNascita"] >= '1900-01-01') && ($_POST["dataNascita"] <= date('Y-m-d'))) {
         $dataValue = trim($_POST["dataNascita"]);
     } else {
         $dataValue = htmlspecialchars(trim($_POST["dataNascita"]));
         $dataStatus = "shownError";
-        $dataError = "Inserire una data valida non precedente a 01/01/1900";
+        $dataError = "Inserire una data valida non precedente a 01/01/1900 e non successiva alla data odierna";
         $dataValid = "aria-invalid='true'";
         $errorStatus = true;
     }
@@ -176,6 +178,8 @@ if(isset($_POST["register"])) {
 
 //testato per xxs con "><script>alert("ciao")</script><"
 //testato per sql injection con Pippo') DROP TABLE Utente;-- 
+
+$paginaLogin = str_replace("[MAX_DATA]", $maxData, $paginaLogin);
 
 $paginaLogin = str_replace("[TOP_ERROR]", $topError, $paginaLogin);
 

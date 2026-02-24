@@ -54,8 +54,8 @@ function checkData(){
     const dataValue = dataNascita.value;
     regex = /^\d{4}-\d{2}-\d{2}$/;
 
-    if(!regex.test(dataValue) || new Date(dataValue) < new Date('1900-01-01')){ //siamo nel futuro una persona può essere nata anche nel 3000
-        showError(dataErr, "Inserire una data valida non precedente a 01/01/1900");
+    if(!regex.test(dataValue) || new Date(dataValue) < new Date('1900-01-01') || new Date(dataValue) > new Date()){
+        showError(dataErr, "Inserire una data valida non precedente a 01/01/1900 e non successiva alla data odierna");
         return 0;
     }
     hideError(dataErr);

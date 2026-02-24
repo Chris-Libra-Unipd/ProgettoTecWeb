@@ -47,7 +47,7 @@
                 
                 <label for="dataNascita">Data di nascita<span class="error">*</span></label>
                 <p class="[DATA_STATUS]" id="dataError">[DATA_ERROR]</p>
-                <input class="authField" type="date" name="dataNascita" id="dataNascita" min="1900-01-01" required value="[DATA_VALUE]" [DATA_VALID] autocomplete="bday" aria-describedby="dataError"/>
+                <input class="authField" type="date" name="dataNascita" id="dataNascita" min="1900-01-01" max="[MAX_DATA]" required value="[DATA_VALUE]" [DATA_VALID] autocomplete="bday" aria-describedby="dataError"/>
 
                 <label for="email"><span lang="en">Email</span><span class="error">*</span></label>
                 <p class="[EMAIL_STATUS]" id="emailError">[EMAIL_ERROR]</p>
